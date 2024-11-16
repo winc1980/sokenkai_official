@@ -3,6 +3,7 @@ import "@/scss/styles.scss";
 import { Image } from "astro:assets";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import 'tocbot/src/scss/tocbot';
 // タイトル等をPropsとして受け取る。
 let { title = "", description = "", og_image = "" } = Astro.props;
 ---
