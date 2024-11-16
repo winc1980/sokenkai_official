@@ -16,6 +16,7 @@
     "flowbite": "^2.5.2",
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.14",
+    "tocbot": "^4.32.2",
     "typescript": "^5.5.4"
   }
 }
