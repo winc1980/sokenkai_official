@@ -1,5 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { getTopics } from "@/lib/microcms";
+const response = await getTopics({
+  fields: ["id", "title", "description", "publishedDate"],
+});
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
 import TopicCard from "@/components/TopicCard.astro";
@@ -23,8 +27,13 @@ const og_image = "";
 
   <section id="topicsList" class="p-topicsList">
     <div class="l-container">
-        <!-- map関数で展開する -->
-        <TopicCard />
+      <!-- map関数で展開する -->
+      <TopicCard />
+      {
+        response.contents.map((content: any) => (
+          <a href={'/topics/' + content.id}>{content.title}</a>
+        ))
+      }
     </div>
   </section>
 </Layout>

@@ -2,6 +2,18 @@
 import Layout from "@/layouts/Layout.astro";
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Toc from "@/components/Toc.astro";
+import { getTopics, getTopicDetail } from "@/lib/microcms";
+export async function getStaticPaths() {
+  const response = await getTopics({ fields: ["id"] });
+  return response.contents.map((content: any) => ({
+    params: {
+      topicId: content.id,
+    },
+  }));
+}
+const { topicId } = Astro.params;
+const topic = await getTopicDetail(topicId as string);
+
 const title = "";
 const description = "";
 const og_image = "";
@@ -17,15 +29,14 @@ const og_image = "";
               { text: "記事タイトル", link: "" },
             ]}
           />
-          <h1>記事のタイトル記事のタイトル</h1>
-          <p>2024.08.31</p>
+          <h1>{topic.title}</h1>
+          <p>{topic.publishedAt}</p>
           <img src="" alt="" loading="eager" width="" height="">
         </div>
       </section>
       
       <section id="topicContent" class="p-topicContent">
         <Toc />
-        <h2>h2テキストh2テキストh2テキスト</h2>
-        <h3>h3テキストh3テキストh3テキスト</h3>
+        <div set:html={topic.content}></div>
       </section>
 </Layout>
