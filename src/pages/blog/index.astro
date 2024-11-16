@@ -1,16 +1,29 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import BreadCrumb from "@/components/BreadCrumb.astro";
+import Mv from "@/components/Mv.astro";
+import BlogCard from "@/components/BlogCard.astro";
 const title = "";
 const description = "";
 const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-    <BreadCrumb
-    items={[
-      { text: 'TOP', link: '/' },
-      { text: '活動報告', link: '/blog' },
-    ]}
-  />
+  <section class="sokenkai__mv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/blog" },
+        ]}
+      />
+      <Mv enTitle="Report" jaTitle="活動報告" />
+    </div>
+  </section>
+
+  <section id="blogList" class="p-blogList">
+    <div class="l-container">
+        <BlogCard />
+    </div>
+  </section>
 </Layout>
