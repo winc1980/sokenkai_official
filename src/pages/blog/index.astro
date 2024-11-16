@@ -1,10 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
 const title = "";
 const description = "";
 const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-	
+    <BreadCrumb
+    items={[
+      { text: 'TOP', link: '/' },
+      { text: '活動報告', link: '/blog' },
+    ]}
+  />
 </Layout>
