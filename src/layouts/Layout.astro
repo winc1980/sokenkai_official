@@ -3,7 +3,6 @@ import "@/scss/styles.scss";
 import { Image } from "astro:assets";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import 'tocbot/src/scss/tocbot';
 // タイトル等をPropsとして受け取る。
 let { title = "", description = "", og_image = "" } = Astro.props;
 ---
@@ -28,6 +27,7 @@ let { title = "", description = "", og_image = "" } = Astro.props;
     <meta name="twitter:image" content={og_image} />
     <link rel="icon" sizes="32x32" type="image/png" href="" />
     <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.30.0/tocbot.css">
   </head>
   <body>
     <Header />

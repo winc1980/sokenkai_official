@@ -1,10 +1,30 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Mv from "@/components/Mv.astro";
+import TopicCard from "@/components/TopicCard.astro";
 const title = "";
 const description = "";
 const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-	
+  <section class="sokenkai__mv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/topics" },
+        ]}
+      />
+      <Mv enTitle="Report" jaTitle="活動報告" />
+    </div>
+  </section>
+
+  <section id="topicsList" class="p-topicsList">
+    <div class="l-container">
+        <!-- map関数で展開する -->
+        <TopicCard />
+    </div>
+  </section>
 </Layout>

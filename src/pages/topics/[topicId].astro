@@ -1,10 +1,31 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Toc from "@/components/Toc.astro";
 const title = "";
 const description = "";
 const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-	
+	<section class="sokenkai__topicMv">
+        <div class="l-container">
+          <BreadCrumb
+            items={[
+              { text: "TOP", link: "/" },
+              { text: "活動報告", link: "/topics" },
+              { text: "記事タイトル", link: "" },
+            ]}
+          />
+          <h1>記事のタイトル記事のタイトル</h1>
+          <p>2024.08.31</p>
+          <img src="" alt="" loading="eager" width="" height="">
+        </div>
+      </section>
+      
+      <section id="topicContent" class="p-topicContent">
+        <Toc />
+        <h2>h2テキストh2テキストh2テキスト</h2>
+        <h3>h3テキストh3テキストh3テキスト</h3>
+      </section>
 </Layout>
