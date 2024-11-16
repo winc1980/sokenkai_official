@@ -20,23 +20,25 @@ const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-	<section class="sokenkai__topicMv">
-        <div class="l-container">
-          <BreadCrumb
-            items={[
-              { text: "TOP", link: "/" },
-              { text: "活動報告", link: "/topics" },
-              { text: "記事タイトル", link: "" },
-            ]}
-          />
-          <h1>{topic.title}</h1>
-          <p>{topic.publishedAt}</p>
-          <img src="" alt="" loading="eager" width="" height="">
-        </div>
-      </section>
-      
-      <section id="topicContent" class="p-topicContent">
-        <Toc />
-        <div set:html={topic.content}></div>
-      </section>
+  <section class="sokenkai__topicMv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/topics" },
+          { text: "記事タイトル", link: "" },
+        ]}
+      />
+      <h1>{topic.title}</h1>
+      <p>{topic.publishedAt}</p>
+      <img src="/assets/banner.png" alt="" loading="eager" width="" height="" />
+    </div>
+  </section>
+
+  <section id="topicContent" class="p-topicContent">
+    <div class="l-container">
+      <Toc />
+      <div set:html={topic.content} />
+    </div>
+  </section>
 </Layout>

@@ -27,13 +27,14 @@ const og_image = "";
 
   <section id="topicsList" class="p-topicsList">
     <div class="l-container">
-      <!-- map関数で展開する -->
-      <TopicCard />
-      {
-        response.contents.map((content: any) => (
-          <a href={'/topics/' + content.id}>{content.title}</a>
-        ))
-      }
+      <div class="p-topicsList__wrapper">
+        <!-- map関数で展開する -->
+        {
+          response.contents.map((content: any) => (
+            <TopicCard content={content} />
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>
