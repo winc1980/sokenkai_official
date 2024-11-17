@@ -1,30 +1,96 @@
 ---
+import {Image} from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
-const title = "";
+const title = "TOP";
 const description = "";
-const og_image = "";
+const text = "hello";
+
 ---
 
-<Layout title={title} , description={description} og_image={og_image}>
-	<!-- ヘッダーここから -->
-	<header></header>
-	<!-- ヘッダーここまで -->
+<Layout title={title} , description={description}>
 
 	<main>
+	
+
 	<!-- ファーストビューここから -->
-	<section id="fv" class="p-fv"></section>
+	<section id="fv" class="p-fv">
+		<h1>早稲田大学<br>
+			学生健康増進互助会</h1>
+		<p>Waseda Univ. <br>
+			Student Health Promotion <br>
+			Mutual Aid Association</p>
+		<div class="p-fv-carousel">
+				<div class="scroll_track">
+				  <ul class="scroll_inner">
+					<li class="scroll_cont">
+					  <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					  <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					  <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+					<li class="scroll_cont">
+					   <img src="" alt="">
+					</li>
+				  </ul>
+			  </div>
+		</div>
+	</section>
 	<!-- ファーストビューここまで -->
 
-	<!-- ニュースここから -->
-	<section id="news" class="p-news"></section>
+	<!-- newsここから -->
+	<section id="news" class="p-news">
+		<h2 class="title">News</h2>
+		<p>2024.08.18</p>
+		<p>早健会のHPを公開しました</p>
+		<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	</section>
 	<!-- ニュースここまで -->
 
 	<!-- アクティビティここから -->
-	<section id="activity" class="p-activity"></section>
+	<section id="activity" class="p-activity">
+		<h3>Activity</h3>
+		<p>100円朝食</p>
+		<p>時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+			近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p>
+		<p>歯科検診</p>
+		<p>毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
+		</p>
+	</section>
 	<!-- アクティビティここまで -->
 
 	<!-- エクスペリエンスここから -->
-	<section id="experience" class="p-experience"></section>
+	<section id="experience" class="p-experience">
+		<h4>Experience</h4>
+		<div>
+		<p>企業と関わる経験</p>
+		<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+		</div>
+		<div>
+		<p>イベントの企画運営</p>
+		<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+	</div>
+	</section>
 	<!-- エクスペリエンスここまで -->
 
 	<!-- レポートここから -->
@@ -44,7 +110,4 @@ const og_image = "";
 	<!-- コンタクトここまで -->
 	</main>
 
-	<!-- フッターここから -->
-	<footer></footer>
-	<!-- フッターここまで -->
 </Layout>

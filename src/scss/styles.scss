@@ -1,3 +1,43 @@
 @charset "UTF-8";
 
 @use "./variables" as *;
+
+// ここにCSSかく
+@media (min-width: $breakpoint-md) {
+}
+
+//headerここから
+header {
+  color: #71cedf;
+}
+.h0 {
+  font-size: 24px;
+}
+.header-nav {
+  display: flex;
+}
+li {
+  font-size: 20px;
+  padding: 0 14px;
+}
+header img {
+  width: 30px;
+  height: 30px;
+}
+//ここまで
+
+// fvここから
+.p-fv {
+  background-image: url(images/IMG_4518);
+}
+
+// ここまで
+
+//newsここから
+//newsここまで
+
+//activityここから
+//activityここまで
+
+//experienceここから
+//experienceここから
