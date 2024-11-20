@@ -1,12 +1,15 @@
 ---
-const {  } = Astro.props
+import dayjs from 'dayjs';
+const { content } = Astro.props;
+const date = dayjs(content.publishedDate).format('YYYY.MM.DD');
+console.log(content);
 ---
+
 <!-- map関数で展開 -->
-<a href="" class="sokenkai__blogcard">
-    <img src="" alt="">
-    <div class="sokenkai__blogcard__texts">
-        <p></p>
-        <h3></h3>
-        <p></p>
-    </div>
+<a href={"/blog/" + content.id} class="sokenkai__blogcard">
+  <img src="" alt="ブログ画像" />
+  <div class="sokenkai__blogcard__texts">
+    <p>{date}</p>
+    <h3>{content.title}</h3>
+  </div>
 </a>

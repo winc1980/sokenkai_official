@@ -1,8 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { getBlogs } from "@/lib/microcms";
+const response = await getBlogs({
+  fields: ["id", "title", "description", "publishedDate"],
+});
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
-import BlogCard from "@/components/BlogCard.astro";
+import BlogCard from "@/components/BlogCard.astro"
 const title = "";
 const description = "";
 const og_image = "";
@@ -21,10 +25,16 @@ const og_image = "";
     </div>
   </section>
 
-  <section id="blogList" class="p-blogList">
+  <section id="blogsList" class="p-blogsList">
     <div class="l-container">
+      <div class="p-blogsList__wrapper">
         <!-- map関数で展開する -->
-        <BlogCard />
+        {
+          response.contents.map((content: any) => (
+          <BlogCard content={content} />
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>
