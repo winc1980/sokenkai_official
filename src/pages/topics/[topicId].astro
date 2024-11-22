@@ -26,12 +26,17 @@ const og_image = "";
         items={[
           { text: "TOP", link: "/" },
           { text: "活動報告", link: "/topics" },
-          { text: "記事タイトル", link: "" },
+          { text: topic.title, link: "" },
         ]}
       />
       <h1>{topic.title}</h1>
       <p>{topic.publishedAt}</p>
-      <img src="/assets/banner.png" alt="" loading="eager" width="" height="" />
+      <img
+        src={topic.featuredImage.url}
+        width={topic.featuredImage.width}
+        height={topic.featuredImage.height}
+        alt="トピック記事のバナー画像"
+      />
     </div>
   </section>
 

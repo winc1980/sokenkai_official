@@ -31,7 +31,12 @@ const og_image = "";
       />
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
-      <img src="/assets/banner.png" alt="" loading="eager" width="" height="" />
+      <img
+        src={blog.featuredImage.url}
+        width={blog.featuredImage.width}
+        height={blog.featuredImage.height}
+        alt="ブログ記事のトップ画像"
+      />
     </div>
   </section>
 

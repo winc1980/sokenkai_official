@@ -7,7 +7,12 @@ console.log(content);
 
 <!-- map関数で展開 -->
 <a href={"/blog/" + content.id} class="sokenkai__blogcard">
-  <img src="" alt="ブログ画像" />
+  <img
+    src={content.featuredImage.url}
+    width={content.featuredImage.width}
+    height={content.featuredImage.height}
+    alt="ブログ記事のトップ画像"
+  />
   <div class="sokenkai__blogcard__texts">
     <p>{date}</p>
     <h3>{content.title}</h3>

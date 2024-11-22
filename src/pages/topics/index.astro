@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { getTopics } from "@/lib/microcms";
 const response = await getTopics({
-  fields: ["id", "title", "description", "publishedDate"],
+  fields: ["id", "title", "description", "publishedDate", "featuredImage"],
 });
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
