@@ -1,5 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+import Btn from '@/components/Btn.astro';
+
 const title = "";
 const description = "";
 const og_image = "";
@@ -42,12 +45,16 @@ const og_image = "";
 	<!-- コンタクトここから -->
 	<section id="contact" class="p-contact">
 		<div class="contact-container">
-			<h1>Contact</h1>
-			<p>
-				体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
-				というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
-				委員会へのお問い合わせもこちらより受け付けております。
-			</p>
+
+			<div class="contact-container-heading">
+				<h1>Contact</h1>
+				<p>
+					体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
+					というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
+					委員会へのお問い合わせもこちらより受け付けております。
+				</p>
+			</div>
+
 			<form>
 				<div class="form-group">
 					<label for="name">お名前/団体名</label>
@@ -76,7 +83,13 @@ const og_image = "";
 					<textarea id="message" name="message" required></textarea>
 				</div>
 
-				<button type="submit" class="submit-button">送信する</button>
+
+				<div class="button">
+				<!-- <button type="submit" class="submit-button">送信する</button> -->
+				 <Btn title="送信する"/>
+				</div>
+
+
 			</form>
 		</div>
 

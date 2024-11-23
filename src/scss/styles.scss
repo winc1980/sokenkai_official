@@ -1,3 +1,49 @@
 @charset "UTF-8";
 
 @use "./variables" as *;
+
+.contact-container p {
+  text-align: left;
+  width: 864px;
+  margin: 0px auto;
+  font-size: 18px;
+  line-height: 175%;
+  letter-spacing: 10%;
+}
+
+.contact-container h1 {
+  font-size: 64px;
+}
+
+.contact-container-heading {
+  text-align: center;
+}
+
+.button {
+  position: center;
+}
+
+.view_more_btn {
+  width: 202px;
+  height: 55px;
+  background-color: #fff;
+  color: #32c8ff;
+  border: 1px solid #32c8ff;
+  border-right: 1px solid #32c8ff;
+  border-bottom: 1px solid #32c8ff;
+}
+
+.view_more_btn::after {
+  content: "";
+  position: absolute;
+  bottom: 3px; /* ボタンの下に3pxの隙間 */
+  right: 3px; /* ボタンの右に3pxの隙間 */
+  width: calc(100% + 3px); /* ボタンの幅に合わせる */
+  height: calc(100% + 3px); /* ボタンの高さに合わせる */
+  border-right: 2px solid #00bfff; /* 右側の線 */
+  border-bottom: 2px solid #00bfff; /* 下側の線 */
+}
+
+.view_more_btn:hover {
+  background-color: #f0f8ff;
+}
