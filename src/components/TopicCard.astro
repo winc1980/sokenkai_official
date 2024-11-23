@@ -1,0 +1,17 @@
+---
+import dayjs from "dayjs";
+const { content } = Astro.props;
+const date = dayjs(content.publishedDate).format("YYYY.MM.DD");
+console.log(content);
+---
+
+<a href={"/topics/" + content.id} class="sokenkai__topiccard">
+  <img
+    src={content.featuredImage.url}
+    width={content.featuredImage.width}
+    height={content.featuredImage.height}
+    alt="トピック記事のバナー画像"
+  />
+  <p>{date}</p>
+  <h3>{content.title}</h3>
+</a>
