@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Toc from "@/components/Toc.astro";
+import { getTopics, getTopicDetail } from "@/lib/microcms";
+export async function getStaticPaths() {
+  const response = await getTopics({ fields: ["id"] });
+  return response.contents.map((content: any) => ({
+    params: {
+      topicId: content.id,
+    },
+  }));
+}
+const { topicId } = Astro.params;
+const topic = await getTopicDetail(topicId as string);
+
+const title = "";
+const description = "";
+const og_image = "";
+---
+
+<Layout title={title} , description={description} og_image={og_image}>
+  <section class="sokenkai__topicMv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/topics" },
+          { text: topic.title, link: "" },
+        ]}
+      />
+      <h1>{topic.title}</h1>
+      <p>{topic.publishedAt}</p>
+      <img
+        src={topic.featuredImage.url}
+        width={topic.featuredImage.width}
+        height={topic.featuredImage.height}
+        alt="トピック記事のバナー画像"
+      />
+    </div>
+  </section>
+
+  <section id="topicContent" class="p-topicContent">
+    <div class="l-container">
+      <Toc />
+      <div set:html={topic.content} />
+    </div>
+  </section>
+</Layout>

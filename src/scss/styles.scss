@@ -189,6 +189,74 @@
           }
         }
       }
+// ここにCSSかく
+@media (min-width: $breakpoint-md) {
+}
+
+//headerここから
+header {
+  color: #71cedf;
+}
+.h0 {
+  font-size: 24px;
+}
+.header-nav {
+  display: flex;
+}
+li {
+  font-size: 20px;
+  padding: 0 14px;
+}
+header img {
+  width: 30px;
+  height: 30px;
+}
+//ここまで
+
+// fvここから
+.p-fv {
+  background-image: url(images/IMG_4518);
+}
+
+// ここまで
+
+//newsここから
+//newsここまで
+
+//activityここから
+//activityここまで
+
+//experienceここから
+//experienceここから
+/* ------------------- 共通要素ここから ------------------- */
+
+.l-container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sokenkai {
+  &__topiccard {
+    display: block;
+    max-width: 550px;
+  }
+}
+
+/* ------------------- 共通要素ここまで ------------------- */
+
+/* ------------------- トピック一覧ここから ------------------- */
+
+.p-topicsList {
+  &__wrapper {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  @media (max-width: $breakpoint-md) {
+    &__wrapper {
+      grid-template-columns: 1fr;
     }
   }
 }
@@ -285,3 +353,19 @@
     }
   }
 }
+/* ------------------- トピック一覧ここまで ------------------- */
+
+/* ------------------- トピック記事ここから ------------------- */
+
+.p-topicContent {
+  h1 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  p {
+  }
+}
+
+/* ------------------- トピック記事ここまで ------------------- */
