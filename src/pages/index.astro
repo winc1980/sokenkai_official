@@ -6,6 +6,7 @@ const description = "";
 const og_image = "";
 
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
+import beer from '@/assets/images/image 1.png';
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
@@ -83,10 +84,13 @@ import dental_checkup from '@/assets/images/IMG_4519.JPG';
                <ul>
                     <li>
                          <a>
-                              <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                              <Image src={beer} alt="乾杯の写真" />
                               <div>
-                                   <h3>あああ</h3>
-                                   <p>aaaaaaaaaaaa</p>
+                                   <span></span>
+                                   <div>
+                                        <h3>あああ</h3>
+                                        <p>aaaaaaaaaaaa</p>
+                                   </div>
                               </div>
                          </a>
                          <div>
@@ -94,7 +98,7 @@ import dental_checkup from '@/assets/images/IMG_4519.JPG';
                     </li>
                     <li>
                          <a>
-                              <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                              <Image src={beer} alt="乾杯の写真" />
                               <div>
                                    <h3>あああ</h3>
                                    <p>aaaaaaaaaaaa</p>
@@ -109,7 +113,38 @@ import dental_checkup from '@/assets/images/IMG_4519.JPG';
 	<!-- トピックここまで -->
 
 	<!-- ここから -->
-	<section id="faqs" class="p-faqs"></section>
+	<section id="faqs" class="p-faqs">
+          <div class="qa-container">
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+          </div>
+     </section>
 	<!-- ここまで -->
 
 	<!-- コンタクトここから -->
@@ -160,4 +195,23 @@ prevBtn.addEventListener("click", () => {
 currentIndex = (currentIndex - 1 + totalItems) % totalItems;
 updateSlider();
 });
+
+document.querySelectorAll('.qa-item').forEach(item => {
+     const question = item.querySelector('.question');
+     const answer = item.querySelector('.answer');
+     const vertical = item.querySelector('.vertical')
+
+     question.addEventListener('click', () => {
+          item.classList.toggle('open');
+
+          if (item.classList.contains('open')) {
+               answer.style.display = 'block';
+               vertical.style.display = 'none';
+          } else {
+               answer.style.display = 'none';
+               vertical.style.display = 'block';
+          }
+     });
+});
+
 </script>
