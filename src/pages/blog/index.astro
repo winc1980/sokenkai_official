@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getBlogs } from "@/lib/microcms";
+const response = await getBlogs({
+  fields: ["id", "title", "description", "publishedDate", "featuredImage"],
+});
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Mv from "@/components/Mv.astro";
+import BlogCard from "@/components/BlogCard.astro"
+const title = "";
+const description = "";
+const og_image = "";
+---
+
+<Layout title={title} , description={description} og_image={og_image}>
+  <section class="sokenkai__mv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/blog" },
+        ]}
+      />
+      <Mv enTitle="Report" jaTitle="活動報告" />
+    </div>
+  </section>
+
+  <section id="blogsList" class="p-blogsList">
+    <div class="l-container">
+      <div class="p-blogsList__wrapper">
+        <!-- map関数で展開する -->
+        {
+          response.contents.map((content: any) => (
+          <BlogCard content={content} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

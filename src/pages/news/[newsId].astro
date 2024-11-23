@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Toc from "@/components/Toc.astro";
+import { getNews, getNewsDetail } from "@/lib/microcms";
+export async function getStaticPaths() {
+  const response = await getNews({ fields: ["id"] });
+  return response.contents.map((content: any) => ({
+    params: {
+      newsId: content.id,
+    },
+  }));
+}
+const { newsId } = Astro.params;
+const news = await getNewsDetail(newsId as string);
+
+const title = "";
+const description = "";
+const og_image = "";
+---
+
+<Layout title={title} , description={description} og_image={og_image}>
+  <section class="sokenkai__newsMv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "活動報告", link: "/news" },
+          { text: news.title, link: "" },
+        ]}
+      />
+      <h1>{news.title}</h1>
+      <p>{news.publishedAt}</p>
+    </div>
+  </section>
+
+  <section id="newsContent" class="p-newsContent">
+    <div class="l-container">
+      <Toc />
+      <div set:html={news.content} />
+    </div>
+  </section>
+</Layout>
