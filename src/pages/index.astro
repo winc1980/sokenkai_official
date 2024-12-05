@@ -1,6 +1,8 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
+import dental_checkup from '@/assets/images/IMG_4519.JPG';
+import beer from '@/assets/images/image 1.png';
 const title = "TOP";
 const description = "";
 const text = "hello";
@@ -93,21 +95,278 @@ const text = "hello";
 	</section>
 	<!-- エクスペリエンスここまで -->
 
-	<!-- レポートここから -->
-	<section id="report" class="p-report"></section>
-	<!-- レポートここまで -->
+<!-- レポートここから -->
+<section id="report" class="p-report">
+     <div class="title">
+          <h2>Report</h2>
+          <p>活動報告</p>
+     </div>
+     <div class="slider">
+          <span id="prevBtn" class="arrow-left"></span>
+          <ul class="slider-list">
+               <li class="slider-item">
+                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <div>
+                         <time datetime="">2024.08.18</time>
+                         <h3>歯科検診レポート</h3>
+                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                    </div>
+               </li>
+               <li class="slider-item">
+                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <div>
+                         <time datetime="">2024.08.18</time>
+                         <h3>歯科検診レポート</h3>
+                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+               </li>
+               <li class="slider-item">
+                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <div>
+                         <time datetime="">2024.08.18</time>
+                         <h3>歯科検診レポート</h3>
+                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+               </li>
+               <li class="slider-item">
+                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <div>
+                         <time datetime="">2024.08.18</time>
+                         <h3>歯科検診レポート</h3>
+                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+               </li>
+               <li class="slider-item">
+                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <div>
+                         <time datetime="">2024.08.18</time>
+                         <h3>歯科検診レポート</h3>
+                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+               </li>
+          </ul>
+          <span id="nextBtn" class="arrow-right"></span>
+     </div>
+</section>
+<!-- レポートここまで -->
 
-	<!-- トピックここから -->
-	<section id="topic" class="p-topic"></section>
-	<!-- トピックここまで -->
+<!-- トピックここから -->
+<section id="topic" class="p-topic">
+     <div class="title">
+          <h2>Topic</h2>
+          <p>記事</p>
+     </div>
+     <div>
+          <ul>
+               <li>
+                    <a>
+                         <figure>
+                              <Image src={beer} alt="乾杯の写真" />
+                         </figure>
+                         <div>
+                              <span></span>
+                              <div>
+                                   <h3>飲酒の健康への影響</h3>
+                                   <h3>適切なアルコールの摂取量とは？</h3>
+                              </div>
+                         </div>
+                    </a>
+                    <div>
+                         <time datetime="">2024.08.31</time>
+                         <hr>
+                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
+                    </div>
+               </li>
+               <li>
+                    <a>
+                         <figure>
+                              <Image src={beer} alt="乾杯の写真" />
+                         </figure>
+                         <div>
+                              <span></span>
+                              <div>
+                                   <h3>飲酒の健康への影響</h3>
+                                   <h3>適切なアルコールの摂取量とは？</h3>
+                              </div>
+                         </div>
+                    </a>
+                    <div>
+                         <time datetime="">2024.08.31</time>
+                         <hr>
+                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
+                    </div>
+               </li>
+               <li>
+                    <a>
+                         <figure>
+                              <Image src={beer} alt="乾杯の写真" />
+                         </figure>
+                         <div>
+                              <span></span>
+                              <div>
+                                   <h3>飲酒の健康への影響</h3>
+                                   <h3>適切なアルコールの摂取量とは？</h3>
+                              </div>
+                         </div>
+                    </a>
+                    <div>
+                         <time datetime="">2024.08.31</time>
+                         <hr>
+                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
+                    </div>
+               </li>
+               <li>
+                    <a>
+                         <figure>
+                              <Image src={beer} alt="乾杯の写真" />
+                         </figure>
+                         <div>
+                              <span></span>
+                              <div>
+                                   <h3>飲酒の健康への影響</h3>
+                                   <h3>適切なアルコールの摂取量とは？</h3>
+                              </div>
+                         </div>
+                    </a>
+                    <div>
+                         <time datetime="">2024.08.31</time>
+                         <hr>
+                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
+                    </div>
+               </li>
+          </ul>
+     </div>
+</section>
+<!-- トピックここまで -->
 
-	<!-- ここから -->
-	<section id="faqs" class="p-faqs"></section>
-	<!-- ここまで -->
+<!-- ここから -->
+<section id="faqs" class="p-faqs">
+     <div class="title">
+          <h2>FAQs</h2>
+          <p>よくある質問</p>
+     </div>
+     <div class="qa-container">
+          <div class="qa-item">
+               <div class="question">
+                    <span>Q.</span>
+                    <span>早健会の会員の文理比を教えてください。</span>
+                    <div class="fq-btn">
+                         <span class="horizontal"></span>
+                         <span class="vertical"></span>
+                    </div>
+               </div>
+               <div class="answer">
+                    <span>A.</span>
+                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+               </div>
+          </div>
+          <div class="qa-item">
+               <div class="question">
+                    <span>Q.</span>
+                    <span>早健会の会員の文理比を教えてください。</span>
+                    <div class="fq-btn">
+                         <span class="horizontal"></span>
+                         <span class="vertical"></span>
+                    </div>
+               </div>
+               <div class="answer">
+                    <span>A.</span>
+                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+               </div>                
+          </div>
+          <div class="qa-item">
+               <div class="question">
+                    <span>Q.</span>
+                    <span>早健会の会員の文理比を教えてください。</span>
+                    <div class="fq-btn">
+                         <span class="horizontal"></span>
+                         <span class="vertical"></span>
+                    </div>
+               </div>
+               <div class="answer">
+                    <span>A.</span>
+                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+               </div>                
+          </div>
+          <div class="qa-item">
+               <div class="question">
+                    <span>Q.</span>
+                    <span>早健会の会員の文理比を教えてください。</span>
+                    <div class="fq-btn">
+                         <span class="horizontal"></span>
+                         <span class="vertical"></span>
+                    </div>
+               </div>
+               <div class="answer">
+                    <span>A.</span>
+                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+               </div>                
+          </div>
+     </div>
+</section>
+<!-- ここまで -->
 
-	<!-- コンタクトここから -->
-	<section id="contact" class="p-contact"></section>
-	<!-- コンタクトここまで -->
-	</main>
+<!-- コンタクトここから -->
+<section id="contact" class="p-contact"></section>
+<!-- コンタクトここまで -->
+</main>
 
+<!-- フッターここから -->
+<footer></footer>
+<!-- フッターここまで -->
+</Layout>
+<script>
+const items = Array.from(document.querySelectorAll(".slider-item"));
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const totalItems = items.length;
+let currentIndex = 0;
+
+function updateSlider() {
+items.forEach((item) => {
+item.classList.remove("left", "active", "right");
+item.style.display = 'none';
+});
+
+const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+const rightIndex = (currentIndex + 1) % totalItems;
+
+items[leftIndex].classList.add("left");
+items[leftIndex].style.display = 'block';
+items[currentIndex].classList.add("active");
+items[currentIndex].style.display = 'block';
+items[rightIndex].classList.add("right");
+items[rightIndex].style.display = 'block';
+}
+
+
+currentIndex = 0;
+updateSlider();
+
+
+nextBtn.addEventListener("click", () => {
+currentIndex = (currentIndex + 1) % totalItems;
+updateSlider();
+});
+
+
+prevBtn.addEventListener("click", () => {
+currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+updateSlider();
+});
+
+document.querySelectorAll('.qa-item').forEach(item => {
+const question = item.querySelector('.question');
+const answer = item.querySelector('.answer');
+const vertical = item.querySelector('.vertical')
+
+question.addEventListener('click', () => {
+     item.classList.toggle('open');
+
+     if (item.classList.contains('open')) {
+          answer.style.display = 'flex';
+          vertical.style.display = 'none';
+     } else {
+          answer.style.display = 'none';
+          vertical.style.display = 'flex';
+     }
+});
+});
+</script>
 </Layout>
