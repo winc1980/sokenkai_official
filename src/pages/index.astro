@@ -55,32 +55,33 @@ const og_image = "";
 				</p>
 			</div>
 
-			<form>
+			<form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/viewform?usp=sf_link" class="contact_form"  method="post" target="hidden_iframe" onsubmit="submitted=true;">
+				
 				<div class="form-group">
 					<label for="name">お名前/団体名</label>
-					<input type="text" id="name" name="name" required />
+					<input type="text" name="entry.1773433501" placeholder="お名前/団体名" required>
 				</div>
 
 				<div class="form-group">
 					<label for="email">メールアドレス</label>
-					<input type="email" id="email" name="email" required />
+					<input type="email" name="entry.208867270" placeholder="お名前/団体名" required>
 				</div>
 
 				<div class="form-group">
 					<label>ご要望</label>
 					<div class="radio-group">
-						<input type="radio" id="join" name="request" value="入会したい" required />
+						<input id="join" type="radio" name="entry.1778729284" value="入会したい" required/>
 						<label for="join">入会したい</label>
-						<input type="radio" id="question" name="request" value="話を聞きたい" />
+						<input id="question" type="radio" name="entry.1778729284" required value="入会したい" />
 						<label for="question">話を聞きたい</label>
-						<input type="radio" id="other" name="request" value="その他" />
+						<input id="other" type="radio" name="entry.1778729284" required value="その他"/>
 						<label for="other">その他</label>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="message">お問い合わせ内容</label>
-					<textarea id="message" name="message" required></textarea>
+					<input type="text" name="entry.160534721" value="入会したい">
 				</div>
 
 
@@ -91,6 +92,11 @@ const og_image = "";
 
 
 			</form>
+			<script type="text/javascript">
+				var submitted = false;
+			</script>
+			  <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted)  {window.location='thanks.astro';}"></iframe>
+
 		</div>
 
 		<div class="top-button">Top</div>
