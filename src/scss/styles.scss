@@ -48,8 +48,29 @@
   background-color: #f0f8ff;
 }
 
-input[type="radio"] {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
+form {
+  display: grid;
+  grid-template-columns: auto 1fr; /* ラベルを左、入力欄を右に配置 */
+  gap: 10px; /* アイテム間の余白 */
+  max-width: 600px; /* フォーム全体の幅（必要に応じて調整） */
+}
+
+label {
+  text-align: right; /* ラベルを右揃え */
+  padding-right: 10px; /* ラベルと入力欄の間の余白 */
+  align-self: center; /* ラベルを縦方向の中央に揃える */
+}
+
+input,
+textarea {
+  width: 100%; /* 入力欄を列全体に広げる */
+  padding: 8px; /* 内側余白を追加 */
+  box-sizing: border-box; /* パディングを含めて幅を計算 */
+}
+
+button {
+  grid-column: span 2; /* ボタンを2列にまたがせる */
+  padding: 10px 15px; /* ボタンの内側余白 */
+  text-align: center; /* ボタン文字を中央揃え */
+  margin-top: 10px; /* 上に余白を追加 */
 }
