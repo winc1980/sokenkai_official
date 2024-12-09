@@ -9,6 +9,7 @@
   font-size: 18px;
   line-height: 175%;
   letter-spacing: 10%;
+  margin: 33px auto 39px auto;
 }
 
 .contact-container h1 {
@@ -19,10 +20,6 @@
   text-align: center;
 }
 
-.button {
-  position: center;
-}
-
 .view_more_btn {
   width: 202px;
   height: 55px;
@@ -31,46 +28,62 @@
   border: 1px solid #32c8ff;
   border-right: 1px solid #32c8ff;
   border-bottom: 1px solid #32c8ff;
+  margin: 43px auto;
+  display: block;
 }
 
-.view_more_btn::after {
-  content: "";
-  position: absolute;
-  bottom: 3px; /* ボタンの下に3pxの隙間 */
-  right: 3px; /* ボタンの右に3pxの隙間 */
-  width: calc(100% + 3px); /* ボタンの幅に合わせる */
-  height: calc(100% + 3px); /* ボタンの高さに合わせる */
-  border-right: 2px solid #00bfff; /* 右側の線 */
-  border-bottom: 2px solid #00bfff; /* 下側の線 */
-}
+// .view_more_btn::after {
+//   content: "";
+//   position: absolute;
+//   bottom: 3px; /* ボタンの下に3pxの隙間 */
+//   right: 3px; /* ボタンの右に3pxの隙間 */
+//   width: calc(100% + 3px); /* ボタンの幅に合わせる */
+//   height: calc(100% + 3px); /* ボタンの高さに合わせる */
+//   border-right: 2px solid #00bfff; /* 右側の線 */
+//   border-bottom: 2px solid #00bfff; /* 下側の線 */
+// }
 
 .view_more_btn:hover {
   background-color: #f0f8ff;
 }
 
-form {
+.form-group {
   display: grid;
-  grid-template-columns: auto 1fr; /* ラベルを左、入力欄を右に配置 */
-  gap: 10px; /* アイテム間の余白 */
-  max-width: 600px; /* フォーム全体の幅（必要に応じて調整） */
+  grid-template-columns: 200px 1fr;
+  max-width: 800px;
+  margin: 50px auto;
 }
 
 label {
-  text-align: right; /* ラベルを右揃え */
-  padding-right: 10px; /* ラベルと入力欄の間の余白 */
-  align-self: center; /* ラベルを縦方向の中央に揃える */
+  // grid-column: 1 / 2;
+  line-height: 54px;
 }
 
-input,
-textarea {
-  width: 100%; /* 入力欄を列全体に広げる */
-  padding: 8px; /* 内側余白を追加 */
-  box-sizing: border-box; /* パディングを含めて幅を計算 */
+input {
+  // grid-column: 2 / 3;
+  max-width: 577px;
+  height: 54px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  border-radius: 10px;
+}
+
+.message {
+  grid-column: 2 / 3;
+  max-width: 577px;
+  height: 168px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  text-align: left;
 }
 
 button {
-  grid-column: span 2; /* ボタンを2列にまたがせる */
-  padding: 10px 15px; /* ボタンの内側余白 */
-  text-align: center; /* ボタン文字を中央揃え */
-  margin-top: 10px; /* 上に余白を追加 */
+  grid-column: 2 / 3;
+}
+
+.radio-group {
+  display: flex;
+  line-height: 54px;
+  max-width: 401px;
+  gap: 0px 25px;
 }
