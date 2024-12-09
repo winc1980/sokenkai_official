@@ -2,6 +2,21 @@
 
 @use "./variables" as *;
 
+body {
+  margin: 0; /* 不要な余白を削除 */
+  color: #343434;
+  font-family: Noto Sans JP;
+  height: 100vh; /* 画面全体の高さ */
+  background-color: #ffffff; /* 背景色を白に設定 */
+  background-image: linear-gradient(
+      to right,
+      rgba(178, 237, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(178, 237, 255, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px; /* グリッドのサイズ */
+}
+
 .contact-container p {
   text-align: left;
   width: 864px;
@@ -14,6 +29,7 @@
 
 .contact-container h1 {
   font-size: 64px;
+  font-family: poppins;
 }
 
 .contact-container-heading {
@@ -36,19 +52,52 @@
   background-color: #f0f8ff;
 }
 
+form{
+  margin: 0px auto;
+  border: 5px solid #71CEDF;
+  max-width: 1100px;
+}
+
 .form-group {
   display: grid;
-  grid-template-columns: 200px 2fr;
-  max-width: 800px;
+  grid-template-columns: 350px 2fr;
+  max-width: 900px;
   margin: 50px auto;
 }
 
+.necessary-label {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  row-gap: 46px;
+}
+
+.necessary {
+  margin-top: 12px;
+}
+
 label {
-  line-height: 54px;
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.necessary {
+  width: 40px;
+  color: #343434;
+  background: #b3fcff;
+  width: 50px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 3px 8px 2px 8px;
 }
 
 input {
-  max-width: 577px;
+  // max-width: 577px;
   height: 54px;
   background-color: #e6f9ff;
   border: 1px solid #71cedf;
@@ -56,21 +105,23 @@ input {
 }
 
 .message {
-  grid-column: 2 / 3;
-  max-width: 577px;
+  // max-width: 577px;
   height: 168px;
   background-color: #e6f9ff;
   border: 1px solid #71cedf;
   text-align: left;
 }
 
-button {
-  grid-column: 2 / 3;
-}
-
 .radio-group {
   display: flex;
-  line-height: 54px;
-  max-width: 401px;
+  line-height: 18px;
   gap: 0px 25px;
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-items: center;
+  margin-left: 96px;
 }
