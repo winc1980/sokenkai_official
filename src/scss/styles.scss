@@ -32,35 +32,22 @@
   display: block;
 }
 
-// .view_more_btn::after {
-//   content: "";
-//   position: absolute;
-//   bottom: 3px; /* ボタンの下に3pxの隙間 */
-//   right: 3px; /* ボタンの右に3pxの隙間 */
-//   width: calc(100% + 3px); /* ボタンの幅に合わせる */
-//   height: calc(100% + 3px); /* ボタンの高さに合わせる */
-//   border-right: 2px solid #00bfff; /* 右側の線 */
-//   border-bottom: 2px solid #00bfff; /* 下側の線 */
-// }
-
 .view_more_btn:hover {
   background-color: #f0f8ff;
 }
 
 .form-group {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 200px 2fr;
   max-width: 800px;
   margin: 50px auto;
 }
 
 label {
-  // grid-column: 1 / 2;
   line-height: 54px;
 }
 
 input {
-  // grid-column: 2 / 3;
   max-width: 577px;
   height: 54px;
   background-color: #e6f9ff;
