@@ -105,40 +105,64 @@ const text = "hello";
           <span id="prevBtn" class="arrow-left"></span>
           <ul class="slider-list">
                <li class="slider-item">
-                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <figure>
+                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    </figure>
                     <div>
                          <time datetime="">2024.08.18</time>
                          <h3>歯科検診レポート</h3>
                          <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                         <a href="">続きを読む</a>
                     </div>
                </li>
                <li class="slider-item">
-                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <figure>
+                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    </figure>
                     <div>
                          <time datetime="">2024.08.18</time>
                          <h3>歯科検診レポート</h3>
                          <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                         <a href="">続きを読む</a>
+                    </div>
                </li>
                <li class="slider-item">
-                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <figure>
+                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    </figure>
                     <div>
                          <time datetime="">2024.08.18</time>
                          <h3>歯科検診レポート</h3>
                          <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                         <a href="">続きを読む</a>
+                    </div>
                </li>
                <li class="slider-item">
-                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <figure>
+                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    </figure>
                     <div>
                          <time datetime="">2024.08.18</time>
                          <h3>歯科検診レポート</h3>
                          <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                         <a href="">続きを読む</a>
+                    </div>
                </li>
                <li class="slider-item">
-                    <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    <figure>
+                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
+                    </figure>
                     <div>
                          <time datetime="">2024.08.18</time>
                          <h3>歯科検診レポート</h3>
                          <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
+                         <a href="">続きを読む</a>
+                    </div>
                </li>
           </ul>
           <span id="nextBtn" class="arrow-right"></span>
@@ -368,5 +392,24 @@ question.addEventListener('click', () => {
      }
 });
 });
+document.addEventListener("DOMContentLoaded", () => {
+     const sliderItems = document.querySelectorAll(".slider-item div p");
+     const readMoreLinks = document.querySelectorAll(".slider-item div a");
+
+     sliderItems.forEach((item, index) => {
+          const maxLength = 125;
+          const fullText = item.textContent.trim();
+
+          if (fullText.length > maxLength) {
+               const truncatedText = fullText.substring(0, maxLength);
+               item.innerHTML = `${truncatedText}<span>…</span>`;
+
+               if (readMoreLinks[index]) {
+                    readMoreLinks[index].style.display = 'block';
+               }
+          }
+     });
+});
+
 </script>
 </Layout>
