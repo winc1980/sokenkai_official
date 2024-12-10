@@ -48,63 +48,57 @@ const og_image = "";
 
 			<div class="contact-container-heading">
 				<h1>Contact</h1>
-				<p>
+				<p>お問い合わせ</p>
+				<span class="underline"></span>
+			</div>
+				<p class="form-explanation">
 					体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
 					というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
 					委員会へのお問い合わせもこちらより受け付けております。
 				</p>
-			</div>
 
-			<form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/viewform?usp=sf_link">
+
+			<form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="post">
 				<div class="form-group">
-						<label for="name">お名前/団体名</label>
-					<div class="necessary-label">
-						<h3 class="necessary">必須</h3>
-						<input type="text" name="entry.1773433501"  required>
-					</div>
+				  <label for="name">お名前/団体名</label>
+				  <div class="necessary-label">
+					<h3 class="necessary">必須</h3>
+					<input type="text" name="entry.1773433501" required>
+				  </div>
 				</div>
-
+			  
+			  
 				<div class="form-group">
-						<label for="email">メールアドレス</label>
-					<div class="necessary-label">
-						<h3 class="necessary">必須</h3>
-						<input type="email" name="entry.208867270" required>
-					</div>
+				  <label>ご要望</label>
+				  <div class="radio-group">
+					<input id="join" type="radio" name="entry.160534721" value="入会したい">
+					<label for="join">入会したい</label>
+			  
+					<input id="question" type="radio" name=name="entry.160534721" value="話を聞きたい">
+					<label for="question">話を聞きたい</label>
+			  
+					<input id="other" type="radio" name="entry.160534721" value="その他">
+					<label for="other">その他</label>
+				  </div>
 				</div>
-
+			  
 				<div class="form-group">
-					<label>ご要望</label>
-					<div class="radio-group">
-						<input id="join" type="radio" name="entry.1778729284" value="入会したい"/>
-						<label for="join">入会したい</label>
-						<input id="question" type="radio" name="entry.1778729284" value="話を聞きたい"/>
-						<label for="question">話を聞きたい</label>
-						<input id="other" type="radio" name="entry.1778729284" value="その他"/>
-						<label for="other">その他</label>
-						
-						<!-- <input id="question" type="radio" name="entry.1778729284" required value="入会したい" />
-						<label for="question">話を聞きたい</label>
-						<input id="other" type="radio" name="entry.1778729284" required value="その他"/>
-						<label for="other">その他</label> -->
-					</div>
+				  <label for="message">お問い合わせ内容</label>
+				  <div class="necessary-label">
+					<h3 class="necessary">必須</h3>
+					<textarea class="message" name="entry.1778729284" required></textarea>
+				  </div>
 				</div>
-
-				<div class="form-group">
-						<label for="message">お問い合わせ内容</label>
-					<div class="necessary-label">
-						<h3 class="necessary">必須</h3>
-						<input class="message" type="message" name="entry.160534721"/>
-					</div>
-
-				</div>
-
-
+			  
 				<div class="button">
-				 <Btn type="submit" title="送信する"/>
+				  <button type="submit">送信する</button>
 				</div>
+			  </form>
+			  
 
 
-			</form>
+
+
 			<script type="text/javascript">
 				var submitted = false;
 			</script>
