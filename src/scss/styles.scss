@@ -511,3 +511,58 @@ header img {
     }
   }
 }
+
+// NewsCard
+
+.sokenkai__newscard{
+
+  p {
+    color: #71cedf;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: right;
+    letter-spacing: 0.5px;
+    
+  }
+  hr{
+    background-color: #71cedf;
+    height: 1px;
+  }
+  div{
+    display: flex;
+    margin-top: 10px;
+
+    figure{
+      background: #71cedf;
+      height: calc(tan(60deg) * 15px / 2);
+      width: 15px;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      padding: 15px;
+      margin-top: 5px;
+
+      }
+      div{
+        flex-grow: 1;
+        flex-direction: column;
+        margin-left: 30px;
+        margin-top: 0;
+
+        h4 {
+          font-size: 24px;
+          font-weight: 400;
+          color: #606060;
+          display: block;
+        }
+
+        h3 {
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 28.96px;
+          color: #606060;
+          display: block;
+        }
+      }
+  }
+
+  
+}

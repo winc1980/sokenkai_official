@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
 import beer from '@/assets/images/image 1.png';
+import left_arrow from '@/assets/images/Vector.svg';
+import right_arrow from '@/assets/images/Vector_right.svg';
 const title = "TOP";
 const description = "";
 const text = "hello";
@@ -102,7 +104,9 @@ const text = "hello";
           <p>活動報告</p>
      </div>
      <div class="slider">
-          <span id="prevBtn" class="arrow-left"></span>
+          <span id="prevBtn" class="arrow-left">
+               
+          </span>
           <ul class="slider-list">
                <li class="slider-item">
                     <figure>
@@ -402,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (fullText.length > maxLength) {
                const truncatedText = fullText.substring(0, maxLength);
-               item.innerHTML = `${truncatedText}<span>…</span>`;
+               item.innerHTML = `${truncatedText}<span>・・・</span>`;
 
                if (readMoreLinks[index]) {
                     readMoreLinks[index].style.display = 'block';

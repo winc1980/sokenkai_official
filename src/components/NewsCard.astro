@@ -5,8 +5,14 @@ const date = dayjs(content.publishedDate).format('YYYY.MM.DD');
 console.log(content)
 ---
 
-<a href={'/news/' + content.id} class="sokenkai__topiccard">
+<a href={'/news/' + content.id} class="sokenkai__newscard">
   <p>{date}</p>
-  <h4>{content.tag}</h4>
-  <h3>{content.title}</h3>
+  <hr>
+  <div>
+    <figure></figure>
+    <div>
+      <h4>{content.tag}</h4>
+      <h3>{content.title}</h3>
+    </div>
+  </div>
 </a>
