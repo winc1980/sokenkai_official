@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getTopics } from "@/lib/microcms";
+import { getTopics } from "@/lib/microcms.ts";
 const response = await getTopics({
   fields: ["id", "title", "description", "publishedDate", "featuredImage"],
 });
