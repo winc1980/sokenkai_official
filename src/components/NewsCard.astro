@@ -6,13 +6,16 @@ console.log(content)
 ---
 
 <a href={'/news/' + content.id} class="sokenkai__newscard">
-  <p>{date}</p>
+  <div>
+    <h4>{content.tag}</h4>
+    <p>{date}</p>
+  </div>
   <hr>
   <div>
     <figure></figure>
     <div>
-      <h4>{content.tag}</h4>
       <h3>{content.title}</h3>
+      <div set:html={content.content}></div>
     </div>
   </div>
 </a>

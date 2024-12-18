@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { getNews } from "@/lib/microcms.ts";
 const response = await getNews({
-  fields: ["id", "title", "description", "publishedDate", "tag"],
+  fields: ["id", "title", "description", "publishedDate", "tag" ,"content"],
 });
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
