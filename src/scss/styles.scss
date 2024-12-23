@@ -2,7 +2,161 @@
 
 @use "./variables" as *;
 
-// ここにCSSかく
+
+body {
+  margin: 0; /* 不要な余白を削除 */
+  color: #343434;
+  font-family: Noto Sans JP;
+  height: 100vh; /* 画面全体の高さ */
+  background-color: #ffffff; /* 背景色を白に設定 */
+  background-image: linear-gradient(
+      to right,
+      rgba(178, 237, 255, 0.2) 2px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(178, 237, 255, 0.2) 2px, transparent 2px);
+  background-size: 30px 30px; /* グリッドのサイズ */
+}
+
+.form-explanation {
+  text-align: left;
+  width: 864px;
+  margin: 0px auto;
+  font-size: 18px;
+  line-height: 175%;
+  letter-spacing: 10%;
+  margin: 33px auto 39px auto;
+}
+
+.contact-container h1 {
+  font-size: 64px;
+  color: #343434;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 16px;
+  font-family: poppins;
+}
+
+.contact-container-heading p {
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 8.8px;
+  margin-top: -15px;
+}
+
+.contact-container-heading {
+  text-align: center;
+}
+
+span {
+  display: block;
+  max-width:324px;
+  height: 8px; /* ラインの太さ */
+  background: #b2edff;
+  margin: 7px auto 0px auto; /* 文字との間隔 */
+}
+
+.view_more_btn {
+  width: 202px;
+  height: 55px;
+  background-color: #fff;
+  color: #32c8ff;
+  border: 1px solid #32c8ff;
+  border-right: 1px solid #32c8ff;
+  border-bottom: 1px solid #32c8ff;
+  margin: 43px auto 100px auto;
+  display: block;
+}
+
+button {
+  width: 202px;
+  height: 55px;
+  background-color: #fff;
+  color: #32c8ff;
+  border: 1px solid #32c8ff;
+  border-right: 1px solid #32c8ff;
+  border-bottom: 1px solid #32c8ff;
+  margin: 43px auto 100px auto;
+  display: block;
+}
+
+.view_more_btn:hover {
+  background-color: #f0f8ff;
+}
+
+form {
+  margin: 0px auto;
+  border: 5px solid #71cedf;
+  max-width: 1100px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 350px 2fr;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.necessary-label {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  row-gap: 46px;
+}
+
+.necessary {
+  margin-top: 12px;
+}
+
+label {
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.necessary {
+  width: 40px;
+  color: #343434;
+  background: #b3fcff;
+  width: 50px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 3px 8px 2px 8px;
+}
+
+input {
+  // max-width: 577px;
+  height: 54px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  border-radius: 10px;
+}
+
+.message {
+  // max-width: 577px;
+  height: 168px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.radio-group {
+  display: flex;
+  line-height: 18px;
+  gap: 0px 25px;
+  color: #343434;
+  
+  // ここにCSSかく
 @media (min-width: $breakpoint-md) {
 }
 
@@ -348,10 +502,16 @@ header img {
 .sokenkai__mv h1 span {
   display: block;
   color: #fff;
+
   font-family: "Noto Sans JP";
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+
+  line-height: normal;
+  align-items: center;
+  margin-left: 96px;
+
   letter-spacing: 4.5px;
 }
 
@@ -369,4 +529,5 @@ header img {
   .sokenkai__mv h1 span {
     font-size: 12px;
   }
+
 }
