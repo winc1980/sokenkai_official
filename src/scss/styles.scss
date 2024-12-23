@@ -2,6 +2,7 @@
 
 @use "./variables" as *;
 
+
 body {
   margin: 0; /* 不要な余白を削除 */
   color: #343434;
@@ -154,11 +155,379 @@ input {
   line-height: 18px;
   gap: 0px 25px;
   color: #343434;
+  
+  // ここにCSSかく
+@media (min-width: $breakpoint-md) {
+}
+
+//headerここから
+header {
+  color: #71cedf;
+}
+.h0 {
+  font-size: 24px;
+}
+.header-nav {
+  display: flex;
+}
+li {
+  font-size: 20px;
+  padding: 0 14px;
+}
+header img {
+  width: 30px;
+  height: 30px;
+}
+//ここまで
+
+// fvここから
+.p-fv {
+  background-image: url(images/IMG_4518);
+}
+
+// ここまで
+
+//newsここから
+//newsここまで
+
+//activityここから
+//activityここまで
+
+//experienceここから
+//experienceここから
+
+// Breadcrumbここから
+.flex {
+  display: block;
+  display: flex;
+  height: 100px;
+  color: #000;
+  font-family: Avenir;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2.7px;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .flex {
+    height: 26px;
+  }
+}
+// Breadcrumbここまで
+
+/* ------------------- 共通要素ここから ------------------- */
+
+.l-container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sokenkai {
+  &__topiccard {
+    display: block;
+    max-width: 550px;
+  }
+}
+
+/* ------------------- トピック一覧ここから ------------------- */
+
+.p-topicsList {
+  &__wrapper {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  @media (max-width: $breakpoint-md) {
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* ------------------- トピック一覧ここまで ------------------- */
+
+/* ------------------- トピック記事ここから ------------------- */
+
+.p-topicContent {
+  h1 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  p {
+  }
+}
+
+/* ------------------- トピック記事ここまで ------------------- */
+
+// ブログ一覧ここから
+
+.blog-entire-page-wrapper {
+  background-color: #ffffff;
+  background-image: linear-gradient(90deg, #c1deff73 2px, transparent 2px),
+    linear-gradient(#c1deff73 2px, transparent 2px);
+  background-position: 10px 10px;
+  background-size: 32px 32px;
+}
+
+.p-blogsList {
+  padding-top: 78px;
+}
+
+.p-blogsList__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .p-blogsList {
+    padding-top: 20px;
+  }
+
+  .blog-entire-page-wrapper {
+    background-color: #ffffff;
+    background-image: none;
+    background-position: 0;
+    background-size: 32px 32px;
+  }
+}
+
+// ブログ一覧ここまで
+
+// ブログ詳細ここから
+.blog-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.blog-header__title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.blog-header__date {
+  font-size: 14px;
+  color: #666;
+}
+.blog-header__image {
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto;
+}
+
+.blog-content {
+  display: flex;
+  gap: 24px;
+}
+.blog-content__main {
+  flex: 3;
+}
+.blog-sidebar {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 16px;
+}
+.blog-sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.blog-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.blog-sidebar li {
+  margin-bottom: 8px;
+}
+.blog-sidebar li a {
+  text-decoration: none;
+  color: #007bff;
+}
+// ブログ詳細ここまで
+
+// BlogCardここから
+.blog-card {
+  display: block;
+  width: 350px;
+  height: 490px;
+  margin-bottom: 50px;
+  margin-left: 37.5px;
+  margin-right: 37.5px;
+}
+
+.blog-card__image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 55%;
+}
+
+.blog-card__content {
+  position: relative;
+  border: #71cedf 4px solid;
+  height: 45%;
+  background-color: white;
+}
+.blog-card__content_innerwrapper {
+  margin: 15px 17.5px;
+}
+
+.blog-card__date {
+  color: #71cedf;
+  font-family: "Noto Sans JP";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.1px;
+}
+
+.blog-card__title {
+  color: #606060;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 172.3%; /* 34.46px */
+  letter-spacing: 2px;
+}
+
+.blog-card__description {
+  color: #606060;
+  font-family: "Noto Sans JP";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%; /* 22.4px */
+}
+
+.blog-card__link {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: #3ab7ff;
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 172.3%; /* 24.122px */
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .blog-card {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 85px;
+    width: 100vw;
+    margin: 10px auto 10px auto;
+    border-bottom: 1px solid #71cedf;
+    padding-bottom: 10px;
+  }
+
+  .blog-card__image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  .blog-card__content {
+    position: relative;
+    border: none;
+    position: block;
+    height: 100%;
+    width: 100%;
+    background-color: none;
+  }
+  .blog-card__content_innerwrapper {
+    margin: 0;
+  }
+
+  .blog-card__date {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    color: #71cedf;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.1px;
+  }
+
+  .blog-card__title {
+    color: #606060;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: none;
+    letter-spacing: 2px;
+    margin-left: 10px;
+  }
+
+  .blog-card__description {
+    display: none;
+  }
+
+  .blog-card__link {
+    display: none;
+  }
+}
+
+// BlogCardここまで
+
+.sokenkai__mv {
+  background: #70acb6;
+  height: 317px;
+  width: 100vw;
+}
+
+.sokenkai__mv h1 {
+  color: #fff;
+  font-family: Avenir;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 12px;
+  padding-top: 100px;
+}
+
+.sokenkai__mv h1 span {
+  display: block;
+  color: #fff;
+
   font-family: "Noto Sans JP";
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+
   line-height: normal;
   align-items: center;
   margin-left: 96px;
+
+  letter-spacing: 4.5px;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .sokenkai__mv {
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .sokenkai__mv h1 {
+    font-size: 20px;
+    padding-top: 25px;
+  }
+
+  .sokenkai__mv h1 span {
+    font-size: 12px;
+  }
+
 }
