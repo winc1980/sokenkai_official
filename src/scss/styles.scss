@@ -234,6 +234,16 @@ body {
     height: 423px;
   }
 }
+
+.grid-activity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 横2列
+  gap: 10px; // 画像間の余白
+  width: 100%; // 親要素の幅を広げる
+  max-width: 800px; // 必要に応じて最大幅を設定
+  margin: auto; // 中央揃え
+}
+
 //activityここまで
 
 //experienceここから
