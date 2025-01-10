@@ -1,10 +1,6 @@
 ---
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
-import dental_checkup from '@/assets/images/IMG_4519.JPG';
-import beer from '@/assets/images/image 1.png';
-import left_arrow from '@/assets/images/Vector.svg';
-import right_arrow from '@/assets/images/Vector_right.svg';
 const title = "TOP";
 const description = "";
 const text = "hello";
@@ -18,402 +14,206 @@ const text = "hello";
 
 	<!-- ファーストビューここから -->
 	<section id="fv" class="p-fv">
+		<div class="p-fv-backimg">
+			<img src="public/assets/images/decolation.png" alt="">
+		<div class="text-overlay">
 		<h1>早稲田大学<br>
 			学生健康増進互助会</h1>
 		<p>Waseda Univ. <br>
 			Student Health Promotion <br>
 			Mutual Aid Association</p>
-		<div class="p-fv-carousel">
-				<div class="scroll_track">
-				  <ul class="scroll_inner">
-					<li class="scroll_cont">
-					  <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					  <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					  <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-					<li class="scroll_cont">
-					   <img src="" alt="">
-					</li>
-				  </ul>
-			  </div>
+		</div>
 		</div>
 	</section>
 	<!-- ファーストビューここまで -->
 
+	<!--カルーセルここから  -->
+	<div class="p-fv-carousel">
+		<div class="scroll_track">
+		  <ul class="scroll_inner">
+			<li class="scroll_cont">
+			  <img src="public/assets/images/IMG_4518.jpg" alt="">
+			</li>
+			<li class="scroll_cont">
+			  <img src="public/assets/images/Rectangle 108.png" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/IMG_4519.jpg" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/Rectangle 108 (1).png" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/IMG_4518.jpg" alt="">
+			</li>
+			<li class="scroll_cont">
+			  <img src="public/assets/images/Rectangle 108.png" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/IMG_4519.jpg" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/Rectangle 108 (1).png" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/IMG_4518.jpg" alt="">
+			</li>
+			<li class="scroll_cont">
+			   <img src="public/assets/images/Rectangle 108.png" alt="">
+			</li>
+		  </ul>
+	  </div>
+	</div>
+	<!-- カルーセルここまで -->
+
 	<!-- newsここから -->
 	<section id="news" class="p-news">
-		<h2 class="title">News</h2>
-		<p>2024.08.18</p>
-		<p>早健会のHPを公開しました</p>
-		<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+		<img class="news-deco1" src="public/assets/images/Ellipse 22.png" alt="">
+		<img class="news-deco2" src="public/assets/images/Group 41.png" alt="">
+		<img class="news-deco3" src="public/assets/images/Group 40.png" alt="">
+		<div class="p-l-container">
+			<div class="title">
+				<h2>News</h2>
+				<p>ニュース</p>
+			</div>
+			<div class="news-tugdate">
+				<p class="tug">タグ</p>
+				<p class="date">2024.08.18</p>
+			</div>
+			<p class="p-news-title">早健会のHPを公開しました</p>
+			<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+			<div class="news-tugdate">
+				<p class="tug">タグ</p>
+				<p class="date">2024.08.18</p>
+			</div>
+			<p class="p-news-title">早健会のHPを公開しました</p>
+			<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+				<div class="news-tugdate">
+					<p class="tug">タグ</p>
+					<p class="date">2024.08.18</p>
+				</div>
+				<p class="p-news-title">早健会のHPを公開しました</p>
+				<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+			<a href="">VIEW MORE</a>
+		</div>
 	</section>
 	<!-- ニュースここまで -->
 
+	<!-- aboutここから -->
+	 <section id="about" class="p-about">
+		<div class="p-l-container">
+		<div class="title">
+			<h2>About</h2>
+			<p>学健会とは</p>
+		</div>
+		<p class="p-about-detail">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+		</div>
+	 </section>
+	<!-- aboutここまで -->
+
 	<!-- アクティビティここから -->
 	<section id="activity" class="p-activity">
-		<h3>Activity</h3>
+		<div class="title">
+			<h2>Activity</h2>
+			<p>活動内容</p>
+		</div>
+
+		<div class="grid-activity">
+			<div class="activity_bg_img1">
+				<img src="public/assets/images/experience-parts.png" alt="experience-parts">
+					<p class="activity-subheading">100円朝食</p>
+						<p class="actuivity-text">時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+						近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。
+						</p>
+			</div>
+
+			<div class="activity_bg_img2">
+				<img src="public/assets/images/experience-parts.png" alt="experience-parts">
+					<p class="activity-subheading">歯科検診</p>
+						<p class="actuivity-text">毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
+						</p>
+			</div>
+
+			<div class="activity_bg_img3">
+				<img src="public/assets/images/experience-parts.png" alt="experience-parts">
+					<p class="activity-subheading">健康フェスタ</p>
+						<p class="actuivity-text">「健康」と言っても幅広い。「肉体的」、「精神的」、「社会的」な健康がある。本イベントでは、そんな健康に対してアプローチをし、セミナー等を実施。2023年度は、「心の病気」、「アンガーマネジメント」、「うつ病」に関するセミナーを11月に開催。
+						</p>
+			</div>
+
+			<div class="activity_bg_img4">
+				<img src="public/assets/images/experience-parts.png" alt="experience-parts">
+				<p class="activity-subheading">委員会内イベント</p>
+					<p class="actuivity-text">時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+						近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p> 
+		
+			</div>
+		</div>
+
+		</section>
+
+
+		<!-- <img src="public/assets/images/IMG_4518.jpg" alt="">
 		<p>100円朝食</p>
 		<p>時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
 			近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p>
+		<img src="public/assets/images/Rectangle 108.png" alt="">
 		<p>歯科検診</p>
 		<p>毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
 		</p>
-	</section>
+		<img src="public/assets/images/Rectangle 108 (1).png" alt="">
+		<p>健康フェスタ</p>
+		<p>「健康」と言っても幅広い。「肉体的」、「精神的」、「社会的」な健康がある。本イベントでは、そんな健康に対してアプローチをし、セミナー等を実施。2023年度は、「心の病気」、「アンガーマネジメント」、「うつ病」に関するセミナーを11月に開催。</p>
+		<img src="public/assets/images/IMG_4519.jpg" alt="">
+		<p>委員会内イベント</p>
+		<p>時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+			近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p> -->
+
+
 	<!-- アクティビティここまで -->
 
 	<!-- エクスペリエンスここから -->
 	<section id="experience" class="p-experience">
-		<h4>Experience</h4>
-		<div>
-		<p>企業と関わる経験</p>
-		<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+		<img src="public/assets/images/Ellipse 19.png" alt="" class="circle">
+		<div class="p-l-container">
+			<div class="title">
+				<h2>Experience</h2>
+				<p>得られる経験</p>
+			</div>
+			
+			<div class="experient-content">
+				<img src="public/assets/images/Vector (2).png" alt="">
+				<div class="exp1">
+					<p class="subtitle">企業と関わる経験</p>
+					<p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+				</div>
+			</div>
+			<div class="experient-content">
+				<img src="public/assets/images/Vector(3).png" alt="">
+				<div class="exp1">
+					<p class="subtitle">イベントの企画運営</p>
+					<p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+				</div>
+			</div>
 		</div>
-		<div>
-		<p>イベントの企画運営</p>
-		<p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
-	</div>
 	</section>
 	<!-- エクスペリエンスここまで -->
 
-<!-- レポートここから -->
-<section id="report" class="p-report">
-     <div class="title">
-          <h2>Report</h2>
-          <p>活動報告</p>
-     </div>
-     <div class="slider">
-          <span id="prevBtn" class="arrow-left">
-               
-          </span>
-          <ul class="slider-list">
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-          </ul>
-          <span id="nextBtn" class="arrow-right"></span>
-     </div>
-</section>
-<!-- レポートここまで -->
+	<!-- レポートここから -->
+	<section id="report" class="p-report"></section>
+	<!-- レポートここまで -->
 
-<!-- トピックここから -->
-<section id="topic" class="p-topic">
-     <div class="title">
-          <h2>Topic</h2>
-          <p>記事</p>
-     </div>
-     <div>
-          <ul>
-               <li>
-                    <a>
-                         <figure>
-                              <Image src={beer} alt="乾杯の写真" />
-                         </figure>
-                         <div>
-                              <span></span>
-                              <div>
-                                   <h3>飲酒の健康への影響</h3>
-                                   <h3>適切なアルコールの摂取量とは？</h3>
-                              </div>
-                         </div>
-                    </a>
-                    <div>
-                         <time datetime="">2024.08.31</time>
-                         <hr>
-                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
-                    </div>
-               </li>
-               <li>
-                    <a>
-                         <figure>
-                              <Image src={beer} alt="乾杯の写真" />
-                         </figure>
-                         <div>
-                              <span></span>
-                              <div>
-                                   <h3>飲酒の健康への影響</h3>
-                                   <h3>適切なアルコールの摂取量とは？</h3>
-                              </div>
-                         </div>
-                    </a>
-                    <div>
-                         <time datetime="">2024.08.31</time>
-                         <hr>
-                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
-                    </div>
-               </li>
-               <li>
-                    <a>
-                         <figure>
-                              <Image src={beer} alt="乾杯の写真" />
-                         </figure>
-                         <div>
-                              <span></span>
-                              <div>
-                                   <h3>飲酒の健康への影響</h3>
-                                   <h3>適切なアルコールの摂取量とは？</h3>
-                              </div>
-                         </div>
-                    </a>
-                    <div>
-                         <time datetime="">2024.08.31</time>
-                         <hr>
-                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
-                    </div>
-               </li>
-               <li>
-                    <a>
-                         <figure>
-                              <Image src={beer} alt="乾杯の写真" />
-                         </figure>
-                         <div>
-                              <span></span>
-                              <div>
-                                   <h3>飲酒の健康への影響</h3>
-                                   <h3>適切なアルコールの摂取量とは？</h3>
-                              </div>
-                         </div>
-                    </a>
-                    <div>
-                         <time datetime="">2024.08.31</time>
-                         <hr>
-                         <p>飲酒の健康への影響 適切な摂取量とは？</p>
-                    </div>
-               </li>
-          </ul>
-     </div>
-</section>
-<!-- トピックここまで -->
+	<!-- トピックここから -->
+	<section id="topic" class="p-topic"></section>
+	<!-- トピックここまで -->
 
-<!-- ここから -->
-<section id="faqs" class="p-faqs">
-     <div class="title">
-          <h2>FAQs</h2>
-          <p>よくある質問</p>
-     </div>
-     <div class="qa-container">
-          <div class="qa-item">
-               <div class="question">
-                    <span>Q.</span>
-                    <span>早健会の会員の文理比を教えてください。</span>
-                    <div class="fq-btn">
-                         <span class="horizontal"></span>
-                         <span class="vertical"></span>
-                    </div>
-               </div>
-               <div class="answer">
-                    <span>A.</span>
-                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
-               </div>
-          </div>
-          <div class="qa-item">
-               <div class="question">
-                    <span>Q.</span>
-                    <span>早健会の会員の文理比を教えてください。</span>
-                    <div class="fq-btn">
-                         <span class="horizontal"></span>
-                         <span class="vertical"></span>
-                    </div>
-               </div>
-               <div class="answer">
-                    <span>A.</span>
-                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
-               </div>                
-          </div>
-          <div class="qa-item">
-               <div class="question">
-                    <span>Q.</span>
-                    <span>早健会の会員の文理比を教えてください。</span>
-                    <div class="fq-btn">
-                         <span class="horizontal"></span>
-                         <span class="vertical"></span>
-                    </div>
-               </div>
-               <div class="answer">
-                    <span>A.</span>
-                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
-               </div>                
-          </div>
-          <div class="qa-item">
-               <div class="question">
-                    <span>Q.</span>
-                    <span>早健会の会員の文理比を教えてください。</span>
-                    <div class="fq-btn">
-                         <span class="horizontal"></span>
-                         <span class="vertical"></span>
-                    </div>
-               </div>
-               <div class="answer">
-                    <span>A.</span>
-                    <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
-               </div>                
-          </div>
-     </div>
-</section>
-<!-- ここまで -->
+	<!-- ここから -->
+	<section id="faqs" class="p-faqs"></section>
+	<!-- ここまで -->
 
-<!-- コンタクトここから -->
-<section id="contact" class="p-contact"></section>
-<!-- コンタクトここまで -->
-</main>
+	<!-- コンタクトここから -->
+	<section id="contact" class="p-contact"></section>
+	<!-- コンタクトここまで -->
+	</main>
 
-<!-- フッターここから -->
-<footer></footer>
-<!-- フッターここまで -->
-</Layout>
-<script>
-const items = Array.from(document.querySelectorAll(".slider-item"));
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const totalItems = items.length;
-let currentIndex = 0;
-
-function updateSlider() {
-items.forEach((item) => {
-item.classList.remove("left", "active", "right");
-item.style.display = 'none';
-});
-
-const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-const rightIndex = (currentIndex + 1) % totalItems;
-
-items[leftIndex].classList.add("left");
-items[leftIndex].style.display = 'block';
-items[currentIndex].classList.add("active");
-items[currentIndex].style.display = 'block';
-items[rightIndex].classList.add("right");
-items[rightIndex].style.display = 'block';
-}
-
-
-currentIndex = 0;
-updateSlider();
-
-
-nextBtn.addEventListener("click", () => {
-currentIndex = (currentIndex + 1) % totalItems;
-updateSlider();
-});
-
-
-prevBtn.addEventListener("click", () => {
-currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-updateSlider();
-});
-
-document.querySelectorAll('.qa-item').forEach(item => {
-const question = item.querySelector('.question');
-const answer = item.querySelector('.answer');
-const vertical = item.querySelector('.vertical')
-
-question.addEventListener('click', () => {
-     item.classList.toggle('open');
-
-     if (item.classList.contains('open')) {
-          answer.style.display = 'flex';
-          vertical.style.display = 'none';
-     } else {
-          answer.style.display = 'none';
-          vertical.style.display = 'flex';
-     }
-});
-});
-document.addEventListener("DOMContentLoaded", () => {
-     const sliderItems = document.querySelectorAll(".slider-item div p");
-     const readMoreLinks = document.querySelectorAll(".slider-item div a");
-
-     sliderItems.forEach((item, index) => {
-          const maxLength = 125;
-          const fullText = item.textContent.trim();
-
-          if (fullText.length > maxLength) {
-               const truncatedText = fullText.substring(0, maxLength);
-               item.innerHTML = `${truncatedText}<span>・・・</span>`;
-
-               if (readMoreLinks[index]) {
-                    readMoreLinks[index].style.display = 'block';
-               }
-          }
-     });
-});
-
-</script>
 </Layout>

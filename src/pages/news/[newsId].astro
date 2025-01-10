@@ -29,10 +29,16 @@ const og_image = "";
           { text: news.title, link: "" },
         ]}
       />
-      <h1>{news.title}</h1>
-      <p>{news.publishedAt}</p>
-    </div>
+
+      <!-- ここからニュースタイトルの帯の部分 -->
+      <div class="news_detail_tittle_bg">
+        <h1 class="news_detail_tittle">{news.title}</h1>
+        <p class="news_detail_date">{news.publishedAt}</p>
+      </div>
+      <!-- ここまでがニュースタイトルの帯の部分 -->
+
   </section>
+
 
   <section id="newsContent" class="p-newsContent">
     <div class="l-container">
@@ -40,4 +46,5 @@ const og_image = "";
       <div set:html={news.content} />
     </div>
   </section>
+</div>
 </Layout>
