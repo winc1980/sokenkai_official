@@ -148,51 +148,103 @@ header img {
 // ブログ一覧ここまで
 
 // ブログ詳細ここから
-.blog-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-.blog-header__title {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-.blog-header__date {
-  font-size: 14px;
-  color: #666;
-}
-.blog-header__image {
-  width: 100%;
-  max-width: 800px;
-  margin: 16px auto;
+.blog-detail-entire-wrapper {
+  background-color: #ffffff;
+  background-image: linear-gradient(90deg, #c1deff73 2px, transparent 2px),
+    linear-gradient(#c1deff73 2px, transparent 2px);
+  background-position: 10px 10px;
+  background-size: 32px 32px;
 }
 
-.blog-content {
+.blog-detail-title {
+  height: 100px;
+  background: #70acb6;
+  padding-left: 120px;
+}
+
+.blog-detail-title h1 {
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 9px;
+  padding-top: 10px;
+}
+
+.blog-detail-title p {
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+.p-blogContent {
   display: flex;
-  gap: 24px;
 }
-.blog-content__main {
-  flex: 3;
+
+.blog-featured-image {
+  width: 530px;
+  object-fit: cover;
+  margin-top: 40px;
 }
-.blog-sidebar {
-  flex: 1;
-  background: #f9f9f9;
-  padding: 16px;
+
+.blog-table-of-contents {
+  color: #000;
+  font-family: "Noto Sans JP";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 53px;
 }
-.blog-sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
+
+.blog-recommendation {
+  margin: 0 auto;
 }
-.blog-sidebar ul {
-  list-style: none;
-  padding: 0;
+
+.blog-recommendation-article {
+  background: rgba(178, 237, 255, 0.2);
+  width: 300px;
+  height: 305px;
 }
-.blog-sidebar li {
-  margin-bottom: 8px;
+
+.blog-recommendation-article h3 {
+  text-align: center;
+  // margin-top: 20px;
 }
-.blog-sidebar li a {
-  text-decoration: none;
-  color: #007bff;
+
+.blog-detail-content {
+  margin-bottom: 40px;
 }
+
+.blog-detail-recommend {
+  color: #343434;
+  text-align: center;
+  font-family: Avenir;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.blog-detail-recommend-subtitle {
+  color: #343434;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: solid 8px #b2edff;
+  margin: 0 auto 20px auto;
+  width: 490px;
+}
+
+.blog-detail-recommend-content {
+  display: flex;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+}
+
 // ブログ詳細ここまで
 
 // BlogCardここから
