@@ -22,11 +22,11 @@ const og_image = "";
         ]}
       />
       <Mv enTitle="News" jaTitle="ニュース" />
-    </div>
+    
   </section>
-
-  <section id="newsList" class="p-newsList">
     <div class="l-container">
+  <section id="newsList" class="p-newsList">
+  </div>
       <div class="p-newsList__wrapper">
         <!-- map関数で展開する -->
         {
@@ -34,7 +34,7 @@ const og_image = "";
           <NewsCard content={content} />
           ))
         }
-      </div>
+</div>
     </div>
   </section>
 </Layout>
