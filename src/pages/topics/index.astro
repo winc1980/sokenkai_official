@@ -7,6 +7,16 @@ const response = await getTopics({
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
 import TopicCard from "@/components/TopicCard.astro";
+import type { GetStaticPathsOptions } from 'astro';
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const topics = await getTopics({ limit: 1000 });
+  return paginate(topics.contents, { pageSize: 3 });
+};
+
+
+const { page } = Astro.props;
+
 const title = "";
 const description = "";
 const og_image = "";
@@ -24,6 +34,8 @@ const og_image = "";
       />
     </div>
     <div class="Article-tittle-bg">
+      <img src="/src/assets/images/triangle_decoration.png"
+      alt="三角のデコレーション"/>
     <div class="l-container">
       <div class="Article-tittle">
         <Mv enTitle="Article" jaTitle="記事" />
@@ -44,6 +56,8 @@ const og_image = "";
           ))
         }
       </div>
+    
+
     </div>
   </section>
   </section>

@@ -91,10 +91,67 @@ header img {
     &__wrapper {
       grid-template-columns: 1fr;
     }
+    #topicsList {
+      border-bottom: 1px solid #71cedf;
+    }
+    .p-topicsList {
+      h3 {
+        color: #606060;
+        font-family: "Noto Sans JP";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 172.3%; /* 20.676px */
+        letter-spacing: 1.2px;
+      }
+      p {
+        color: #71cedf;
+        font-family: "Noto Sans JP";
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1.4px;
+      }
+    }
+
+    .Article-tittle-bg {
+      background-color: #70acb6;
+      margin-bottom: 73px;
+      padding-top: 10px;
+      padding-bottom: 13px;
+      img {
+        margin-left: 85%;
+      }
+    }
+
+    .sokenkai__mv {
+      h1 {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 146.2%; /* 29.24px */
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      span {
+        color: #fff;
+        font-family: "Noto Sans JP";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 146.2%; /* 17.544px */
+        letter-spacing: 3px;
+      }
+    }
   }
 }
-
-#topicsList {
+.p-topicsList {
   p {
     color: #71cedf;
     font-family: "Noto Sans JP";
@@ -105,8 +162,16 @@ header img {
     letter-spacing: 2.1px;
     border-bottom: 1px solid #71cedf;
   }
+  h3 {
+    color: #343434;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 9px;
+  }
 }
-
 .sokenkai__mv {
   h1 {
     color: #fff;
@@ -116,6 +181,10 @@ header img {
     font-weight: 400;
     line-height: 146.2%; /* 70.176px */
     letter-spacing: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0; /* 不要な余白を削除 */
   }
 
   span {
@@ -140,6 +209,9 @@ header img {
   margin-bottom: 73px;
   padding-top: 109px;
   padding-bottom: 138px;
+  img {
+    margin-left: 85%;
+  }
 }
 
 /* ------------------- トピック一覧ここまで ------------------- */
