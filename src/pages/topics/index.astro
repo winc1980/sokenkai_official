@@ -8,11 +8,22 @@ import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
 import TopicCard from "@/components/TopicCard.astro";
 import type { GetStaticPathsOptions } from 'astro';
+export async function getStaticPaths({ paginate }) {
+  // microCMSからデータを取得
+  const response = await fetch("https://sokenkai-web.microcms.io/api/v1/topics", {
+    headers: {
+      "X-MICROCMS-API-KEY": import.meta.env.MICROCMS_API_KEY, // 環境変数を使用
+    },
+  });
+  
 
-export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
-  const topics = await getTopics({ limit: 1000 });
-  return paginate(topics.contents, { pageSize: 3 });
-};
+  // JSON形式でデータを解析
+  const result = await response.json();
+  const articleList = result.contents; 
+
+  // 取得したデータ（例: posts配列）を使ってページネーション
+  return paginate(result.contents, { pageSize: 2 });
+}
 
 
 const { page } = Astro.props;
@@ -57,8 +68,12 @@ const og_image = "";
         }
       </div>
     
-
+      <div class="pagination">
+        <!-- {page.url.prev && <a href={page.url.prev}>前のページ</a>}
+        {page.url.next && <a href={page.url.next}>次のページ</a>} -->
+      </div>
     </div>
+
   </section>
   </section>
 </Layout>
