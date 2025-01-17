@@ -156,9 +156,9 @@ input {
   line-height: 18px;
   gap: 0px 25px;
   color: #343434;
-  
+}
   // ここにCSSかく
-=======
+
 .p-report {
   margin: 0 auto;
   width: fit-content;
@@ -346,6 +346,9 @@ input {
           }
         }
       }
+    }
+  }
+}
 // ここにCSSかく
       
 @media (min-width: $breakpoint-md) {
@@ -814,5 +817,4 @@ header img {
   .sokenkai__mv h1 span {
     font-size: 12px;
   }
-
 }
