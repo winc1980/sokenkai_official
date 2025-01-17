@@ -6,10 +6,14 @@ import Layout from "@/layouts/Layout.astro";
 import Btn from '@/components/Btn.astro';
 
 const title = "";
+import { Image } from 'astro:assets';
 
+import dental_checkup from '@/assets/images/IMG_4519.JPG';
+import beer from '@/assets/images/image 1.png';
 const title = "TOP";
 
 const description = "";
+const og_image = "";
 const text = "hello";
 
 
@@ -108,16 +112,121 @@ const text = "hello";
 	<!-- エクスペリエンスここまで -->
 
 	<!-- レポートここから -->
-	<section id="report" class="p-report"></section>
+	<section id="report" class="p-report">
+          <div class="slider">
+               <button id="prevBtn" class="arrow">◀</button>
+               <ul class="slider-list">
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                         </div>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+               </ul>
+               <button id="nextBtn" class="arrow">▶</button>
+          </div>
+	</section>
 	<!-- レポートここまで -->
 
 	<!-- トピックここから -->
-	<section id="topic" class="p-topic"></section>
+	<section id="topic" class="p-topic">
+          <div>
+               <ul>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <span></span>
+                                   <div>
+                                        <h3>あああ</h3>
+                                        <p>aaaaaaaaaaaa</p>
+                                   </div>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <h3>あああ</h3>
+                                   <p>aaaaaaaaaaaa</p>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+	</section>
 	<!-- トピックここまで -->
 
-	<!-- FAQここから -->
-	<section id="faqs" class="p-faqs"></section>
-	<!-- FAQここまで -->
+	<!-- ここから -->
+	<section id="faqs" class="p-faqs">
+          <div class="qa-container">
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+          </div>
+     </section>
+	<!-- ここまで -->
+
 
 	<!-- コンタクトここから -->
 	<section id="contact" class="p-contact">
@@ -189,3 +298,62 @@ const text = "hello";
 	</main>
 
 </Layout>
+<script>
+const items = Array.from(document.querySelectorAll(".slider-item"));
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const totalItems = items.length;
+let currentIndex = 0;
+
+function updateSlider() {
+items.forEach((item) => {
+item.classList.remove("left", "active", "right");
+item.style.display = 'none';
+});
+
+const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+const rightIndex = (currentIndex + 1) % totalItems;
+
+items[leftIndex].classList.add("left");
+items[leftIndex].style.display = 'block';
+items[currentIndex].classList.add("active");
+items[currentIndex].style.display = 'block';
+items[rightIndex].classList.add("right");
+items[rightIndex].style.display = 'block';
+}
+
+
+currentIndex = 0;
+updateSlider();
+
+
+nextBtn.addEventListener("click", () => {
+currentIndex = (currentIndex + 1) % totalItems;
+updateSlider();
+});
+
+
+prevBtn.addEventListener("click", () => {
+currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+updateSlider();
+});
+
+document.querySelectorAll('.qa-item').forEach(item => {
+     const question = item.querySelector('.question');
+     const answer = item.querySelector('.answer');
+     const vertical = item.querySelector('.vertical')
+
+     question.addEventListener('click', () => {
+          item.classList.toggle('open');
+
+          if (item.classList.contains('open')) {
+               answer.style.display = 'block';
+               vertical.style.display = 'none';
+          } else {
+               answer.style.display = 'none';
+               vertical.style.display = 'block';
+          }
+     });
+});
+
+</script>
