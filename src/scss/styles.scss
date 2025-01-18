@@ -257,6 +257,42 @@ header img {
   font-family: "Noto Sans JP";
   font-size: 20px;
 }
+.sokenkai_short-despriction {
+  padding-top: 36px;
+  padding-bottom: 57px;
+  background-color: #e8fbff;
+  margin-top: 100px;
+  h1 {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 65.474px */
+  }
+  p {
+    color: #222;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 27.568px */
+    margin-top: 40px;
+  }
+  .view_more_btn {
+    margin-top: 60px;
+    text-align: center;
+    display: block;
+  }
+  a {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 31.014px */
+  }
+}
 
 /* ------------------- トピック記事ここまで ------------------- */
 
