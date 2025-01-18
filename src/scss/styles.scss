@@ -84,6 +84,7 @@ header img {
   &__wrapper {
     display: grid;
     column-gap: 30px;
+    row-gap: 50px;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
   }
@@ -161,6 +162,7 @@ header img {
     line-height: normal;
     letter-spacing: 2.1px;
     border-bottom: 1px solid #71cedf;
+    width: 526px;
   }
   h3 {
     color: #343434;
@@ -226,7 +228,34 @@ header img {
   h3 {
   }
   p {
+    color: #222;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 27.568px */
   }
+}
+
+.Article_detail_tittle_bg {
+  background: #70acb6; // タイトル背景のスタイル
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 60px;
+  margin-top: 25px;
+}
+
+.Article_detail_tittle {
+  font-size: 36px;
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-weight: 400;
+}
+
+.Article_detail_date {
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
 }
 
 /* ------------------- トピック記事ここまで ------------------- */
@@ -783,8 +812,4 @@ header img {
     line-height: normal;
     border-bottom: 1px solid #393939;
   }
-}
-
-#BreadCrumb {
-  margin-top: 25px;
 }
