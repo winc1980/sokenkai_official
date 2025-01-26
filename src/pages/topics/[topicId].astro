@@ -60,7 +60,7 @@ const og_image = "";
 
     <div class="sokenkai_short-despriction">
       <div class="l-container">
-        <h2>早健会とは</h2>
+        <h4 class="description_tittle">早健会とは</h4>
         <p>学生早健会（1964年設立）は、会員（学生）から納入された会費によって、会員の健康の維持・増進を図るための活動や医療費給付・健康診断補助費給付などの事業を行う早稲田大学独自の互助会組織です。早稲田大学に入学した正規の学生は自動的に会員となり、年間3000円の会費を学費に含まれた形で納入していただいています。集まった会費をもとに、早大生の健康増進のために様々なサービスを提供しています。近年の活動においては、「100円朝食」、「歯科検診」、「健康フェスタ」の３つを活動の柱としています。
         </p>
         <div class="view_more_btn">
@@ -70,26 +70,27 @@ const og_image = "";
       </div>
       </div>
 
-    <div class="l-container">
-
-			<div class="title" style="margin:53px 0px; ">
-				<h2>Recommend</h2>
-				<p>おすすめの投稿</p>
-			</div>
-
-      <section id="topicsList" class="p-topicsList">
-      <div class="p-topicsList__wrapper">
-        <!-- map関数で展開する -->
-        {
-          response.contents.map((content: any) => (
-            <TopicCard content={content} />
-          ))
-        }
-      </div>
-      </section>
+ 
     </div>
 
 
 
   </section>
+  <div class="l-container">
+
+    <div class="title" style="margin:53px 0px; ">
+      <h2>Recommend</h2>
+      <p>おすすめの投稿</p>
+    </div>
+
+    <section id="topicsList" class="p-topicsList">
+    <div class="p-topicsList__wrapper">
+      <!-- map関数で展開する -->
+      {
+        response.contents.map((content: any) => (
+          <TopicCard content={content} />
+        ))
+      }
+    </div>
+    </section>
 </Layout>

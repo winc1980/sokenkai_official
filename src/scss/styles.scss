@@ -231,7 +231,15 @@ header img {
     font-weight: 500;
     line-height: 172.3%; /* 65.474px */
   }
+
   h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid #393939;
   }
   p {
     color: #222;
@@ -254,15 +262,15 @@ header img {
     border-bottom: 1px solid #71cedf;
     width: 526px;
   }
-  h3 {
-    color: #343434;
-    font-family: "Noto Sans JP";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 9px;
-  }
+}
+.description_tittle {
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 9px;
 }
 
 .Article_detail_tittle_bg {
@@ -285,12 +293,13 @@ header img {
   font-family: "Noto Sans JP";
   font-size: 20px;
 }
+
 .sokenkai_short-despriction {
   padding-top: 36px;
   padding-bottom: 57px;
   background-color: #e8fbff;
   margin-top: 100px;
-  h1 {
+  .description_tittle {
     color: #000;
     font-family: "Noto Sans JP";
     font-size: 38px;
