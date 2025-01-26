@@ -224,6 +224,12 @@ header img {
   h1 {
   }
   h2 {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 65.474px */
   }
   h3 {
   }
@@ -234,6 +240,28 @@ header img {
     font-style: normal;
     font-weight: 500;
     line-height: 172.3%; /* 27.568px */
+  }
+}
+.p-topicsList {
+  p {
+    color: #71cedf;
+    font-family: "Noto Sans JP";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.1px;
+    border-bottom: 1px solid #71cedf;
+    width: 526px;
+  }
+  h3 {
+    color: #343434;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 9px;
   }
 }
 
