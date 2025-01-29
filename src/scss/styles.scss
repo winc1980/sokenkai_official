@@ -535,13 +535,13 @@ header img {
 // ここからレスポンシブ
 @media (max-width: $breakpoint-md) {
   .sokenkai__topiccard {
-    display: flex;
-
     .sokenkai__topiccard__text {
+      display: flex;
       flex-direction: column-reverse;
     }
     img {
       width: 100px;
+      float: left;
     }
     h3 {
       color: #606060;
@@ -551,6 +551,46 @@ header img {
       font-weight: 400;
       line-height: 172.3%; /* 20.676px */
       letter-spacing: 1.2px;
+    }
+  }
+  .Article-tittle-bg {
+    padding-top: 10px;
+    padding-bottom: 13px;
+    h1 {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 146.2%; /* 29.24px */
+      letter-spacing: 5px;
+      margin-left: 4px;
+    }
+    p {
+      color: #fff;
+      font-family: "Noto Sans JP";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 146.2%; /* 17.544px */
+      letter-spacing: 3px;
+      margin-left: 4px;
+    }
+  }
+  .p-topicsList {
+    width: 288px;
+    display: flex;
+
+    p {
+      color: #71cedf;
+      font-family: "Noto Sans JP";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 1.4px;
+      border-bottom: none;
+      text-align: right;
     }
   }
 }
@@ -654,6 +694,13 @@ header img {
 
 .p-topicContent {
   h1 {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 146.2%; /* 29.24px */
+    letter-spacing: 5px;
   }
   h2 {
     color: #000;
@@ -662,6 +709,8 @@ header img {
     font-style: normal;
     font-weight: 500;
     line-height: 172.3%; /* 65.474px */
+    margin-top: 37px;
+    margin-bottom: 34px;
   }
 
   h3 {
@@ -672,6 +721,16 @@ header img {
     font-weight: 400;
     line-height: normal;
     border-bottom: 1px solid #393939;
+  }
+  h4 {
+    color: #000;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 58px;
+    margin-bottom: 19px;
   }
   p {
     color: #222;
@@ -691,7 +750,6 @@ header img {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.1px;
-    border-bottom: 1px solid #71cedf;
     width: 526px;
   }
 }
@@ -882,7 +940,8 @@ header img {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow: 8px 0 30px rgba(255, 255, 255),
+          box-shadow:
+            8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
