@@ -1,17 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
+
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
 import beer from '@/assets/images/image 1.png';
 import left_arrow from '@/assets/images/Vector.svg';
 import right_arrow from '@/assets/images/Vector_right.svg';
-const title = "TOP";
-const description = "";
-const text = "hello";
 
+
+import Btn from '@/components/Btn.astro';
+
+const title = "TOP";
+
+const description = "";
+const og_image = "";
+const text = "hello";
 ---
 
+
+
+<Layout title={title} description={description} og_image={og_image}>
+	<!-- ヘッダーここから -->
+	<header></header>
+	<!-- ヘッダーここまで -->
+
 <Layout title={title} , description={description}>
+
 
 	<main>
 	
@@ -96,6 +110,7 @@ const text = "hello";
 	</div>
 	</section>
 	<!-- エクスペリエンスここまで -->
+
 
 <!-- レポートここから -->
 <section id="report" class="p-report">
@@ -334,6 +349,233 @@ const text = "hello";
 <!-- コンタクトここまで -->
 </main>
 
+	<!-- レポートここから -->
+<!--                  
+	<section id="report" class="p-report">
+          <div class="slider">
+               <button id="prevBtn" class="arrow">◀</button>
+               <ul class="slider-list">
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                         </div>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+               </ul>
+               <button id="nextBtn" class="arrow">▶</button>
+          </div>
+	</section>
+                       -->
+	<!-- レポートここまで -->
+ -->
+                      
+	<!-- トピックここから -->
+<!--                  
+	<section id="topic" class="p-topic">
+          <div>
+               <ul>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <span></span>
+                                   <div>
+                                        <h3>あああ</h3>
+                                        <p>aaaaaaaaaaaa</p>
+                                   </div>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <h3>あああ</h3>
+                                   <p>aaaaaaaaaaaa</p>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+	</section> 
+
+	<!-- トピックここまで -->
+
+	<!-- ここから -->
+	<section id="faqs" class="p-faqs">
+          <div class="qa-container">
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+               <div class="qa-item">
+                    <div class="question">
+                         <span>Q.</span>
+                         <span>早健会の会員の男女比を教えてください。</span>
+                         <div class="fq-btn">
+                              <span class="horizontal"></span>
+                              <span class="vertical"></span>
+                         </div>
+                    </div>
+                    <div class="answer">
+                         <span>A.</span>
+                         <span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+                    </div>
+               </div>
+          </div>
+     </section>
+	<!-- ここまで -->
+
+
+	<!-- コンタクトここから -->
+	<section id="contact" class="p-contact">
+		<div class="contact-container">
+
+			<div class="contact-container-heading">
+				<h1>Contact</h1>
+				<p>お問い合わせ</p>
+				<span class="underline"></span>
+			</div>
+				<p class="form-explanation">
+					体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
+					というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
+					委員会へのお問い合わせもこちらより受け付けております。
+				</p>
+
+
+			<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="post"> -->
+			<form id="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event)">
+	
+				<div class="form-group">
+				  <label for="name">お名前/団体名</label>
+				  <div class="necessary-label">
+					<h3 class="necessary">必須</h3>
+					<input type="text" name="entry.1773433501" required>
+				  </div>
+				</div>
+			  
+				<div class="form-group">
+					<label for="name">メールアドレス</label>
+					<div class="necessary-label">
+					  <h3 class="necessary">必須</h3>
+					  <input type="text" name="entry.1417418675" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+				  <label>ご要望</label>
+				  <div class="radio-group">
+				<!-- ラジオボタンのラベルが3つの要素が横並びになっているので、画面幅が小さくなった時に折り返すようにしたい -->
+					<input id="join" type="radio" name="entry.160534721" value="入会したい">
+					<label for="join">入会したい</label>
+			  
+					<input id="question" type="radio" name=name="entry.160534721" value="話を聞きたい">
+					<label for="question">話を聞きたい</label>
+			  
+					<input id="other" type="radio" name="entry.160534721" value="その他">
+					<label for="other">その他</label>
+				  </div>
+				</div>
+			  
+				<div class="form-group">
+				  <label for="message">お問い合わせ内容</label>
+				  <div class="necessary-label">
+					<h3 class="necessary">必須</h3>
+					<textarea class="message" name="entry.1778729284" required></textarea>
+				  </div>
+				</div>
+			  
+				<div class="button">
+				  <button type="submit">送信する</button>
+				</div>
+			  </form>
+			  
+			  <script>
+				function handleSubmit(event) {
+				  event.preventDefault(); // デフォルトの画面遷移を防ぐ
+			  
+				  const form = event.target;
+			  
+				  // Google Formsにデータを送信
+				  fetch(form.action, {
+					method: form.method,
+					body: new FormData(form),
+				  })
+				//   .then((response) => {
+				// 	if (!response.ok) {
+				// 	  throw new Error('送信エラー: ' + response.status);
+				// 	}
+				// 	// サクセスメッセージを表示
+				// 	document.getElementById('success-message').style.display = 'block';
+				// 	form.reset(); // フォームの内容をリセット
+				//   })
+				.then(() => {
+      			// 送信完了後にリダイレクト
+				  window.location.href = 'http://localhost:4322/thanks';
+
+				})
+				
+				  .catch((error) => {
+					console.error(error);
+					alert('送信中にエラーが発生しました。もう一度お試しください。');
+				  });
+			  
+				  return false; // フォーム送信を止める
+				}
+			  </script>
+			  
+
+
+		</div>
+
+	</section>
+	<!-- コンタクトここまで -->
+	</main>
+
 <!-- フッターここから -->
 <footer></footer>
 <!-- フッターここまで -->
@@ -569,3 +811,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 </Layout>
+<script>
+const items = Array.from(document.querySelectorAll(".slider-item"));
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const totalItems = items.length;
+let currentIndex = 0;
+
+function updateSlider() {
+items.forEach((item) => {
+item.classList.remove("left", "active", "right");
+item.style.display = 'none';
+});
+
+const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+const rightIndex = (currentIndex + 1) % totalItems;
+
+items[leftIndex].classList.add("left");
+items[leftIndex].style.display = 'block';
+items[currentIndex].classList.add("active");
+items[currentIndex].style.display = 'block';
+items[rightIndex].classList.add("right");
+items[rightIndex].style.display = 'block';
+}
+
+
+currentIndex = 0;
+updateSlider();
+
+
+nextBtn.addEventListener("click", () => {
+currentIndex = (currentIndex + 1) % totalItems;
+updateSlider();
+});
+
+
+prevBtn.addEventListener("click", () => {
+currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+updateSlider();
+});
+
+document.querySelectorAll('.qa-item').forEach(item => {
+     const question = item.querySelector('.question');
+     const answer = item.querySelector('.answer');
+     const vertical = item.querySelector('.vertical')
+
+     question.addEventListener('click', () => {
+          item.classList.toggle('open');
+
+          if (item.classList.contains('open')) {
+               answer.style.display = 'block';
+               vertical.style.display = 'none';
+          } else {
+               answer.style.display = 'none';
+               vertical.style.display = 'block';
+          }
+     });
+});
+
+</script>
