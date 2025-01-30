@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getNews } from "@/lib/microcms";
+import { getNews } from "@/lib/microcms.ts";
 const response = await getNews({
-  fields: ["id", "title", "description", "publishedDate", "tag"],
+  fields: ["id", "title", "description", "publishedDate", "tag" ,"content"],
 });
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Mv from "@/components/Mv.astro";
@@ -21,7 +21,7 @@ const og_image = "";
           { text: "活動報告", link: "/news" },
         ]}
       />
-      <Mv enTitle="Report" jaTitle="活動報告" />
+      <Mv enTitle="News" jaTitle="ニュース" />
     </div>
   </section>
 

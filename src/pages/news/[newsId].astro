@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Toc from "@/components/Toc.astro";
-import { getNews, getNewsDetail } from "@/lib/microcms";
+import { getNews, getNewsDetail } from "@/lib/microcms.ts";
 export async function getStaticPaths() {
   const response = await getNews({ fields: ["id"] });
   return response.contents.map((content: any) => ({
