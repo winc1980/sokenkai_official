@@ -460,11 +460,9 @@ header img {
     display: grid;
     column-gap: 93px;
     row-gap: 23px;
-    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-columns: calc(50% - 46.5px) calc(50% - 46.5px); /* gapを考慮 */
     width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
   }
   @media (max-width: $breakpoint-md) {
     &__wrapper {
@@ -475,6 +473,8 @@ header img {
 .Article-tittle-bg {
   background-color: #70acb6;
   margin-bottom: 73px;
+  display: grid;
+  grid-template-columns: 1fr;
   .sokenkai__mv {
     display: flex;
     h1 {
@@ -487,6 +487,7 @@ header img {
       letter-spacing: 12px;
     }
     span {
+      float: none;
       color: #fff;
       font-family: "Noto Sans JP";
       font-size: 18px;
@@ -523,13 +524,18 @@ header img {
 // ここからレスポンシブ
 @media (max-width: $breakpoint-md) {
   .sokenkai__topiccard {
+    border-bottom: 1px solid #71cedf;
+    padding-bottom: 8px;
     .sokenkai__topiccard__text {
       display: flex;
       flex-direction: column-reverse;
     }
     img {
-      width: 100px;
       float: left;
+      display: block;
+      width: 100px;
+      height: auto;
+      aspect-ratio: 1/1;
     }
     h3 {
       color: #606060;
@@ -1038,19 +1044,19 @@ header img {
         padding-bottom: 6px;
         padding-left: 41px;
       }
-      h3::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        margin: 0px;
-        display: block;
-        min-width: 254px;
-        height: 1px; /* 線の太さ */
-        background-color: #71cedf; /* 線の色 */
-        margin-top: 10px; /* 線とテキストの間隔 */
-      }
+      // h3::after {
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: 0;
+      //   width: 100%;
+      //   margin: 0px;
+      //   display: block;
+      //   min-width: 254px;
+      //   height: 1px; /* 線の太さ */
+      //   background-color: #71cedf; /* 線の色 */
+      //   margin-top: 10px; /* 線とテキストの間隔 */
+      // }
       p {
         margin-left: 9px;
         color: #000;
