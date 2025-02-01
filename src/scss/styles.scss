@@ -230,8 +230,7 @@ input {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow:
-            8px 0 30px rgba(255, 255, 255),
+          box-shadow: 8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
@@ -450,14 +449,22 @@ header img {
 /* ------------------- 共通要素ここまで ------------------- */
 
 /* ------------------- トピック一覧ここから ------------------- */
-
+.sokenkai__topiccard {
+  img {
+    max-width: 500px;
+    max-height: fit-content;
+  }
+}
 .p-topicsList {
   &__wrapper {
     display: grid;
-    column-gap: 30px;
-    row-gap: 50px;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    column-gap: 93px;
+    row-gap: 23px;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: calc(50% - 46.5px) calc(50% - 46.5px); /* gapを考慮 */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   @media (max-width: $breakpoint-md) {
     &__wrapper {
@@ -513,13 +520,6 @@ header img {
   }
 }
 
-.Article-tittle-bg {
-  .Article-tittle {
-    display: flex;
-    flex-direction: column; /* 縦方向に配置 */
-  }
-}
-
 // ここからレスポンシブ
 @media (max-width: $breakpoint-md) {
   .sokenkai__topiccard {
@@ -542,27 +542,31 @@ header img {
     }
   }
   .Article-tittle-bg {
-    padding-top: 10px;
-    padding-bottom: 13px;
-    h1 {
-      color: #fff;
-      font-family: Poppins;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 146.2%; /* 29.24px */
-      letter-spacing: 5px;
-      margin-left: 4px;
-    }
-    p {
-      color: #fff;
-      font-family: "Noto Sans JP";
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 146.2%; /* 17.544px */
-      letter-spacing: 3px;
-      margin-left: 4px;
+    background-color: #70acb6;
+    margin-bottom: 73px;
+    .sokenkai__mv {
+      padding-top: 10px;
+      padding-bottom: 13px;
+      h1 {
+        color: #fff;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 146.2%; /* 29.24px */
+        letter-spacing: 5px;
+        margin-left: 4px;
+      }
+      p {
+        color: #fff;
+        font-family: "Noto Sans JP";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 146.2%; /* 17.544px */
+        letter-spacing: 3px;
+        margin-left: 4px;
+      }
     }
   }
   .p-topicsList {
@@ -679,6 +683,7 @@ header img {
 
 /* ------------------- トピック記事ここから ------------------- */
 
+// トピック記事の内容(見出し・本文の装飾)
 .p-topicContent {
   h1 {
     color: #fff;
@@ -728,16 +733,58 @@ header img {
     line-height: 172.3%; /* 27.568px */
   }
 }
-.p-topicsList {
+
+// recommendの部分の装飾
+.Article-title {
+  text-align: center;
+  line-height: 3rem;
+  letter-spacing: 0.75rem;
+  margin: 53px 0px;
+  h2 {
+    font-size: 64px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+.Article-title::after {
+  display: block;
+  content: "";
+  background-color: #b2edff;
+  width: 245px;
+  height: 8px;
+  left: 0px;
+  right: 0px;
+  bottom: -3px;
+  margin: auto;
+}
+.Article-title-resp {
+  display: none;
+}
+.p-topicsIdList__wrapper {
+  display: grid;
+  column-gap: 30px;
+  column-gap: 30px;
+  row-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   p {
     color: #71cedf;
     font-family: "Noto Sans JP";
-    font-size: 15px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.1px;
-    width: 526px;
+    border-bottom: 1px solid #71cedf;
+  }
+  h3 {
+    color: #343434;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 }
 .description_tittle {
@@ -805,6 +852,219 @@ header img {
     font-style: normal;
     font-weight: 500;
     line-height: 172.3%; /* 31.014px */
+  }
+}
+
+// ここからTOPIC記事のレスポンシブ
+@media (max-width: $breakpoint-md) {
+  // 目次
+  .p-topicContent {
+    h4 {
+      color: #222;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 2.24px;
+      margin: 18px 0px 16px 0px;
+    }
+    h2 {
+      color: #222;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 350;
+      line-height: 172.3%; /* 27.568px */
+      margin: 47px 0px 16px 0px;
+    }
+  }
+  .Article-title {
+    display: none;
+  }
+  .Article-title-resp {
+    display: block;
+    h2 {
+      color: #000;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 172.3%; /* 27.568px */
+    }
+  }
+  .Article_detail_tittle {
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 146.2%; /* 29.24px */
+    letter-spacing: 5px;
+  }
+  .Article_detail_date {
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 146.2%; /* 14.62px */
+    letter-spacing: 2.5px;
+  }
+  .p-topicContent {
+    h1 {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 146.2%; /* 29.24px */
+      letter-spacing: 5px;
+    }
+    h2 {
+      color: #000;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 172.3%;
+      margin-top: 17px;
+      margin-bottom: 17px;
+    }
+
+    h3 {
+      color: #000;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+      border-bottom: 1px solid #393939;
+    }
+    h4 {
+      // 目次
+      color: #222;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 2.24px;
+    }
+    p {
+      color: #000;
+      font-family: "Noto Sans JP";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 350;
+      line-height: 172.3%; /* 24.122px */
+    }
+  }
+  a.toc-link {
+    color: #222;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 172.3%; /* 24.122px */
+  }
+  .sokenkai_short-despriction .description_tittle {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 17px;
+    margin-bottom: 13px;
+  }
+  .sokenkai_short-despriction p {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+  }
+  .sokenkai_short-despriction {
+    padding: 17px 0px 14px 0px;
+    .article_view_more_btn {
+      margin-top: 17px;
+      a {
+        color: #000;
+        font-family: Avenir;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 172.3%; /* 17.23px */
+      }
+    }
+  }
+
+  // おすすめの記事！
+  .Article-title-resp {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; /* 27.568px */
+    text-align: center;
+    margin: 56px 0px 28px 0px;
+  }
+  .p-topicsIdList__wrapper {
+    display: grid;
+    column-gap: 30px;
+    column-gap: 15px;
+    row-gap: 50px;
+    grid-template-columns: 1fr;
+    justify-items: auto;
+
+    .sokenkai__topiccard {
+      flex-direction: column;
+      justify-items: left;
+      width: 100%;
+      h3 {
+        color: #007bff;
+        margin-top: 5px;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 128.2%; /* 17.948px */
+        position: relative;
+        width: 90%;
+        padding-bottom: 6px;
+        padding-left: 41px;
+      }
+      h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0px;
+        display: block;
+        min-width: 254px;
+        height: 1px; /* 線の太さ */
+        background-color: #71cedf; /* 線の色 */
+        margin-top: 10px; /* 線とテキストの間隔 */
+      }
+      p {
+        margin-left: 9px;
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 128.2%; /* 15.384px */
+        border: none;
+      }
+    }
+    img {
+      display: none;
+    }
   }
 }
 
@@ -926,8 +1186,7 @@ header img {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow:
-            8px 0 30px rgba(255, 255, 255),
+          box-shadow: 8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
@@ -1600,7 +1859,6 @@ header img {
 }
 
 .sokenkai__mv h1 span {
-  display: block;
   color: #fff;
 
   font-family: "Noto Sans JP";

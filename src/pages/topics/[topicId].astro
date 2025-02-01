@@ -52,6 +52,7 @@ const og_image = "";
     </div>
   </section>
 
+  <!-- ここからp-topicContent -->
   <section id="topicContent" class="p-topicContent">
     <div class="l-container">
       <h4>目次</h4>
@@ -79,15 +80,20 @@ const og_image = "";
 
 
   </section>
+  <!-- ここまでp-topicContent -->
   <div class="l-container">
 
-    <div class="title" style="margin:53px 0px; ">
+    <div class="Article-title">
       <h2>Recommend</h2>
       <p>おすすめの投稿</p>
     </div>
 
-    <section id="topicsList" class="p-topicsList">
-    <div class="p-topicsList__wrapper">
+    <div class="Article-title-resp">
+      <h2>おすすめの記事!</h2>
+    </div>
+
+    <section id="topicsList" class="p-topicsIdList">
+    <div class="p-topicsIdList__wrapper">
       <!-- map関数で展開する -->
       {
         response.contents.map((content: any) => (
@@ -96,4 +102,5 @@ const og_image = "";
       }
     </div>
     </section>
+  </div>
 </Layout>
