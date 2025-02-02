@@ -650,7 +650,7 @@ header img {
             height: 208.125px;
           }
         }
-      
+
         .image-blur {
           position: absolute;
           top: 0;
@@ -661,11 +661,11 @@ header img {
           filter: blur(2px);
           z-index: 1;
         }
-      
+
         .image-small {
           position: relative;
-          top: 50%; 
-          left: 50%; 
+          top: 50%;
+          left: 50%;
           transform: translate(-50%, -50%);
           width: 100%;
           height: 100%;
@@ -673,7 +673,6 @@ header img {
           z-index: 2;
           // border:1px solid #ffffff;
 
-          
           &::after {
             content: "";
             position: absolute;
@@ -756,7 +755,7 @@ header img {
           }
           a {
             font-size: 12px;
-            color: #3AB7FF;
+            color: #3ab7ff;
             display: none;
             text-align: right;
             align-items: end;
@@ -779,7 +778,8 @@ header img {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow: 8px 0 30px rgba(255, 255, 255),
+          box-shadow:
+            8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
@@ -805,6 +805,7 @@ header img {
           div {
             height: 260px;
             padding: 10px;
+
 
             @media (max-width: $breakpoint-lg) {
               height: 234px;
@@ -920,12 +921,13 @@ header img {
       }
     }
     .arrow-left {
-      border-left: 10px solid #B2EDFF;
-      border-bottom: 10px solid #B2EDFF;
+      border-left: 10px solid #b2edff;
+      border-bottom: 10px solid #b2edff;
       transform: rotate(30deg);
       left: -40px;
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
+
 
       @media (max-width: $breakpoint-lg) {
         left: -30px;
@@ -936,12 +938,13 @@ header img {
     }
 
     .arrow-right {
-      border-top: 10px solid #B2EDFF;
-      border-right: 10px solid #B2EDFF;
+      border-top: 10px solid #b2edff;
+      border-right: 10px solid #b2edff;
       transform: rotate(30deg);
       right: -40px;
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
+
 
       @media (max-width: $breakpoint-md) {
         right: -20px;
@@ -952,8 +955,8 @@ header img {
 .p-topic {
   div {
     &:not(.title) {
-    max-width: 1200px;
-    margin: 0 auto;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     ul {
@@ -979,20 +982,20 @@ header img {
           border: 12px solid #71cedf;
           overflow: hidden;
 
-          figure{
+          figure {
             width: 100%;
             height: 202px;
-            box-shadow: 0px -10px 10px 0px rgba(255,255,255) inset;
+            box-shadow: 0px -10px 10px 0px rgba(255, 255, 255) inset;
             position: relative;
 
-          img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: -1;
+            img {
+              height: 200px;
+              width: 100%;
+              object-fit: cover;
+              position: relative;
+              z-index: -1;
+            }
           }
-        }
 
           div {
             display: flex;
@@ -1018,6 +1021,7 @@ header img {
                 font-size: 24px;
                 font-weight: 400;
                 line-height: 34.75px;
+
                 color: #3B3B3B;
 
                 @media (max-width: $breakpoint-xl) {
@@ -1030,7 +1034,7 @@ header img {
             }
           }
         }
-        div{
+        div {
           width: 526px;
 
           time {
@@ -1038,10 +1042,10 @@ header img {
             font-size: 15px;
             letter-spacing: 2px;
           }
-          hr{
+          hr {
             border: 1px solid #71cedf;
           }
-          p{
+          p {
             font-size: 20px;
             font-weight: 400;
             padding: 10px 0;
@@ -1070,7 +1074,7 @@ header img {
         margin: 0 10px;
       }
 
-      &:nth-child(1){
+      &:nth-child(1) {
         border-bottom: 0;
       }
       &:not(:nth-child(1)) {
@@ -1176,12 +1180,12 @@ header img {
 
 // NewsCard
 
-.sokenkai__newscard{
+.sokenkai__newscard {
   div {
     display: flex;
     justify-content: space-between;
 
-    h4{
+    h4 {
       font-size: 20px;
       font-weight: 400;
       color: #ffffff;
@@ -1190,15 +1194,13 @@ header img {
       height: 27px;
       text-align: center;
       align-items: center;
-
     }
     p {
-    color: #71cedf;
-    font-size: 20px;
-    font-weight: 400;
-    text-align: right;
-    letter-spacing: 0.5px;
-    
+      color: #71cedf;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: right;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -1208,50 +1210,230 @@ header img {
     background-color: #71cedf;
     margin: 1px 0;
   }
-  div{
+  div {
     display: flex;
     margin-top: 10px;
 
-    figure{
+    figure {
       background: #71cedf;
       height: calc(tan(60deg) * 15px / 2);
       width: 15px;
       clip-path: polygon(0 0, 100% 50%, 0 100%);
       padding: 15px;
       margin-top: 5px;
+    }
+    div {
+      flex-grow: 1;
+      flex-direction: column;
+      margin-left: 30px;
+      margin-top: 0;
 
+      h3 {
+        font-size: 24px;
+        font-weight: 400;
+        color: #606060;
+        display: block;
       }
-      div{
-        flex-grow: 1;
-        flex-direction: column;
-        margin-left: 30px;
-        margin-top: 0;
 
-        h3 {
-          font-size: 24px;
-          font-weight: 400;
-          color: #606060;
-          display: block;
-        }
+      div {
+        margin: 0;
 
-        div {
-          margin: 0;
-
-          p{
+        p {
           font-size: 20px;
           font-weight: 400;
           line-height: 28.96px;
           color: #606060;
           display: block;
           text-align: left;
-          }
-
         }
       }
+    }
+  }
+}
+
+// news詳細ここから
+
+.page-wrapper {
+  background-color: #ffffff;
+  background-image: linear-gradient(
+      90deg,
+      rgba(178, 237, 255, 0.2) 2px,
+      transparent 2px
+    ),
+    linear-gradient(rgba(178, 237, 255, 0.2) 2px, transparent 2px);
+  background-position: 10px 10px;
+  background-size: 32px 32px;
+}
+
+.news_detail_tittle_bg {
+  background: #70acb6; // タイトル背景のスタイル
+  padding-top: 3px;
+  padding-bottom: 8px;
+  margin-bottom: 60px;
+  margin-top: 25px;
+}
+
+.news_detail_tittle {
+  font-size: 36px;
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-weight: 400;
+}
+
+.news_detail_date {
+  color: #fff;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+}
+
+#newsContent {
+  p {
+    color: #222;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 172.3%; // 27.568px
+    margin-bottom: 160px;
   }
 
-  
+  img {
+    width: 498px;
+    height: 700px;
+    flex-shrink: 0;
+    margin-top: 40px;
+    margin-bottom: 48px;
+  }
+
+  div[set\:html] img {
+    z-index: +3;
+    background-color: #b2edff;
+    width: 498px;
+    height: 700px;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+
+  h2 {
+    color: #000;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid #393939;
+  }
 }
+
+// News詳細ここまで
+
+// News一覧ここから
+
+// 帯の部分
+.news_tittle_bg {
+  background: #70acb6;
+  padding-top: 109px;
+  padding-bottom: 112px;
+  margin-bottom: 60px;
+  margin-top: 25px;
+  h1 {
+    color: #fff;
+    font-family: Avenir;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 146.2%; /* 70.176px */
+    letter-spacing: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  span {
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 146.2%; /* 26.316px */
+    letter-spacing: 4.5px;
+    display: block;
+  }
+}
+@media (max-width: $breakpoint-md) {
+  .news_tittle_bg {
+    background: #70acb6;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    margin-bottom: 28px;
+    margin-top: 6px;
+    h1 {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 146.2%; /* 29.24px */
+      letter-spacing: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+    span {
+      color: #fff;
+      font-family: "Noto Sans JP";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 146.2%; /* 17.544px */
+      letter-spacing: 3px;
+      display: block;
+    }
+  }
+
+  .sokenkai__newscard {
+    div {
+      h4 {
+        color: #fff;
+        font-family: "Noto Sans JP";
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1.54px;
+      }
+      p {
+        color: #71cedf;
+        font-family: "Noto Sans JP";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1.96px;
+      }
+      h3 {
+        color: #007bff;
+        font-family: "Noto Sans JP";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// newscardの部分
+
+// News一覧ここまで
+
 
 // ブログ一覧ここから
 
@@ -1518,4 +1700,3 @@ header img {
     font-size: 12px;
   }
 }
-
