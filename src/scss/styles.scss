@@ -230,7 +230,8 @@ input {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow: 8px 0 30px rgba(255, 255, 255),
+          box-shadow:
+            8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
@@ -461,7 +462,6 @@ header img {
     column-gap: 93px;
     row-gap: 23px;
     grid-template-columns: 1fr 1fr;
-    grid-template-columns: calc(50% - 46.5px) calc(50% - 46.5px); /* gapを考慮 */
     width: 100%;
   }
   @media (max-width: $breakpoint-md) {
@@ -1192,7 +1192,8 @@ header img {
           background-color: #fff;
           transform: translate(-50%, -50%);
           z-index: 200;
-          box-shadow: 8px 0 30px rgba(255, 255, 255),
+          box-shadow:
+            8px 0 30px rgba(255, 255, 255),
             -8px 0 30px rgba(255, 255, 255);
           font-size: 15px;
 
