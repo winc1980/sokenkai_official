@@ -27,66 +27,40 @@ body {
   margin: 33px auto 39px auto;
 }
 
-.contact-container h1 {
-  font-size: 64px;
-  color: #343434;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 16px;
-  font-family: poppins;
-}
-
-.contact-container-heading p {
-  text-align: center;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 8.8px;
-  margin-top: -15px;
-}
-
 .contact-container-heading {
   text-align: center;
+  h1 {
+    font-size: 64px;
+    color: #343434;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 16px;
+    font-family: poppins;
+    margin-top: 68px;
+  }
+
+  .contact-container-heading p {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.8px;
+    margin-top: -15px;
+  }
+
+  span {
+    display: block;
+    max-width: 324px;
+    height: 8px; /* ラインの太さ */
+    background: #b2edff;
+    margin: 7px auto 0px auto; /* 文字との間隔 */
+  }
 }
 
-span {
-  display: block;
-  max-width:324px;
-  height: 8px; /* ラインの太さ */
-  background: #b2edff;
-  margin: 7px auto 0px auto; /* 文字との間隔 */
-}
-
-.view_more_btn {
-  width: 202px;
-  height: 55px;
-  background-color: #fff;
-  color: #32c8ff;
-  border: 1px solid #32c8ff;
-  border-right: 1px solid #32c8ff;
-  border-bottom: 1px solid #32c8ff;
-  margin: 43px auto 100px auto;
-  display: block;
-}
-
-button {
-  width: 202px;
-  height: 55px;
-  background-color: #fff;
-  color: #32c8ff;
-  border: 1px solid #32c8ff;
-  border-right: 1px solid #32c8ff;
-  border-bottom: 1px solid #32c8ff;
-  margin: 43px auto 100px auto;
-  display: block;
-}
-
-.view_more_btn:hover {
-  background-color: #f0f8ff;
-}
+// ここからお問い合わせフォーム
 
 form {
   margin: 0px auto;
@@ -162,3 +136,17 @@ input {
   align-items: center;
   margin-left: 96px;
 }
+
+// 送信ボタン
+// .form-submit-btn {
+//   margin: 0px auto;
+//   color: #32c8ff;
+//   text-align: center;
+//   font-family: "Noto Sans JP";
+//   font-size: 20px;
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 172.3%;
+// }
+
+// ここまでお問い合わせフォーム
