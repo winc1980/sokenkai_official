@@ -134,9 +134,57 @@ const text = "hello";
 					委員会へのお問い合わせもこちらより受け付けております。
 				</p>
 
+				
+						<form action="https://ssgform.com/s/1AJvhvMnFWUk" method="post">
+							<!-- <div style="display: none;"><input type="text" name="wana" /></div> -->
+							<div class="form-group">
+							<label>お名前/団体名</label>
+								<div class="necessary-label">
+									<h3 class="necessary">必須</h3>
+									<input type="text" name="お名前" required="required">
+								</div>	
+							</div>
 
-			<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="post"> -->
-			<form id="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event)">
+							<div class="form-group">
+							<label>メールアドレス</label>
+								<div class="necessary-label">
+								<h3 class="necessary">必須</h3>
+								<input type="email" name="メールアドレス" required="required">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label>ご要望</label>
+								<div class="radio-group">
+									<input type="radio" name="要望" value="入会希望" id="document-true">
+									<label for="document-true">入会したい</label>
+									<input type="radio" name="要望" value="話を聞きたい"id="document-maybe">
+									<label for="document-false">話を聞きたい</label>
+									<input type="radio" name="要望" value="その他"id="document-false">
+									<label for="document-false">その他</label>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+							<label style="display: block; margin-bottom: 10px;">お問い合わせ内容</label>
+								<div class="necessary-label">
+								<h3 class="necessary">必須</h3>
+								<textarea class="message" name="お問い合わせ内容" required="required"></textarea>
+								</div>
+							</div>
+							
+
+							<button type="submit" style="display: inline-block; background: #00bbff; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">送信する</button>
+						</form>
+					</div>
+				</form>
+
+		
+
+		<!-- ここからGoogleforms -->
+		
+			<!-- <form id="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event)">
 	
 				<div class="form-group">
 				  <label for="name">お名前/団体名</label>
@@ -180,9 +228,14 @@ const text = "hello";
 				<div class="button">
 				  <button type="submit">送信する</button>
 				</div>
-			  </form>
+			  </form> -->
 			  
-			  <script>
+
+
+
+
+
+			  <!-- <script>
 				function handleSubmit(event) {
 				  event.preventDefault(); // デフォルトの画面遷移を防ぐ
 			  
@@ -193,14 +246,7 @@ const text = "hello";
 					method: form.method,
 					body: new FormData(form),
 				  })
-				//   .then((response) => {
-				// 	if (!response.ok) {
-				// 	  throw new Error('送信エラー: ' + response.status);
-				// 	}
-				// 	// サクセスメッセージを表示
-				// 	document.getElementById('success-message').style.display = 'block';
-				// 	form.reset(); // フォームの内容をリセット
-				//   })
+
 				.then(() => {
       			// 送信完了後にリダイレクト
 				  window.location.href = 'http://localhost:4322/thanks';
@@ -214,8 +260,10 @@ const text = "hello";
 			  
 				  return false; // フォーム送信を止める
 				}
-			  </script>
+			  </script> -->
 			  
+
+		<!-- ここまでGoogleforms -->
 
 
 		</div>

@@ -61,17 +61,8 @@ span {
   margin: 7px auto 0px auto; /* 文字との間隔 */
 }
 
-.view_more_btn {
-  width: 202px;
-  height: 55px;
-  background-color: #fff;
-  color: #32c8ff;
-  border: 1px solid #32c8ff;
-  border-right: 1px solid #32c8ff;
-  border-bottom: 1px solid #32c8ff;
-  margin: 43px auto 100px auto;
-  display: block;
-}
+
+// Googleformの部分
 
 button {
   width: 202px;
@@ -97,7 +88,7 @@ form {
 
 .form-group {
   display: grid;
-  grid-template-columns: 350px 2fr;
+  grid-template-columns: 2fr 5fr;
   max-width: 900px;
   margin: 50px auto;
 }
@@ -134,7 +125,6 @@ label {
 }
 
 input {
-  // max-width: 577px;
   height: 54px;
   background-color: #e6f9ff;
   border: 1px solid #71cedf;
@@ -142,7 +132,6 @@ input {
 }
 
 .message {
-  // max-width: 577px;
   height: 168px;
   background-color: #e6f9ff;
   border: 1px solid #71cedf;
@@ -531,3 +520,7 @@ header img {
   }
 
 }
+// Googleformの部分
+
+
+
