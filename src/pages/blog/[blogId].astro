@@ -2,7 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import BreadCrumb from "@/components/BreadCrumb.astro";
 import Toc from "@/components/Toc.astro";
-import { getBlogs, getBlogDetail } from "@/lib/microcms.ts";
+
+import { getBlogs, getBlogDetail } from "@/lib/microcms";
+import dayjs from "dayjs";
 export async function getStaticPaths() {
   const response = await getBlogs({ fields: ["id"] });
   return response.contents.map((content: any) => ({
@@ -13,6 +15,7 @@ export async function getStaticPaths() {
 }
 const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
+const date = dayjs(blog.publishedDate).format("YYYY.MM.DD");
 
 const title = "";
 const description = "";
@@ -30,7 +33,7 @@ const og_image = "";
         ]}
       />
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <p>{date}</p>
       <img
         src={blog.featuredImage.url}
         width={blog.featuredImage.width}
