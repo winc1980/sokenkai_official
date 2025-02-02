@@ -963,12 +963,22 @@ header img {
       justify-content: space-between;
       flex-wrap: wrap;
 
+      @media (max-width: $breakpointMobile) {
+        display: block;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+
       li {
         width: 550px;
         overflow: hidden;
 
         @media (max-width: $breakpoint-xl) {
           width: 49%;
+        }
+        @media (max-width: $breakpointMobile) {
+          width: 100%;
+          margin: 0 auto;
         }
 
         a {
@@ -978,6 +988,12 @@ header img {
           border-radius: 16px;
           border: 12px solid #71cedf;
           overflow: hidden;
+
+          @media (max-width: $breakpointMobile) {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+          }
 
           figure{
             width: 100%;
