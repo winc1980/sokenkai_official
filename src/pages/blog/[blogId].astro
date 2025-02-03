@@ -3,7 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import BreadCrumb from "@/components/Breadcrumb.astro";
 import Toc from "@/components/Toc.astro";
+
 import { getBlogs, getBlogDetail } from "@/lib/microcms";
+import dayjs from "dayjs";
 export async function getStaticPaths() {
   const response = await getBlogs({ fields: ["id"] });
   return response.contents.map((content: any) => ({
@@ -16,6 +18,7 @@ const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
 import beerImage from "@/assets/images/beer.png";
 import postImage from "@/assets/images/recommend-post-image.png";
+const date = dayjs(blog.publishedDate).format("YYYY.MM.DD");
 
 const title = "";
 const description = "";
