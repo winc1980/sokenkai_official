@@ -183,12 +183,74 @@ header img {
 
 .p-blogContent {
   display: flex;
+  width: 100%;
+}
+
+.blog-main-content {
+  width: 80%;
+}
+
+.blog-sidemenu {
+  margin-top: 80px;
+}
+
+.blog-sidemenu-new-link p {
+  margin-top: 5px;
+  margin-left: 18px;
+  color: #000;
+  font-family: "Noto Sans JP";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 172.3%; /* 20.676px */
+}
+
+.blog-sidemenu-new-link a {
+  margin-left: 18px;
+  color: #007bff;
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.blog-sidemenu-dot {
+  display: inline;
+  margin-right: 5px;
+}
+
+.blog-sidemenu-title {
+  display: inline;
+  color: #000;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.blog-sidemenu-list-year {
+  margin-top: 8px;
+}
+
+.blog-sidemenu-list-year-title {
+  margin-left: 18px;
+}
+
+.blog-sidemenu-list-year-link {
+  display: block;
+  margin-left: 35px;
+  margin-top: 8px;
+  color: #007bff;
+  font-family: "Noto Sans JP";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .blog-featured-image {
   width: 530px;
   object-fit: cover;
-  margin-top: 40px;
+  margin-top: 80px;
+  margin-left: 5%;
 }
 
 .blog-table-of-contents {
@@ -198,6 +260,7 @@ header img {
   font-style: normal;
   font-weight: 400;
   margin-top: 53px;
+  margin-left: 5%;
 }
 
 .blog-recommendation {
@@ -217,6 +280,7 @@ header img {
 
 .blog-detail-content {
   margin-bottom: 40px;
+  margin-left: 5%;
 }
 
 .blog-detail-recommend {
@@ -238,11 +302,207 @@ header img {
   width: 490px;
 }
 
-.blog-detail-recommend-content {
+.blog-detail-recommend-posts {
+  width: 70%;
+  margin: 40px auto 0 auto;
+  padding-bottom: 140px;
+}
+
+.blog-detail-recommend-post {
+  margin: 0 auto 30px auto;
+  height: auto;
   display: flex;
 }
 
+.blog-detail-recommend-post-image {
+  height: 300px;
+  width: 50%;
+  object-fit: cover;
+}
+
+.blog-detail-recommend-post-text {
+  position: relative;
+  border-top: 4px solid #71cedf;
+  border-right: 5px solid #71cedf;
+  border-bottom: 4px solid #71cedf;
+  border-left: 5px solid #71cedf;
+  background: #fff;
+  width: 50%;
+}
+
+.blog-detail-recommend-post-text-title {
+  color: #606060;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-weight: 350;
+  margin-left: 20px;
+}
+
+.blog-detail-recommend-post-text-date {
+  color: #71cedf;
+  font-family: "Noto Sans JP";
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 27px;
+  margin-left: 20px;
+}
+
+.blog-detail-recommend-post-text-content {
+  color: #606060;
+  font-family: "Noto Sans JP";
+  font-size: 16px;
+  font-weight: 300;
+  margin: 21px 20px 0 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* 任意の行数を指定 */
+}
+
+.blog-detail-recommend-post-text-detail {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: #3ab7ff;
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.blog-featured-image-md {
+  display: none;
+}
+
 @media screen and (max-width: $breakpoint-md) {
+  .blog-detail-title {
+    padding-left: 20px;
+    padding-top: 15px;
+  }
+
+  .blog-detail-title h1 {
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 5px;
+  }
+
+  .blog-detail-title p {
+    color: #fff;
+    font-family: "Noto Sans JP";
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    margin-top: 5px;
+  }
+
+  .blog-table-of-contents {
+    color: #222;
+    font-family: "Noto Sans JP";
+    font-size: 14px !important;
+    font-style: normal;
+    font-weight: 350;
+  }
+
+  .blog-featured-image {
+    display: none;
+  }
+
+  .blog-featured-image-md {
+    display: block;
+    width: 70%;
+    object-fit: cover;
+    margin: 40px auto 0 auto;
+  }
+
+  .blog-table-of-contents {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 53px;
+    margin-left: 5%;
+  }
+
+  .blog-detail-content {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .blog-main-content {
+    width: 100%;
+  }
+
+  .blog-sidemenu {
+    display: none;
+  }
+
+  .blog-detail-entire-wrapper {
+    background: none;
+  }
+
+  .blog-detail-recommend {
+    display: none;
+  }
+
+  .blog-detail-recommend-subtitle {
+    color: #000;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    width: auto;
+  }
+
+  .blog-detail-recommend-posts {
+    width: 70%;
+    margin: 40px auto 0 auto;
+    padding-bottom: 16px;
+  }
+
+  .blog-detail-recommend-post {
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #71cedf;
+  }
+
+  .blog-detail-recommend-post-image {
+    display: none;
+  }
+
+  .blog-detail-recommend-post-text {
+    position: relative;
+    border: none;
+    width: 100%;
+  }
+
+  .blog-detail-recommend-post-text-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 128.2%; /* 20.512px */
+  }
+
+  .blog-detail-recommend-post-text-date {
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .blog-detail-recommend-post-text-content {
+    display: none;
+  }
+
+  .blog-detail-recommend-post-text-detail {
+    bottom: 5px;
+  }
 }
 
 // ブログ詳細ここまで
