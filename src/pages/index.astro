@@ -48,15 +48,15 @@ const og_image = "";
 					<h1>Contact</h1>
 					<p>お問い合わせ</p>
 					<span class="underline"></span>
-			</div>
+				</div>
 				<p class="form-explanation">
-					体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
+					体験・入会は、早稲田の公式<a href="https://www.instagram.com/soukenkai_waseda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>もしくは公式<a href="https://x.com/soukenkai_wsd">Twitter</a>に、「体験したい」「入会したい」
 					というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
 					委員会へのお問い合わせもこちらより受け付けております。
 				</p>
   
   
-  <form action="https://ssgform.com/s/1AJvhvMnFWUk" method="post">
+  						<form class="PC-form" action="https://ssgform.com/s/1AJvhvMnFWUk" method="post">
 							<!-- <div style="display: none;"><input type="text" name="wana" /></div> -->
 							<div class="form-group">
 								<label>お名前/団体名</label>
@@ -67,9 +67,9 @@ const og_image = "";
 							</div>
 
 							<div class="form-group">
-							<label>メールアドレス</label>
-								<div class="necessary-label">
-								<h3 class="necessary">必須</h3>
+									<label>メールアドレス</label>
+									<div class="necessary-label">
+									<h3 class="necessary">必須</h3>
 								<input type="email" name="メールアドレス" required="required">
 								</div>
 							</div>
@@ -98,9 +98,62 @@ const og_image = "";
 
 							<button type="submit" class="form-submit-btn">送信する</button>
 						</form>
-					</div>
-				</form>
 
+
+<!-- ここからレスポンシブのform -->
+						
+					<div class="rsp-form-flame">
+
+						<form class="rsp-form" action="https://ssgform.com/s/1AJvhvMnFWUk" method="post">
+
+							<div class="form-row">
+							<label>お名前/団体名</label>
+							<h3 class="necessary">必須</h3>
+							</div>
+							<input type="text" name="お名前" required="required">
+							
+							<div class="form-row">
+							<label>メールアドレス</label>
+							<h3 class="necessary">必須</h3>
+							</div>
+							<input type="email" name="メールアドレス" required="required">
+							
+
+					
+							<label>ご要望</label>
+								<div class="radio-group">
+									<div class="radio-btn">
+									<input type="radio" name="要望" value="入会希望" id="document-true">
+									<label for="document-true">入会したい</label>
+									</div>
+
+									<div class="radio-btn">
+									<input type="radio" name="要望" value="話を聞きたい"id="document-maybe">
+									<label for="document-false">話を聞きたい</label>
+									</div>
+
+									<div class="radio-btn">
+									<input type="radio" name="要望" value="その他"id="document-false">
+									<label for="document-false">その他</label>
+									</div>
+								</div>
+							
+							<div class="form-row">	
+							<label style="display: block; margin-bottom: 10px;">お問い合わせ内容</label>
+							<h3 class="necessary">必須</h3>
+							</div>
+								<textarea class="message" name="お問い合わせ内容" required="required"></textarea>
+								
+							
+							
+
+							<button type="submit" class="rsp-form-submit-btn">送信する</button>
+						</form>
+					</div>
+				
+			<!-- ここまでレスポンシブのform -->
+
+				
 	<!-- コンタクトここまで -->
 	</main>
 

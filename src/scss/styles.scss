@@ -25,6 +25,9 @@ body {
   line-height: 175%;
   letter-spacing: 10%;
   margin: 33px auto 39px auto;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .contact-container-heading {
@@ -61,8 +64,11 @@ body {
 }
 
 // ここからお問い合わせフォーム
+.rsp-form {
+  display: hidden;
+}
 
-form {
+.PC-form {
   margin: 0px auto;
   border: 5px solid #71cedf;
   max-width: 1100px;
@@ -71,7 +77,7 @@ form {
 
 .form-group {
   display: grid;
-  grid-template-columns: 350px 2fr;
+  grid-template-columns: 250px 2fr;
   max-width: 900px;
   margin: 50px auto;
 }
@@ -177,6 +183,16 @@ input {
 
 // ここからレスポンシブ
 @media (max-width: 768px) {
+  .rsp-form-flame {
+    margin: 0px auto;
+    width: 90%;
+    border: 2px solid #71cedf;
+    max-width: 1100px;
+    padding-bottom: 22px;
+  }
+  .PC-form {
+    display: none;
+  }
   .form-explanation {
     color: #343434;
     font-family: "Noto Sans JP";
@@ -185,7 +201,10 @@ input {
     font-weight: 400;
     line-height: 175%; /* 21px */
     letter-spacing: 1.2px;
-    max-width: 270px;
+    width: 90%;
+    a {
+      text-decoration: underline;
+    }
   }
   .contact-container-heading {
     text-align: center;
@@ -210,7 +229,6 @@ input {
       line-height: normal;
       letter-spacing: 3px;
     }
-
     span {
       display: block;
       width: 245px;
@@ -220,18 +238,102 @@ input {
     }
   }
 
-  form {
+  .rsp-form {
+    width: 90%;
     margin: 0px auto;
-    border: 2px solid #71cedf;
-    padding: 10px auto 10px auto;
-    max-width: 370px;
-  }
-  .form-group {
-    grid-template-columns: 1fr;
-    .necessary-label {
-      grid-template-columns: 1fr;
+    .rsp-form-submit-btn {
+      display: flex;
+      margin: 0px auto;
+      color: #32c8ff;
+      background: #fff;
+      border: 1px solid #32c8ff;
+      padding: 11px 61px 10px 61px;
+      text-align: center;
+      font-family: "Noto Sans JP";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 172.3%; /* 24.122px */
+      margin: 14px auto 0px auto;
+      position: relative;
     }
-    .radio-group {
+    .rsp-form-submit-btn::after {
+      content: "";
+      background-color: #32c8ff;
+      width: 180px;
+      height: 1px;
+      position: absolute;
+      left: 3px;
+      bottom: -5px;
+    }
+    .rsp-form-submit-btn::before {
+      content: "";
+      background-color: #32c8ff;
+      width: 1px;
+      height: 46px;
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+    }
+    input {
+      width: 100%;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 5px;
+      border: 1px solid #71cedf;
+      background: #e6f9ff;
+    }
+    textarea {
+      border-radius: 5px;
+      border: 1px solid #71cedf;
+      background: #e6f9ff;
+      width: 100%;
+      height: 120px;
+    }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .radio-btn {
+      label {
+        font-size: 12px;
+      }
+    }
+    #document-true {
+      width: 17px;
+      height: 17px;
+    }
+    #document-maybe {
+      width: 17px;
+      height: 17px;
+    }
+    #document-false {
+      width: 17px;
+      height: 17px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .necessary {
+      width: 50px;
+      background: #b3fcff;
+      height: 32px;
+      flex-shrink: 0;
+      padding: 0px auto;
+      margin-bottom: 5px;
+      h3 {
+        color: #343434;
+        font-family: "Noto Sans JP";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
     }
   }
 }
