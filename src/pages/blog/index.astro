@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getBlogs } from "@/lib/microcms";
+import { getBlogs } from "@/lib/microcms.ts";
 const response = await getBlogs({
   fields: ["id", "title", "description", "publishedDate", "featuredImage"],
 });
@@ -13,6 +13,7 @@ const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
+
   <section class="blog-entire-page-wrapper">
     <BreadCrumb
       items={[
@@ -26,6 +27,7 @@ const og_image = "";
       </div>
     </section>
 
+
     <section id="blogsList" class="p-blogsList">
       <div class="l-container">
         <div class="p-blogsList__wrapper">
@@ -37,6 +39,7 @@ const og_image = "";
           }
         </div>
       </div>
+
     </section>
   </section>
 </Layout>

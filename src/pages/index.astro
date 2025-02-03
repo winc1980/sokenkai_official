@@ -1,123 +1,1044 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
+
+import dental_checkup from "@/assets/images/IMG_4519.JPG";
+import beer from "@/assets/images/image 1.png";
+import left_arrow from "@/assets/images/Vector.svg";
+import right_arrow from "@/assets/images/Vector_right.svg";
+
+import Btn from "@/components/Btn.astro";
+
 const title = "TOP";
+
 const description = "";
+const og_image = "";
 const text = "hello";
 ---
 
-<Layout title={title} description={description}>
-  <main>
-    <!-- ファーストビューここから -->
-    <section id="fv" class="p-fv">
-      <h1>
-        早稲田大学<br />
-        学生健康増進互助会
-      </h1>
-      <p>
-        Waseda Univ. <br />
-        Student Health Promotion <br />
-        Mutual Aid Association
-      </p>
-      <div class="p-fv-carousel">
-        <div class="scroll_track">
-          <ul class="scroll_inner">
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-            <li class="scroll_cont">
-              <img src="" alt="" />
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- ファーストビューここまで -->
+<Layout title={title} description={description} og_image={og_image}>
+  <!-- ヘッダーここから -->
+  <header></header>
+  <!-- ヘッダーここまで -->
 
-    <!-- newsここから -->
-    <section id="news" class="p-news">
-      <h2 class="title">News</h2>
-      <p>2024.08.18</p>
-      <p>早健会のHPを公開しました</p>
-      <p>
+  <!-- ファーストビューここから -->
+  <section id="fv" class="p-fv">
+    <div class="p-fv-backimg">
+      <img src="public/assets/images/decolation.png" alt="" />
+      <div class="text-overlay">
+        <h1>
+          早稲田大学<br />
+          学生健康増進互助会
+        </h1>
+        <p>
+          Waseda Univ. <br />
+          Student Health Promotion <br />
+          Mutual Aid Association
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ファーストビューここまで -->
+
+  <!--カルーセルここから  -->
+  <div class="p-fv-carousel">
+    <div class="scroll_track">
+      <ul class="scroll_inner">
+        <li class="scroll_cont">
+          <img src="public/assets/images/IMG_4518.jpg" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/Rectangle 108.png" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/IMG_4519.jpg" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/Rectangle 108 (1).png" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/IMG_4518.jpg" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/Rectangle 108.png" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/IMG_4519.jpg" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/Rectangle 108 (1).png" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/IMG_4518.jpg" alt="" />
+        </li>
+        <li class="scroll_cont">
+          <img src="public/assets/images/Rectangle 108.png" alt="" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- カルーセルここまで -->
+
+  <!-- newsここから -->
+  <section id="news" class="p-news">
+    <img class="news-deco1" src="public/assets/images/Ellipse 22.png" alt="" />
+    <img class="news-deco2" src="public/assets/images/Group 41.png" alt="" />
+    <img class="news-deco3" src="public/assets/images/Group 40.png" alt="" />
+    <div class="p-l-container">
+      <div class="title">
+        <h2>News</h2>
+        <p>ニュース</p>
+      </div>
+      <div class="news-tugdate">
+        <p class="tug">タグ</p>
+        <p class="date">2024.08.18</p>
+      </div>
+      <p class="p-news-title">早健会のHPを公開しました</p>
+      <p class="p-news-content">
         内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
       </p>
-    </section>
-    <!-- ニュースここまで -->
-
-    <!-- アクティビティここから -->
-    <section id="activity" class="p-activity">
-      <h3>Activity</h3>
-      <p>100円朝食</p>
-      <p>
-        時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
-        近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜
-        6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜
-        6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。
+      <div class="news-tugdate">
+        <p class="tug">タグ</p>
+        <p class="date">2024.08.18</p>
+      </div>
+      <p class="p-news-title">早健会のHPを公開しました</p>
+      <p class="p-news-content">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
       </p>
-      <p>歯科検診</p>
-      <p>
-        毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
+      <div class="news-tugdate">
+        <p class="tug">タグ</p>
+        <p class="date">2024.08.18</p>
+      </div>
+      <p class="p-news-title">早健会のHPを公開しました</p>
+      <p class="p-news-content">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
       </p>
-    </section>
-    <!-- アクティビティここまで -->
+      <a href="">VIEW MORE</a>
+    </div>
+  </section>
+  <!-- ニュースここまで -->
 
-    <!-- エクスペリエンスここから -->
-    <section id="experience" class="p-experience">
-      <h4>Experience</h4>
-      <div>
-        <p>企業と関わる経験</p>
-        <p>
-          あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+  <!-- aboutここから -->
+  <section id="about" class="p-about">
+    <div class="p-l-container">
+      <div class="title">
+        <h2>About</h2>
+        <p>学健会とは</p>
+      </div>
+      <p class="p-about-detail">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+      </p>
+    </div>
+  </section>
+  <!-- aboutここまで -->
+
+  <!-- アクティビティここから -->
+  <section id="activity" class="p-activity">
+    <div class="title">
+      <h2>Activity</h2>
+      <p>活動内容</p>
+    </div>
+
+    <div class="grid-activity">
+      <div class="activity_bg_img1">
+        <img
+          src="public/assets/images/experience-parts.png"
+          alt="experience-parts"
+        />
+        <p class="activity-subheading">100円朝食</p>
+        <p class="actuivity-text">
+          時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+          近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜
+          6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜
+          6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。
         </p>
       </div>
-      <div>
-        <p>イベントの企画運営</p>
-        <p>
-          あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+
+      <div class="activity_bg_img2">
+        <img
+          src="public/assets/images/experience-parts.png"
+          alt="experience-parts"
+        />
+        <p class="activity-subheading">歯科検診</p>
+        <p class="actuivity-text">
+          毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
         </p>
       </div>
-    </section>
-    <!-- エクスペリエンスここまで -->
 
-    <!-- レポートここから -->
-    <section id="report" class="p-report"></section>
-    <!-- レポートここまで -->
+      <div class="activity_bg_img3">
+        <img
+          src="public/assets/images/experience-parts.png"
+          alt="experience-parts"
+        />
+        <p class="activity-subheading">健康フェスタ</p>
+        <p class="actuivity-text">
+          「健康」と言っても幅広い。「肉体的」、「精神的」、「社会的」な健康がある。本イベントでは、そんな健康に対してアプローチをし、セミナー等を実施。2023年度は、「心の病気」、「アンガーマネジメント」、「うつ病」に関するセミナーを11月に開催。
+        </p>
+      </div>
 
-    <!-- トピックここから -->
-    <section id="topic" class="p-topic"></section>
-    <!-- トピックここまで -->
+      <div class="activity_bg_img4">
+        <img
+          src="public/assets/images/experience-parts.png"
+          alt="experience-parts"
+        />
+        <p class="activity-subheading">委員会内イベント</p>
+        <p class="actuivity-text">
+          時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+          近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜
+          6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜
+          6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ここから -->
-    <section id="faqs" class="p-faqs"></section>
-    <!-- ここまで -->
+  <!-- <img src="public/assets/images/IMG_4518.jpg" alt="">
+		<p>100円朝食</p>
+		<p>時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+			近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p>
+		<img src="public/assets/images/Rectangle 108.png" alt="">
+		<p>歯科検診</p>
+		<p>毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
+		</p>
+		<img src="public/assets/images/Rectangle 108 (1).png" alt="">
+		<p>健康フェスタ</p>
+		<p>「健康」と言っても幅広い。「肉体的」、「精神的」、「社会的」な健康がある。本イベントでは、そんな健康に対してアプローチをし、セミナー等を実施。2023年度は、「心の病気」、「アンガーマネジメント」、「うつ病」に関するセミナーを11月に開催。</p>
+		<img src="public/assets/images/IMG_4519.jpg" alt="">
+		<p>委員会内イベント</p>
+		<p>時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+			近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p> -->
 
-    <!-- コンタクトここから -->
-    <section id="contact" class="p-contact"></section>
-    <!-- コンタクトここまで -->
-  </main>
+  <!-- アクティビティここまで -->
+
+  <!-- エクスペリエンスここから -->
+  <section id="experience" class="p-experience">
+    <img src="public/assets/images/Ellipse 19.png" alt="" class="circle" />
+    <div class="p-l-container">
+      <div class="title">
+        <h2>Experience</h2>
+        <p>得られる経験</p>
+      </div>
+
+      <div class="experient-content">
+        <img src="public/assets/images/Vector (2).png" alt="" />
+        <div class="exp1">
+          <p class="subtitle">企業と関わる経験</p>
+          <p class="exp-detail">
+            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+          </p>
+        </div>
+      </div>
+      <div class="experient-content">
+        <img src="public/assets/images/Vector(3).png" alt="" />
+        <div class="exp1">
+          <p class="subtitle">イベントの企画運営</p>
+          <p class="exp-detail">
+            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- エクスペリエンスここまで -->
+
+  <!-- レポートここから -->
+  <section id="report" class="p-report">
+    <div class="title">
+      <h2>Report</h2>
+      <p>活動報告</p>
+    </div>
+    <div class="slider">
+      <span id="prevBtn" class="arrow-left"> </span>
+      <ul class="slider-list">
+        <li class="slider-item">
+          <figure>
+            <Image
+              class="image-blur"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+            <Image
+              class="image-small"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+          </figure>
+          <div>
+            <time datetime="">2024.08.18</time>
+            <h3>歯科検診レポート1</h3>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+            </p>
+            <a href="">続きを読む</a>
+          </div>
+        </li>
+        <li class="slider-item">
+          <figure>
+            <Image
+              class="image-blur"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+            <Image
+              class="image-small"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+          </figure>
+          <div>
+            <time datetime="">2024.08.18</time>
+            <h3>歯科検診レポート2</h3>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+            </p>
+            <a href="">続きを読む</a>
+          </div>
+        </li>
+        <li class="slider-item">
+          <figure>
+            <Image
+              class="image-blur"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+            <Image
+              class="image-small"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+          </figure>
+          <div>
+            <time datetime="">2024.08.18</time>
+            <h3>歯科検診レポート3</h3>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+            </p>
+            <a href="">続きを読む</a>
+          </div>
+        </li>
+        <li class="slider-item">
+          <figure>
+            <Image
+              class="image-blur"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+            <Image
+              class="image-small"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+          </figure>
+          <div>
+            <time datetime="">2024.08.18</time>
+            <h3>歯科検診レポート4</h3>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+            </p>
+            <a href="">続きを読む</a>
+          </div>
+        </li>
+        <li class="slider-item">
+          <figure>
+            <Image
+              class="image-blur"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+            <Image
+              class="image-small"
+              src={dental_checkup}
+              alt="歯科検診のイメージ画像"
+            />
+          </figure>
+          <div>
+            <time datetime="">2024.08.18</time>
+            <h3>歯科検診レポート5</h3>
+            <p>
+              あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+            </p>
+            <a href="">続きを読む</a>
+          </div>
+        </li>
+      </ul>
+      <span id="nextBtn" class="arrow-right"></span>
+    </div>
+  </section>
+  <!-- レポートここまで -->
+
+  <!-- トピックここから -->
+  <section id="topic" class="p-topic">
+    <div class="title">
+      <h2>Topic</h2>
+      <p>記事</p>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a>
+            <figure>
+              <Image src={beer} alt="乾杯の写真" />
+            </figure>
+            <div>
+              <span></span>
+              <div>
+                <h3>飲酒の健康への影響<br />適切なアルコールの摂取量とは？</h3>
+              </div>
+            </div>
+          </a>
+          <div>
+            <time datetime="">2024.08.31</time>
+            <hr />
+            <p>飲酒の健康への影響 適切な摂取量とは？</p>
+          </div>
+        </li>
+        <li>
+          <a>
+            <figure>
+              <Image src={beer} alt="乾杯の写真" />
+            </figure>
+            <div>
+              <span></span>
+              <div>
+                <h3>飲酒の健康への影響</h3>
+                <h3>適切なアルコールの摂取量とは？</h3>
+              </div>
+            </div>
+          </a>
+          <div>
+            <time datetime="">2024.08.31</time>
+            <hr />
+            <p>飲酒の健康への影響 適切な摂取量とは？</p>
+          </div>
+        </li>
+        <li>
+          <a>
+            <figure>
+              <Image src={beer} alt="乾杯の写真" />
+            </figure>
+            <div>
+              <span></span>
+              <div>
+                <h3>飲酒の健康への影響</h3>
+                <h3>適切なアルコールの摂取量とは？</h3>
+              </div>
+            </div>
+          </a>
+          <div>
+            <time datetime="">2024.08.31</time>
+            <hr />
+            <p>飲酒の健康への影響 適切な摂取量とは？</p>
+          </div>
+        </li>
+        <li>
+          <a>
+            <figure>
+              <Image src={beer} alt="乾杯の写真" />
+            </figure>
+            <div>
+              <span></span>
+              <div>
+                <h3>飲酒の健康への影響</h3>
+                <h3>適切なアルコールの摂取量とは？</h3>
+              </div>
+            </div>
+          </a>
+          <div>
+            <time datetime="">2024.08.31</time>
+            <hr />
+            <p>飲酒の健康への影響 適切な摂取量とは？</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- トピックここまで -->
+
+  <!-- ここから -->
+  <section id="faqs" class="p-faqs">
+    <div class="title">
+      <h2>FAQs</h2>
+      <p>よくある質問</p>
+    </div>
+    <div class="qa-container">
+      <div class="qa-item">
+        <div class="question">
+          <span>Q.</span>
+          <span>早健会の会員の文理比を教えてください。</span>
+          <div class="fq-btn">
+            <span class="horizontal"></span>
+            <span class="vertical"></span>
+          </div>
+        </div>
+        <div class="answer">
+          <span>A.</span>
+          <span
+            >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+          >
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="question">
+          <span>Q.</span>
+          <span>早健会の会員の文理比を教えてください。</span>
+          <div class="fq-btn">
+            <span class="horizontal"></span>
+            <span class="vertical"></span>
+          </div>
+        </div>
+        <div class="answer">
+          <span>A.</span>
+          <span
+            >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+          >
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="question">
+          <span>Q.</span>
+          <span>早健会の会員の文理比を教えてください。</span>
+          <div class="fq-btn">
+            <span class="horizontal"></span>
+            <span class="vertical"></span>
+          </div>
+        </div>
+        <div class="answer">
+          <span>A.</span>
+          <span
+            >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+          >
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="question">
+          <span>Q.</span>
+          <span>早健会の会員の文理比を教えてください。</span>
+          <div class="fq-btn">
+            <span class="horizontal"></span>
+            <span class="vertical"></span>
+          </div>
+        </div>
+        <div class="answer">
+          <span>A.</span>
+          <span
+            >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ここまで -->
+
+  <!-- コンタクトここから -->
+  <section id="contact" class="p-contact"></section>
+  <!-- コンタクトここまで -->
 </Layout>
+
+<!-- レポートここから -->
+<!--                  
+	<section id="report" class="p-report">
+          <div class="slider">
+               <button id="prevBtn" class="arrow">◀</button>
+               <ul class="slider-list">
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                         </div>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+                    <li class="slider-item">
+                         <Image src={dental_checkup} alt="歯科検診のイメージ画像" />
+                         <div>
+                              <time datetime="">2024.08.18</time>
+                              <h3>歯科検診レポート</h3>
+                              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </li>
+               </ul>
+               <button id="nextBtn" class="arrow">▶</button>
+          </div>
+	</section>
+                       -->
+<!-- レポートここまで -->
+-->
+
+<!-- トピックここから -->
+<!--                  
+	<section id="topic" class="p-topic">
+          <div>
+               <ul>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <span></span>
+                                   <div>
+                                        <h3>あああ</h3>
+                                        <p>aaaaaaaaaaaa</p>
+                                   </div>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+                    <li>
+                         <a>
+                              <Image src={beer} alt="乾杯の写真" />
+                              <div>
+                                   <h3>あああ</h3>
+                                   <p>aaaaaaaaaaaa</p>
+                              </div>
+                         </a>
+                         <div>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+	</section> 
+
+	<!-- トピックここまで -->
+
+<!-- ここから -->
+<section id="faqs" class="p-faqs">
+  <div class="qa-container">
+    <div class="qa-item">
+      <div class="question">
+        <span>Q.</span>
+        <span>早健会の会員の男女比を教えてください。</span>
+        <div class="fq-btn">
+          <span class="horizontal"></span>
+          <span class="vertical"></span>
+        </div>
+      </div>
+      <div class="answer">
+        <span>A.</span>
+        <span
+          >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+        >
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="question">
+        <span>Q.</span>
+        <span>早健会の会員の男女比を教えてください。</span>
+        <div class="fq-btn">
+          <span class="horizontal"></span>
+          <span class="vertical"></span>
+        </div>
+      </div>
+      <div class="answer">
+        <span>A.</span>
+        <span
+          >テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ここまで -->
+
+<!-- コンタクトここから -->
+<section id="contact" class="p-contact">
+  <div class="contact-container">
+    <div class="contact-container-heading">
+      <h1>Contact</h1>
+      <p>お問い合わせ</p>
+      <span class="underline"></span>
+    </div>
+    <p class="form-explanation">
+      体験・入会は、早稲田の公式Instagramもしくは公式Twitterに、「体験したい」「入会したい」
+      というメッセージをDMで送っていただくか、下記フォームよりお問い合わせください。
+      委員会へのお問い合わせもこちらより受け付けております。
+    </p>
+
+    <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse" method="post"> -->
+    <form
+      id="custom-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSd3Xg_shbCITyzkzYpfWrRTMVaN_r1G1Ry2dF79q84PC9IPGg/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="return handleSubmit(event)"
+    >
+      <div class="form-group">
+        <label for="name">お名前/団体名</label>
+        <div class="necessary-label">
+          <h3 class="necessary">必須</h3>
+          <input type="text" name="entry.1773433501" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">メールアドレス</label>
+        <div class="necessary-label">
+          <h3 class="necessary">必須</h3>
+          <input type="text" name="entry.1417418675" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>ご要望</label>
+        <div class="radio-group">
+          <!-- ラジオボタンのラベルが3つの要素が横並びになっているので、画面幅が小さくなった時に折り返すようにしたい -->
+          <input
+            id="join"
+            type="radio"
+            name="entry.160534721"
+            value="入会したい"
+          />
+          <label for="join">入会したい</label>
+
+          <input
+            id="question"
+            type="radio"
+            name='name="entry.160534721"'
+            value="話を聞きたい"
+          />
+          <label for="question">話を聞きたい</label>
+
+          <input
+            id="other"
+            type="radio"
+            name="entry.160534721"
+            value="その他"
+          />
+          <label for="other">その他</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">お問い合わせ内容</label>
+        <div class="necessary-label">
+          <h3 class="necessary">必須</h3>
+          <textarea class="message" name="entry.1778729284" required></textarea>
+        </div>
+      </div>
+
+      <div class="button">
+        <button type="submit">送信する</button>
+      </div>
+    </form>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // デフォルトの画面遷移を防ぐ
+
+        const form = event.target;
+
+        // Google Formsにデータを送信
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+        })
+          //   .then((response) => {
+          // 	if (!response.ok) {
+          // 	  throw new Error('送信エラー: ' + response.status);
+          // 	}
+          // 	// サクセスメッセージを表示
+          // 	document.getElementById('success-message').style.display = 'block';
+          // 	form.reset(); // フォームの内容をリセット
+          //   })
+          .then(() => {
+            // 送信完了後にリダイレクト
+            window.location.href = "http://localhost:4322/thanks";
+          })
+
+          .catch((error) => {
+            console.error(error);
+            alert("送信中にエラーが発生しました。もう一度お試しください。");
+          });
+
+        return false; // フォーム送信を止める
+      }
+    </script>
+  </div>
+</section>
+<!-- コンタクトここまで -->
+
+<!-- フッターここから -->
+<footer></footer>
+<!-- フッターここまで -->
+
+<script>
+  const items = Array.from(document.querySelectorAll(".slider-item"));
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalItems = items.length;
+  let currentIndex = 0;
+  let startX = 0;
+
+  // メディアクエリのブレークポイント
+  const breakpointMobile = window.matchMedia("(max-width: 590px)");
+
+  // スライダーを更新する関数
+  function updateSlider() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "block";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "block";
+  }
+
+  function updateSlider_Mobile() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "none";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "none";
+  }
+
+  // 初期表示
+  currentIndex = 0;
+
+  // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
+  function responsiveUpdateSlider() {
+    if (breakpointMobile.matches) {
+      updateSlider_Mobile();
+    } else {
+      updateSlider();
+    }
+  }
+  responsiveUpdateSlider();
+
+  // ボタンクリックでスライダーを操作
+  function setupButtonNavigation() {
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      responsiveUpdateSlider();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      responsiveUpdateSlider();
+    });
+  }
+
+  // フリック操作でスライダーを操作
+  function setupSwipeNavigation() {
+    const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
+
+    sliderContainer.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX; // タッチの開始位置を記録
+    });
+
+    sliderContainer.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
+      const diffX = endX - startX;
+
+      if (diffX > 50) {
+        // 右フリック: 前のアイテム
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        responsiveUpdateSlider();
+      } else if (diffX < -50) {
+        // 左フリック: 次のアイテム
+        currentIndex = (currentIndex + 1) % totalItems;
+        responsiveUpdateSlider();
+      }
+    });
+  }
+
+  // メディアクエリに基づいてイベントリスナーを切り替える
+  function setupResponsiveNavigation() {
+    if (breakpointMobile.matches) {
+      // モバイルサイズの場合
+      setupSwipeNavigation();
+    } else {
+      // デスクトップサイズの場合
+      setupButtonNavigation();
+    }
+  }
+
+  // ページがロードされたらイベントを設定
+  document.addEventListener("DOMContentLoaded", () => {
+    setupResponsiveNavigation();
+  });
+
+  // ウィンドウサイズ変更時に再設定
+  window.addEventListener("resize", () => {
+    // メディアクエリの状態を再確認
+    responsiveUpdateSlider();
+    setupResponsiveNavigation();
+  });
+
+  document.querySelectorAll(".qa-item").forEach((item) => {
+    const question = item.querySelector(".question");
+    const answer = item.querySelector(".answer");
+    const vertical = item.querySelector(".vertical");
+
+    question.addEventListener("click", () => {
+      item.classList.toggle("open");
+
+      if (item.classList.contains("open")) {
+        answer.style.display = "flex";
+        vertical.style.display = "none";
+      } else {
+        answer.style.display = "none";
+        vertical.style.display = "flex";
+      }
+    });
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const listItems = document.querySelectorAll(".p-topic ul li");
+    const totalItems = listItems.length;
+    let currentIndex = 0; // 初期表示のインデックス
+    let startX = 0;
+
+    // スマホサイズかどうかを判定
+    function isMobileSize() {
+      return window.innerWidth <= 590; // ここでスマホサイズの条件を指定
+    }
+
+    // 初期表示の更新関数
+    function updateDisplay() {
+      listItems.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.classList.add("active");
+          item.style.display = "block"; // 表示
+        } else {
+          item.classList.remove("active");
+          item.style.display = "none"; // 非表示
+        }
+      });
+    }
+
+    // イベントリスナーのセットアップ
+    function setupSwipeEvents() {
+      const ulElement = document.querySelector(".p-topic ul");
+
+      ulElement.addEventListener("touchstart", (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        startX = e.touches[0].clientX; // タッチの開始位置を取得
+      });
+
+      ulElement.addEventListener("touchend", (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        if (diffX > 50) {
+          // 右スワイプ：前のアイテムを表示
+          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        } else if (diffX < -50) {
+          // 左スワイプ：次のアイテムを表示
+          currentIndex = (currentIndex + 1) % totalItems;
+        }
+
+        updateDisplay(); // 表示を更新
+      });
+    }
+
+    // 初期化
+    if (isMobileSize()) {
+      updateDisplay();
+      setupSwipeEvents();
+    }
+
+    // ウィンドウサイズ変更時に再判定
+    window.addEventListener("resize", () => {
+      if (isMobileSize()) {
+        updateDisplay(); // スマホサイズなら表示を更新
+      } else {
+        // スマホサイズ以外では全てのアイテムを表示
+        listItems.forEach((item) => {
+          item.style.display = "block";
+          item.classList.remove("visible");
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+  const items = Array.from(document.querySelectorAll(".slider-item"));
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalItems = items.length;
+  let currentIndex = 0;
+
+  function updateSlider() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "block";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "block";
+  }
+
+  currentIndex = 0;
+  updateSlider();
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateSlider();
+  });
+
+  document.querySelectorAll(".qa-item").forEach((item) => {
+    const question = item.querySelector(".question");
+    const answer = item.querySelector(".answer");
+    const vertical = item.querySelector(".vertical");
+
+    question.addEventListener("click", () => {
+      item.classList.toggle("open");
+
+      if (item.classList.contains("open")) {
+        answer.style.display = "block";
+        vertical.style.display = "none";
+      } else {
+        answer.style.display = "none";
+        vertical.style.display = "block";
+      }
+    });
+  });
+</script>
