@@ -1,7 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import BreadCrumb from "@/components/BreadCrumb.astro";
+import Image from "astro/components/Image.astro";
+import BreadCrumb from "@/components/Breadcrumb.astro";
 import Toc from "@/components/Toc.astro";
+
 import { getBlogs, getBlogDetail } from "@/lib/microcms";
 import dayjs from "dayjs";
 export async function getStaticPaths() {
@@ -14,6 +16,8 @@ export async function getStaticPaths() {
 }
 const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
+import beerImage from "@/assets/images/beer.png";
+import postImage from "@/assets/images/recommend-post-image.png";
 const date = dayjs(blog.publishedDate).format("YYYY.MM.DD");
 
 const title = "";
@@ -22,8 +26,8 @@ const og_image = "";
 ---
 
 <Layout title={title} , description={description} og_image={og_image}>
-  <section class="sokenkai__blogMv">
-    <div class="l-container">
+  <div class="blog-detail-entire-wrapper">
+    <div class="sokenkai__blogMv">
       <BreadCrumb
         items={[
           { text: "TOP", link: "/" },
@@ -31,21 +35,170 @@ const og_image = "";
           { text: blog.title, link: "" },
         ]}
       />
-      <h1>{blog.title}</h1>
-      <p>{date}</p>
-      <img
-        src={blog.featuredImage.url}
-        width={blog.featuredImage.width}
-        height={blog.featuredImage.height}
-        alt="ブログ記事のトップ画像"
-      />
+      <div class="blog-detail-title">
+        <h1>{blog.title}</h1>
+        <p>{blog.publishedAt}</p>
+      </div>
     </div>
-  </section>
 
-  <section id="blogContent" class="p-blogContent">
-    <div class="l-container">
-      <Toc />
-      <div set:html={blog.content} />
-    </div>
-  </section>
+    <section id="blogContent">
+      <div class="l-container">
+        <div class="p-blogContent">
+          <div class="blog-main-content">
+            <img
+              src={blog.featuredImage.url}
+              width={blog.featuredImage.width}
+              height={blog.featuredImage.height}
+              alt="ブログ記事のトップ画像"
+              class="blog-featured-image"
+            />
+            <div class="blog-table-of-contents-wrapper">
+              <h2 class="blog-table-of-contents">目次</h2>
+            </div>
+
+            <img
+              src={blog.featuredImage.url}
+              width={blog.featuredImage.width}
+              height={blog.featuredImage.height}
+              alt="ブログ記事のトップ画像"
+              class="blog-featured-image-md"
+            />
+            <Toc />
+            <div class="blog-detail-content" set:html={blog.content} />
+          </div>
+          <div class="blog-sidemenu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              class="blog-sidemenu-dot"
+            >
+              <path
+                d="M10 5C10 7.76142 7.76142 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5Z"
+                fill="#D9D9D9"></path>
+            </svg>
+            <!-- <div class="blog-sidemenu-dot"></div> -->
+            <p class="blog-sidemenu-title">新着</p>
+            <div class="blog-sidemenu-new-link">
+              <p>2024.08.18</p>
+              <a href="">link</a>
+            </div>
+            <div class="blog-sidemenu-new-link">
+              <p>2024.08.18</p>
+              <a href="">link</a>
+            </div>
+            <div class="blog-sidemenu-new-link">
+              <p>2024.08.18</p>
+              <a href="">linklinklinlinklin</a>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              class="blog-sidemenu-dot"
+            >
+              <path
+                d="M10 5C10 7.76142 7.76142 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5Z"
+                fill="#D9D9D9"></path>
+            </svg>
+            <!-- <div class="blog-sidemenu-dot"></div> -->
+            <p class="blog-sidemenu-title">一覧</p>
+            <div class="blog-sidemenu-list-year">
+              <p class="blog-sidemenu-list-year-title">▶︎ 2023 (5)</p>
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+            </div>
+            <div class="blog-sidemenu-list-year">
+              <p class="blog-sidemenu-list-year-title">▶︎ 2023 (5)</p>
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+              <a href="" class="blog-sidemenu-list-year-link"
+                >歯科検診レポート 2024.08.18</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-detail-recommend-posts">
+          <h2 class="blog-detail-recommend">Recommend</h2>
+          <p class="blog-detail-recommend-subtitle">おすすめの投稿</p>
+          <div class="blog-detail-recommend-post">
+            <Image
+              class="blog-detail-recommend-post-image"
+              src={postImage}
+              alt="おすすめ記事の画像"
+            />
+
+            <div class="blog-detail-recommend-post-text">
+              <p class="blog-detail-recommend-post-text-date">2024.08.18</p>
+              <p class="blog-detail-recommend-post-text-title">
+                歯科検診レポート
+              </p>
+              <p class="blog-detail-recommend-post-text-content">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+              </p>
+              <a href="" class="blog-detail-recommend-post-text-detail"
+                >続きを読む</a
+              >
+            </div>
+          </div>
+          <div class="blog-detail-recommend-post">
+            <Image
+              class="blog-detail-recommend-post-image"
+              src={postImage}
+              alt="おすすめ記事の画像"
+            />
+
+            <div class="blog-detail-recommend-post-text">
+              <p class="blog-detail-recommend-post-text-date">2024.08.18</p>
+              <p class="blog-detail-recommend-post-text-title">
+                歯科検診レポート
+              </p>
+              <p class="blog-detail-recommend-post-text-content">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+              </p>
+              <a href="" class="blog-detail-recommend-post-text-detail"
+                >続きを読む</a
+              >
+            </div>
+          </div>
+          <div class="blog-detail-recommend-post">
+            <Image
+              class="blog-detail-recommend-post-image"
+              src={postImage}
+              alt="おすすめ記事の画像"
+            />
+
+            <div class="blog-detail-recommend-post-text">
+              <p class="blog-detail-recommend-post-text-date">2024.08.18</p>
+              <p class="blog-detail-recommend-post-text-title">
+                歯科検診レポート
+              </p>
+              <p class="blog-detail-recommend-post-text-content">
+                あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・
+              </p>
+              <a href="" class="blog-detail-recommend-post-text-detail"
+                >続きを読む</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
