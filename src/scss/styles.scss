@@ -360,12 +360,19 @@ header {
   background-color: #fff;
   width: 100%;
   height: 95px;
-
+  .hamburger {
+    display: hidden;
+  }
   nav {
     display: flex;
     justify-content: space-between; /* 両端に要素を配置 */
+    .rsp-header-nav {
+      display: none;
+    }
   }
-
+  .rsp-header-menu {
+    display: none;
+  }
   .header-left-side {
     padding-left: 69px;
     padding-top: 22px;
@@ -377,6 +384,9 @@ header {
       font-weight: 400;
       line-height: normal;
       letter-spacing: 8.88px;
+    }
+    br {
+      display: none;
     }
     p {
       color: #71cedf;
@@ -429,20 +439,134 @@ header {
   .header-join::after {
     content: "";
     height: 1px;
-    width: 130px;
+    width: 100%;
     position: absolute;
-    left: 7px;
+    left: 5px;
     bottom: -5px;
     background-color: #f300c3;
   }
   .header-join::before {
     content: "";
     width: 1px;
-    height: 55px;
+    height: 100%;
     background-color: #f300c3;
     position: absolute;
     right: -5px;
     bottom: -5px;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  header {
+    position: relative;
+    background-color: #fff;
+    height: 50px;
+    .header-join {
+      color: #71cedf;
+      border: none;
+    }
+    .header-join::after,
+    .header-join::before {
+      display: none;
+    }
+    .header-join:hover {
+      color: #498999;
+      background-color: #a5d0d8;
+    }
+    .header-join {
+      color: #71cedf;
+      font-family: "Noto Sans JP";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+
+      .header-left-side {
+        padding-left: 16px;
+        padding-top: 8px;
+        p {
+          display: none;
+        }
+        h0 {
+          color: #71cedf;
+          font-family: "Noto Sans JP";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 4.44px;
+        }
+      }
+      li {
+        color: #71cedf;
+        font-family: "Noto Sans JP";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1px;
+        :hover {
+          color: #498999;
+          background-color: #a5d0d8;
+        }
+      }
+    }
+    .hamburger {
+      position: absolute;
+      top: 10px;
+      right: 32px;
+      cursor: pointer;
+      width: 17px;
+      height: 17px;
+      z-index: 10;
+    }
+    .header-nav {
+      display: none;
+    }
+
+    .header-nav.active {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      right: 0px;
+      top: 50px;
+      .header-join {
+        color: #71cedf;
+        font-family: "Noto Sans JP";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1px;
+      }
+    }
+
+    .hamburger span {
+      /*3本の線を作る*/
+      transition: all 0.3s;
+      position: absolute;
+      height: 2px;
+      background: #606060;
+      width: 100%;
+      z-index: 10;
+    }
+    .hamburger span:nth-of-type(1) {
+      /*上の線の位置*/
+      top: 4px;
+    }
+    .hamburger span:nth-of-type(2) {
+      /*真ん中の線の位置*/
+      top: 12px;
+    }
+    .hamburger span:nth-of-type(3) {
+      /*下の線の位置*/
+      top: 20px;
+    }
   }
 }
 
