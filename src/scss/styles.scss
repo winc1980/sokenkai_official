@@ -54,7 +54,7 @@ body {
   text-align: center;
 }
 
-span {
+.container-contact-heading span {
   display: block;
   max-width:324px;
   height: 8px; /* ラインの太さ */
@@ -168,7 +168,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    // overflow: hidden;
     width: 1100px;
     height: 600px;
 
@@ -216,6 +216,14 @@ input {
           border-color: #71cedf;
           padding: 10px;
           height: 240.5px;
+          position: relative;
+
+          a{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 2px;
+          }
 
           time {
             color: #71cedf;
