@@ -392,6 +392,342 @@ body {
     }
   }
 }
+body {
+  margin: 0; /* 不要な余白を削除 */
+  color: #343434;
+  font-family: Noto Sans JP;
+  height: 100vh; /* 画面全体の高さ */
+  background-color: #ffffff; /* 背景色を白に設定 */
+  background-image: linear-gradient(
+      to right,
+      rgba(178, 237, 255, 0.2) 2px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(178, 237, 255, 0.2) 2px, transparent 2px);
+  background-size: 30px 30px; /* グリッドのサイズ */
+}
+
+.form-explanation {
+  text-align: left;
+  width: 864px;
+  margin: 0px auto;
+  font-size: 18px;
+  line-height: 175%;
+  letter-spacing: 10%;
+  margin: 33px auto 39px auto;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.contact-container-heading {
+  text-align: center;
+  h1 {
+    font-size: 64px;
+    color: #343434;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 16px;
+    font-family: poppins;
+    margin-top: 68px;
+  }
+
+  .contact-container-heading p {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.8px;
+    margin-top: -15px;
+  }
+
+  span {
+    display: block;
+    max-width: 324px;
+    height: 8px; /* ラインの太さ */
+    background: #b2edff;
+    margin: 7px auto 0px auto; /* 文字との間隔 */
+  }
+}
+
+// ここからお問い合わせフォーム
+.rsp-form {
+  display: hidden;
+}
+
+.PC-form {
+  margin: 0px auto;
+  border: 5px solid #71cedf;
+  max-width: 1100px;
+  padding: 70px 90px 70px 89px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 250px 2fr;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.necessary-label {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  row-gap: 46px;
+}
+
+.necessary {
+  margin-top: 12px;
+}
+
+label {
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.necessary {
+  width: 40px;
+  color: #343434;
+  background: #b3fcff;
+  width: 50px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 3px 8px 2px 8px;
+}
+
+input {
+  // max-width: 577px;
+  height: 54px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  border-radius: 10px;
+}
+
+.message {
+  // max-width: 577px;
+  height: 168px;
+  background-color: #e6f9ff;
+  border: 1px solid #71cedf;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 18px;
+  gap: 0px 25px;
+  color: #343434;
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-items: center;
+  margin-left: 96px;
+}
+
+// 送信ボタン
+.form-submit-btn {
+  display: flex;
+  margin: 0px auto;
+  color: #32c8ff;
+  border: 1px solid #32c8ff;
+  padding: 11px 61px 10px 61px;
+  margin: 0px auto;
+  background: #fff;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 172.3%;
+  position: relative;
+}
+.form-submit-btn::after {
+  content: "";
+  background-color: #32c8ff;
+  width: 202px;
+  height: 1px;
+  position: absolute;
+  left: 5px;
+  bottom: -5px;
+}
+.form-submit-btn::before {
+  content: "";
+  background-color: #32c8ff;
+  width: 1px;
+  height: 55px;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+
+// ここからレスポンシブ
+@media (max-width: 768px) {
+  .rsp-form-flame {
+    margin: 0px auto;
+    width: 90%;
+    border: 2px solid #71cedf;
+    max-width: 1100px;
+    padding-bottom: 22px;
+  }
+  .PC-form {
+    display: none;
+  }
+  .form-explanation {
+    color: #343434;
+    font-family: "Noto Sans JP";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%; /* 21px */
+    letter-spacing: 1.2px;
+    width: 90%;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .contact-container-heading {
+    text-align: center;
+    h1 {
+      color: #343434;
+      text-align: center;
+      font-family: Nunito;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 6px;
+    }
+
+    .contact-container-heading p {
+      color: #343434;
+      text-align: center;
+      font-family: "Noto Sans JP";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+    span {
+      display: block;
+      width: 245px;
+      height: 3px;
+      background: #b2edff;
+      margin: 7px auto 0px auto; /* 文字との間隔 */
+    }
+  }
+
+  .rsp-form {
+    width: 90%;
+    margin: 0px auto;
+    .rsp-form-submit-btn {
+      display: flex;
+      margin: 0px auto;
+      color: #32c8ff;
+      background: #fff;
+      border: 1px solid #32c8ff;
+      padding: 11px 61px 10px 61px;
+      text-align: center;
+      font-family: "Noto Sans JP";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 172.3%; /* 24.122px */
+      margin: 14px auto 0px auto;
+      position: relative;
+    }
+    .rsp-form-submit-btn::after {
+      content: "";
+      background-color: #32c8ff;
+      width: 180px;
+      height: 1px;
+      position: absolute;
+      left: 3px;
+      bottom: -5px;
+    }
+    .rsp-form-submit-btn::before {
+      content: "";
+      background-color: #32c8ff;
+      width: 1px;
+      height: 46px;
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+    }
+    input {
+      width: 100%;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 5px;
+      border: 1px solid #71cedf;
+      background: #e6f9ff;
+    }
+    textarea {
+      border-radius: 5px;
+      border: 1px solid #71cedf;
+      background: #e6f9ff;
+      width: 100%;
+      height: 120px;
+    }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .radio-btn {
+      label {
+        font-size: 12px;
+      }
+    }
+    #document-true {
+      width: 17px;
+      height: 17px;
+    }
+    #document-maybe {
+      width: 17px;
+      height: 17px;
+    }
+    #document-false {
+      width: 17px;
+      height: 17px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    .necessary {
+      width: 50px;
+      background: #b3fcff;
+      height: 32px;
+      flex-shrink: 0;
+      padding: 0px auto;
+      margin-bottom: 5px;
+      h3 {
+        color: #343434;
+        font-family: "Noto Sans JP";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
+
 
 /* ------------------- トピック一覧ここまで ------------------- */
 
@@ -409,3 +745,4 @@ body {
 }
 
 /* ------------------- トピック記事ここまで ------------------- */
+// ここまでお問い合わせフォーム
