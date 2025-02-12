@@ -1,20 +1,27 @@
 ---
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 const { content } = Astro.props;
-const date = dayjs(content.publishedDate).format('YYYY.MM.DD');
+const date = dayjs(content.publishedDate).format("YYYY.MM.DD");
 console.log(content);
 ---
 
-<!-- map関数で展開 -->
-<a href={"/blog/" + content.id} class="sokenkai__blogcard">
-  <img
-    src={content.featuredImage.url}
-    width={content.featuredImage.width}
-    height={content.featuredImage.height}
-    alt="ブログ記事のトップ画像"
-  />
-  <div class="sokenkai__blogcard__texts">
-    <p>{date}</p>
-    <h3>{content.title}</h3>
-  </div>
-</a>
+<div class="blog-card">
+  <a href={"/blog/" + content.id} class="blog-card-link-wrapper">
+    <img
+      class="blog-card__image"
+      src={content.featuredImage.url}
+      width={content.featuredImage.width}
+      height={content.featuredImage.height}
+      alt={content.title}
+    />
+    <div class="blog-card__content">
+      <div class="blog-card__content_innerwrapper">
+        <p class="blog-card__date">{date}</p>
+        <h3 class="blog-card__title">{content.title}</h3>
+        <p class="blog-card__description">{content.description}</p>
+        <a href={"/blog/" + content.id} class="blog-card__link">続きを読む</a>
+      </div>
+    </div>
+  </a>
+  <br class="blog-card-br" />
+</div>
