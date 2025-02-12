@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 
 import dental_checkup from "@/assets/images/IMG_4519.jpg";
@@ -7,6 +8,7 @@ import beer from "@/assets/images/image 1.png";
 import left_arrow from "@/assets/images/Vector.svg";
 import right_arrow from "@/assets/images/Vector_right.svg";
 
+import Btn from "@/components/Btn.astro";
 import Btn from "@/components/Btn.astro";
 
 const title = "TOP";
@@ -786,7 +788,15 @@ const text = "hello";
   const totalItems = items.length;
   let currentIndex = 0;
   let startX = 0;
+  const items = Array.from(document.querySelectorAll(".slider-item"));
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalItems = items.length;
+  let currentIndex = 0;
+  let startX = 0;
 
+  // メディアクエリのブレークポイント
+  const breakpointMobile = window.matchMedia("(max-width: 590px)");
   // メディアクエリのブレークポイント
   const breakpointMobile = window.matchMedia("(max-width: 590px)");
 
@@ -796,10 +806,25 @@ const text = "hello";
       item.classList.remove("left", "active", "right");
       item.style.display = "none";
     });
+  // スライダーを更新する関数
+  function updateSlider() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
 
     const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
     const rightIndex = (currentIndex + 1) % totalItems;
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
 
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "block";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "block";
+  }
     items[leftIndex].classList.add("left");
     items[leftIndex].style.display = "block";
     items[currentIndex].classList.add("active");
@@ -813,7 +838,14 @@ const text = "hello";
       item.classList.remove("left", "active", "right");
       item.style.display = "none";
     });
+  function updateSlider_Mobile() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
 
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
     const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
     const rightIndex = (currentIndex + 1) % totalItems;
 
@@ -824,10 +856,28 @@ const text = "hello";
     items[rightIndex].classList.add("right");
     items[rightIndex].style.display = "none";
   }
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "none";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "none";
+  }
 
   // 初期表示
   currentIndex = 0;
+  // 初期表示
+  currentIndex = 0;
 
+  // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
+  function responsiveUpdateSlider() {
+    if (breakpointMobile.matches) {
+      updateSlider_Mobile();
+    } else {
+      updateSlider();
+    }
+  }
+  responsiveUpdateSlider();
   // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
   function responsiveUpdateSlider() {
     if (breakpointMobile.matches) {
@@ -844,13 +894,27 @@ const text = "hello";
       currentIndex = (currentIndex + 1) % totalItems;
       responsiveUpdateSlider();
     });
+  // ボタンクリックでスライダーを操作
+  function setupButtonNavigation() {
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      responsiveUpdateSlider();
+    });
 
     prevBtn.addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + totalItems) % totalItems;
       responsiveUpdateSlider();
     });
   }
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      responsiveUpdateSlider();
+    });
+  }
 
+  // フリック操作でスライダーを操作
+  function setupSwipeNavigation() {
+    const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
   // フリック操作でスライダーを操作
   function setupSwipeNavigation() {
     const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
@@ -863,6 +927,17 @@ const text = "hello";
       const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
       const diffX = endX - startX;
 
+      if (diffX > 50) {
+        // 右フリック: 前のアイテム
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        responsiveUpdateSlider();
+      } else if (diffX < -50) {
+        // 左フリック: 次のアイテム
+        currentIndex = (currentIndex + 1) % totalItems;
+        responsiveUpdateSlider();
+      }
+    });
+  }
       if (diffX > 50) {
         // 右フリック: 前のアイテム
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
@@ -916,7 +991,128 @@ const text = "hello";
     });
   });
   document.addEventListener("DOMContentLoaded", () => {
-    const sliderItems = document.querySelectorAll(".slider-item div p");
-    const readMoreLinks = document.querySelectorAll(".slider-item div a");
+    const listItems = document.querySelectorAll(".p-topic ul li");
+    const totalItems = listItems.length;
+    let currentIndex = 0; // 初期表示のインデックス
+    let startX = 0;
+
+    // スマホサイズかどうかを判定
+    function isMobileSize() {
+      return window.innerWidth <= 590; // ここでスマホサイズの条件を指定
+    }
+
+    // 初期表示の更新関数
+    function updateDisplay() {
+      listItems.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.classList.add("active");
+          item.style.display = "block"; // 表示
+        } else {
+          item.classList.remove("active");
+          item.style.display = "none"; // 非表示
+        }
+      });
+    }
+
+    // イベントリスナーのセットアップ
+    function setupSwipeEvents() {
+      const ulElement = document.querySelector(".p-topic ul");
+
+      ulElement.addEventListener("touchstart", (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        startX = e.touches[0].clientX; // タッチの開始位置を取得
+      });
+
+      ulElement.addEventListener("touchend", (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        if (diffX > 50) {
+          // 右スワイプ：前のアイテムを表示
+          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        } else if (diffX < -50) {
+          // 左スワイプ：次のアイテムを表示
+          currentIndex = (currentIndex + 1) % totalItems;
+        }
+
+        updateDisplay(); // 表示を更新
+      });
+    }
+
+    // 初期化
+    if (isMobileSize()) {
+      updateDisplay();
+      setupSwipeEvents();
+    }
+
+    // ウィンドウサイズ変更時に再判定
+    window.addEventListener("resize", () => {
+      if (isMobileSize()) {
+        updateDisplay(); // スマホサイズなら表示を更新
+      } else {
+        // スマホサイズ以外では全てのアイテムを表示
+        listItems.forEach((item) => {
+          item.style.display = "block";
+          item.classList.remove("visible");
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+  const items = Array.from(document.querySelectorAll(".slider-item"));
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalItems = items.length;
+  let currentIndex = 0;
+
+  function updateSlider() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "block";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "block";
+  }
+
+  currentIndex = 0;
+  updateSlider();
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateSlider();
+  });
+
+  document.querySelectorAll(".qa-item").forEach((item) => {
+    const question = item.querySelector(".question");
+    const answer = item.querySelector(".answer");
+    const vertical = item.querySelector(".vertical");
+
+    question.addEventListener("click", () => {
+      item.classList.toggle("open");
+
+      if (item.classList.contains("open")) {
+        answer.style.display = "block";
+        vertical.style.display = "none";
+      } else {
+        answer.style.display = "none";
+        vertical.style.display = "block";
+      }
+    });
   });
 </script>
