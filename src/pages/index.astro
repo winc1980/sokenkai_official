@@ -1,8 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
-
+import { getNews } from "@/lib/microcms.ts";
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
+const response = await getNews({
+  fields: ["id", "title", "description", "publishedDate", "tag" ,"content"],
+});
+import NewsCard from "@/components/NewsCard.astro"
 import beer from '@/assets/images/image 1.png';
 import left_arrow from '@/assets/images/Vector.svg';
 import right_arrow from '@/assets/images/Vector_right.svg';
@@ -78,45 +82,38 @@ const text = "hello";
 
 	<!-- newsここから -->
 	<section id="news" class="p-news">
-		<img class="news-deco1" src="public/assets/images/Ellipse 22.png" alt="">
-		<img class="news-deco2" src="public/assets/images/Group 41.png" alt="">
-		<img class="news-deco3" src="public/assets/images/Group 40.png" alt="">
-		<div class="p-l-container">
-			<div class="title">
-				<h2>News</h2>
-				<p>ニュース</p>
-			</div>
-			<div class="news-tugdate">
-				<p class="tug">タグ</p>
-				<p class="date">2024.08.18</p>
-			</div>
-			<p class="p-news-title">早健会のHPを公開しました</p>
-			<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-			<div class="news-tugdate">
-				<p class="tug">タグ</p>
-				<p class="date">2024.08.18</p>
-			</div>
-			<p class="p-news-title">早健会のHPを公開しました</p>
-			<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-				<div class="news-tugdate">
-					<p class="tug">タグ</p>
-					<p class="date">2024.08.18</p>
-				</div>
-				<p class="p-news-title">早健会のHPを公開しました</p>
-				<p class="p-news-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-			<a href="">VIEW MORE</a>
+          <div class="news-title">
+			<h2>News</h2>
+			<p>ニュース</p>
 		</div>
+          <div class="top-p-newsList__wrapper">
+               <!-- map関数で展開する -->
+               {
+                 response.contents.map((content: any) => (
+                 <NewsCard content={content} />
+                 ))
+               }
+          </div>
+
+          <div class="top-vm-bt-center">
+               <a class="top-vm-bt" href="/news/">VIEW MORE</a>
+          </div>
+
+
 	</section>
 	<!-- ニュースここまで -->
 
 	<!-- aboutここから -->
 	 <section id="about" class="p-about">
 		<div class="p-l-container">
-		<div class="title">
+		<div class="about-title">
 			<h2>About</h2>
 			<p>学健会とは</p>
 		</div>
-		<p class="p-about-detail">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+		<p class="p-about-detail">学生早健会とは、早大生の健康増進のために様々なサービスを提供する学内設置の委員会です。サークルとは異なり、学生のために活動するという観点から学生主体の保健委員会のような団体となっています！本委員会は、様々な学部に所属する学生で構成されています(部室は戸山キャンパス学生会館にありますが、所沢キャンパスに所属する学生も本委員会で活動しています)。そのため委員会内で異なる学部で異なる考え方を持つ人と交流することができるのもグッドなポイントです。
+               学校側や生協の方々、外部の方々の協力を得ながらも学生主体で他の委員と協力しながらイベントを実施しています。そのため企画力、計画力、コミュニケーション能力、協調力を養うことができます！イベントを企画し実行していく過程では時に物事が予想通りに進まないことがありますが、それでも委員同士で役割分担しそれを乗り越えた時の達成感、経験はとても貴重なものになります！
+               「健康に興味がある！」、「早大生のために何かしたい！」、「イベントを学生主体で企画・運営してみたい！」という人は活動にとてもやりがいを感じることができます！学部・学年問わず年中新規委員を募集しているので、ぜひご連絡ください！
+               </p>
 		</div>
 	 </section>
 	<!-- aboutここまで -->
@@ -159,6 +156,40 @@ const text = "hello";
 		
 			</div>
 		</div>
+
+          <div class="grid-activity2">
+			<div class="activity_bg_img2">
+				<img src="src/assets/images/Group 75.png" alt="experience-parts">
+					<p class="activity-subheading2">100円朝食</p>
+						<p class="actuivity-text2">時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+						近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。
+						</p>
+			</div>
+
+			<div class="activity_bg_img2">
+				<img src="src/assets/images/Group 75.png" alt="experience-parts">
+					<p class="activity-subheading2">歯科検診</p>
+						<p class="actuivity-text2">毎年、秋学期に4キャンパス（早稲田・西早稲田・戸山・所沢）で実施。当日は検診に合わせ、ブラッシング指導（模型を使った指導）も同時に行われる。受診料無料、事前申込不要。
+						</p>
+			</div>
+
+			<div class="activity_bg_img2">
+				<img src="src/assets/images/Group 75.png" alt="experience-parts">
+					<p class="activity-subheading2">健康フェスタ</p>
+						<p class="actuivity-text2">「健康」と言っても幅広い。「肉体的」、「精神的」、「社会的」な健康がある。本イベントでは、そんな健康に対してアプローチをし、セミナー等を実施。2023年度は、「心の病気」、「アンガーマネジメント」、「うつ病」に関するセミナーを11月に開催。
+						</p>
+			</div>
+
+			<div class="activity_bg_img2">
+				<img src="src/assets/images/Group 75.png" alt="experience-parts">
+				<p class="activity-subheading2">委員会内イベント</p>
+					<p class="actuivity-text2">時間がない、金銭的に厳しいなどの理由から、朝食を抜きがちな大学生に、「朝食を通して、健康になってもらおう！」という趣旨で実施する本イベント。
+						近年、毎年6月、2週間に渡り実施。2024年度は6月18日（火）〜 6月21日（金）に大隈ガーデンハウスにて、6月25日（火）〜 6月28日（金）に理工カフェテリアにて7:50~8:45（8:30受付終了、8:45閉店）で開催。</p> 
+		
+			</div>
+		</div>
+
+
 
 		</section>
 

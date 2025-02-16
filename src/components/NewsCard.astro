@@ -15,7 +15,9 @@ console.log(content)
     <figure></figure>
     <div>
       <h3>{content.title}</h3>
-      <div set:html={content.content}></div>
+      <div class="content-description" set:html={content.description}></div>
     </div>
   </div>
 </a>
+
+
