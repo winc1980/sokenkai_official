@@ -19,6 +19,7 @@ const title = "TOP";
 const description = "";
 const og_image = "";
 const text = "hello";
+import { getBlogs, getBlogDetail } from "@/lib/microcms";
 ---
 
 <Layout title={title} , description={description}>
@@ -42,6 +43,8 @@ const text = "hello";
 	<!-- ファーストビューここまで -->
 
 	<!--カルーセルここから  -->
+
+     
 	<div class="p-fv-carousel">
 		<div class="scroll_track">
 		  <ul class="scroll_inner">
@@ -86,6 +89,7 @@ const text = "hello";
 			<h2>News</h2>
 			<p>ニュース</p>
 		</div>
+
           <div class="top-p-newsList__wrapper">
                <!-- map関数で展開する -->
                {
@@ -108,7 +112,7 @@ const text = "hello";
 		<div class="p-l-container">
 		<div class="about-title">
 			<h2>About</h2>
-			<p>学健会とは</p>
+			<p>早健会とは</p>
 		</div>
 		<p class="p-about-detail">学生早健会とは、早大生の健康増進のために様々なサービスを提供する学内設置の委員会です。サークルとは異なり、学生のために活動するという観点から学生主体の保健委員会のような団体となっています！本委員会は、様々な学部に所属する学生で構成されています(部室は戸山キャンパス学生会館にありますが、所沢キャンパスに所属する学生も本委員会で活動しています)。そのため委員会内で異なる学部で異なる考え方を持つ人と交流することができるのもグッドなポイントです。
                学校側や生協の方々、外部の方々の協力を得ながらも学生主体で他の委員と協力しながらイベントを実施しています。そのため企画力、計画力、コミュニケーション能力、協調力を養うことができます！イベントを企画し実行していく過程では時に物事が予想通りに進まないことがありますが、それでも委員同士で役割分担しそれを乗り越えた時の達成感、経験はとても貴重なものになります！
@@ -120,7 +124,7 @@ const text = "hello";
 
 	<!-- アクティビティここから -->
 	<section id="activity" class="p-activity">
-		<div class="title">
+		<div class="activity-title">
 			<h2>Activity</h2>
 			<p>活動内容</p>
 		</div>
@@ -215,28 +219,31 @@ const text = "hello";
 
 	<!-- エクスペリエンスここから -->
 	<section id="experience" class="p-experience">
-		<img src="public/assets/images/Ellipse 19.png" alt="" class="circle">
-		<div class="p-l-container">
-			<div class="title">
+
+
+
+			<div class="experience-title">
 				<h2>Experience</h2>
 				<p>得られる経験</p>
 			</div>
-			
-			<div class="experient-content">
-				<img src="public/assets/images/Vector (2).png" alt="">
-				<div class="exp1">
-					<p class="subtitle">企業と関わる経験</p>
-					<p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
-				</div>
-			</div>
-			<div class="experient-content">
-				<img src="public/assets/images/Vector(3).png" alt="">
-				<div class="exp1">
-					<p class="subtitle">イベントの企画運営</p>
-					<p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
-				</div>
-			</div>
-		</div>
+               <div class="experience-grid">
+                    <img src="src/assets/images/experience_decplation.png" alt="circle" class="circle">
+                    <div class="p-l-container">
+                    <div class="experient-content">
+                         <div class="exp1">
+                              <p class="subtitle">企業と関わる経験</p>
+                              <p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+                         </div>
+                    </div>
+                    <div class="experient-content">
+                         <div class="exp1">
+                              <p class="subtitle">イベントの企画運営</p>
+                              <p class="exp-detail">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、</p>
+                         </div>
+                    </div>
+                    </div>
+               </div>
+
 	</section>
 	<!-- エクスペリエンスここまで -->
 
