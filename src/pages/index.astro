@@ -93,7 +93,7 @@ import { getBlogs, getBlogDetail } from "@/lib/microcms";
           <div class="top-p-newsList__wrapper">
                <!-- map関数で展開する -->
                {
-                 response.contents.map((content: any) => (
+               response.contents.slice(0, 3).map((content: any) => (
                  <NewsCard content={content} />
                  ))
                }
