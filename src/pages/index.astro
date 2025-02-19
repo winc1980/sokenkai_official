@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import { getNews } from "@/lib/microcms.ts";
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
+import decolation1 from '@/assets/images/Group 76.png';
+import decolation2 from '@/assets/images/Group 41.png';
+import decolation3 from '@/assets/images/Group 40.png';
+import decolation4 from '@/assets/images/Ellipse 22.png';
 const response = await getNews({
   fields: ["id", "title", "description", "publishedDate", "tag" ,"content"],
 });
@@ -30,7 +34,7 @@ import { getBlogs, getBlogDetail } from "@/lib/microcms";
 	<!-- ファーストビューここから -->
 	<section id="fv" class="p-fv">
 		<div class="p-fv-backimg">
-			<img src="public/assets/images/decolation.png" alt="">
+			<img src="public/assets/images/decolation.png" alt="ファーストビューのデコレーション">
 		<div class="text-overlay">
 		<h1>早稲田大学<br>
 			学生健康増進互助会</h1>
@@ -85,6 +89,8 @@ import { getBlogs, getBlogDetail } from "@/lib/microcms";
 
 	<!-- newsここから -->
 	<section id="news" class="p-news">
+          <Image class="decolation3" src={decolation3} alt="デコレーション3" />
+          <Image class="decolation1" src={decolation1} alt="デコレーション1" />
           <div class="news-title">
 			<h2>News</h2>
 			<p>ニュース</p>
@@ -109,6 +115,8 @@ import { getBlogs, getBlogDetail } from "@/lib/microcms";
 
 	<!-- aboutここから -->
 	 <section id="about" class="p-about">
+          <Image class="decolation2" src={decolation2} alt="デコレーション2" />
+          <Image class="decolation4" src={decolation4} alt="デコレーション4" />
 		<div class="p-l-container">
 		<div class="about-title">
 			<h2>About</h2>
@@ -228,7 +236,7 @@ import { getBlogs, getBlogDetail } from "@/lib/microcms";
 			</div>
                <div class="experience-grid">
                     <img src="src/assets/images/experience_decplation.png" alt="circle" class="circle">
-                    <div class="p-l-container">
+                    <div class="l-container">
                     <div class="experient-content">
                          <div class="exp1">
                               <p class="subtitle">企業と関わる経験</p>
