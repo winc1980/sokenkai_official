@@ -174,7 +174,7 @@ body {
   }
 }
 
-.p-news-title {
+.ponews-title {
   font-size: 24px;
   padding: 19px 0;
 }
@@ -196,6 +196,8 @@ body {
 .top-p-newsList__wrapper {
   margin: 0 auto;
   width: 70%;
+  /* 3つ目のNewsCardにのみ適用 */
+
   .sokenkai__newscard {
     figure {
       display: none;
@@ -214,6 +216,7 @@ body {
       display: none;
     }
   }
+
 }
 
 .top-vm-bt-center {
@@ -538,8 +541,6 @@ body {
       letter-spacing: 6.4px;
       top: 353px;
       left: 53px;
-      width: 100%;
-      height: 100%;
       z-index: +3;
     }
     .actuivity-text {
@@ -673,7 +674,7 @@ body {
     display: block;
     content: "";
     background-color: #b2edff;
-    width: 245px;
+    width: 464px;
     height: 8px;
     left: 0px;
     right: 0px;
@@ -688,6 +689,7 @@ body {
     grid-template-columns: 1fr 3fr;
   }
   .subtitle {
+    margin-top: 83px;
     font-size: 40px;
     letter-spacing: 0.75rem;
     padding-bottom: 38px;
@@ -754,6 +756,7 @@ body {
       margin-top: 0px;
     }
     .subtitle {
+      margin-top: 0px;
       color: #343434;
       font-family: "Noto Sans JP";
       font-size: 16px;
@@ -787,8 +790,52 @@ body {
 
 // ここからお問い合わせフォーム
 @media (min-width: $breakpoint-md) {
+  .contact-title {
+    margin-top: 120px;
+    text-align: center;
+    line-height: 3rem;
+    letter-spacing: 0.75rem;
+    margin-bottom: 24px;
+    h2 {
+      color: #343434;
+      text-align: center;
+      font-family: Nunito;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 6px;
+      padding-top: 33px;
+    }
+
+    p {
+      position: relative;
+      color: #343434;
+      text-align: center;
+      font-family: "Noto Sans JP";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      letter-spacing: 3px;
+
+    }
+    p::after {
+      display: block;
+      content: "";
+      background-color: #b2edff;
+      width: 324px;
+      height: 8px;
+      left: 0px;
+      right: 0px;
+      bottom: -11px;
+      margin: auto;
+      position: absolute;
+    }
+  }
   .form-explanation {
     color: #343434;
+    width:864px;
+    text-align: left;
+    margin:39px auto 34px auto;
     font-family: "Noto Sans JP";
     font-size: 18px;
     font-style: normal;
@@ -799,38 +846,6 @@ body {
       text-decoration: underline;
     }
   }
-  .contact-container-heading {
-    text-align: center;
-    h1 {
-      color: #343434;
-      text-align: center;
-      font-family: Nunito;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: 6px;
-    }
-
-    .contact-container-heading p {
-      color: #343434;
-      text-align: center;
-      font-family: "Noto Sans JP";
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: normal;
-      letter-spacing: 3px;
-    }
-    span {
-      display: block;
-      width: 245px;
-      height: 3px;
-      background: #b2edff;
-      margin: 7px auto 0px auto; /* 文字との間隔 */
-    }
-  }
-
   .rsp-form {
     display: none;
   }
@@ -904,6 +919,64 @@ body {
 }
 // お問い合わせフォームレスポンシブ
 @media (max-width: $breakpoint-md) {
+  .contact-title {
+    margin-top: 50px;
+    text-align: center;
+    line-height: 3rem;
+    letter-spacing: 0.75rem;
+    margin-bottom: 24px;
+    h2 {
+      color: #343434;
+      text-align: center;
+      font-family: Nunito;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 6px;
+    }
+
+    p {
+      position: relative;
+      color: #343434;
+      text-align: center;
+      font-family: "Noto Sans JP";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+    p::after {
+      display: block;
+      content: "";
+      background-color: #b2edff;
+      width: 245px;
+      height: 3px;
+      left: 0px;
+      right: 0px;
+      bottom: -3px;
+      margin: auto;
+      position: absolute;
+    }
+  }
+    .form-explanation {
+      color: #343434;
+      width:90%;
+      text-align: left;
+      margin:0px auto;
+      font-family: "Noto Sans JP";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 175%; /* 31.5px */
+      letter-spacing: 1.8px;
+      margin-bottom: 10px;
+      a {
+        text-decoration: underline;
+      }
+    }
+  
   .rsp-form-flame {
     margin: 0px auto;
     width: 90%;
@@ -914,49 +987,9 @@ body {
   .PC-form {
     display: none;
   }
-  .form-explanation {
-    color: #343434;
-    font-family: "Noto Sans JP";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 175%; /* 21px */
-    letter-spacing: 1.2px;
-    width: 90%;
-    a {
-      text-decoration: underline;
-    }
-  }
-  .contact-container-heading {
-    text-align: center;
-    h1 {
-      color: #343434;
-      text-align: center;
-      font-family: Nunito;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: 6px;
-    }
-    .contact-container-heading p {
-      color: #343434;
-      text-align: center;
-      font-family: "Noto Sans JP";
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: normal;
-      letter-spacing: 3px;
-    }
-    span {
-      display: block;
-      width: 245px;
-      height: 3px;
-      background: #b2edff;
-      margin: 7px auto 0px auto; /* 文字との間隔 */
-    }
-  }
+
+  
+  
 
   .rsp-form {
     width: 90%;
@@ -1105,51 +1138,7 @@ body {
   background-size: 30px 30px; /* グリッドのサイズ */
 }
 
-.form-explanation {
-  text-align: left;
-  width: 864px;
-  margin: 0px auto;
-  font-size: 18px;
-  line-height: 175%;
-  letter-spacing: 10%;
-  margin: 33px auto 39px auto;
-  a {
-    text-decoration: underline;
-  }
-}
 
-.contact-container-heading {
-  text-align: center;
-  h1 {
-    font-size: 64px;
-    color: #343434;
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 16px;
-    font-family: poppins;
-    margin-top: 68px;
-  }
-
-  .contact-container-heading p {
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 8.8px;
-    margin-top: -15px;
-  }
-
-  span {
-    display: block;
-    max-width: 324px;
-    height: 8px; /* ラインの太さ */
-    background: #b2edff;
-    margin: 7px auto 0px auto; /* 文字との間隔 */
-  }
-}
 
 // ここにCSSかく
 
