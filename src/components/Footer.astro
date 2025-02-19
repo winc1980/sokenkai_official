@@ -1,7 +1,27 @@
 ---
+import { Image } from "astro:assets";
+import footer_x_icon from "@/assets/images/footer_x_icon.png"
+import footer_insta_icon from "@/assets/images/footer_instagram_icon.png"
 
 ---
 
 <footer>
+    <div class="footer-comtent">
+        <ul class="footer-nav" id="footer-menu">
+            <li><a href="/">トップ</a></li>
+            <li><a href="/news/">ニュース</a></li>
+            <li><a href="/blog/">ブログ</a></li>
+            <li><a href="/topics/">記事</a></li>
+            <li><a href="https://x.com/soukenkai_wsd"><Image class="header_x_icon"src={footer_x_icon}alt="xのアイコン"/></a></li>
+            <li><a href="https://www.instagram.com/soukenkai_waseda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><Image class="header_insta_icon"src={footer_insta_icon} alt="insta"></a></li>
+        </ul>
+
+        <p>@ 2024 Copyright: 早健会</p>
+    </div>
+
+    <div class="rsp-footer">
+        <p>@ 2024 Copyright: 早健会</p>
+    </div>
+
 
 </footer>
