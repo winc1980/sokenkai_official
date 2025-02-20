@@ -6,13 +6,16 @@ console.log(content);
 ---
 
 <a href={"/topics/" + content.id} class="sokenkai__topiccard">
-  <img
-    src={content.featuredImage.url}
-    width={content.featuredImage.width}
-    height={content.featuredImage.height}
-    alt="トピック記事のバナー画像"
-  />
-      <p>{date}</p>
-      <h3>{content.title}</h3>
+    <img class="topiccard_img"
+      src={content.featuredImage.url}
+      width={content.featuredImage.width}
+      height={content.featuredImage.height}
+      alt="トピック記事のバナー画像"
+    />
+    <div class="sokenkai__topiccard_text">
+        <p class="topiccard_date">{date}</p>
+        <h3 class="topiccard_title">{content.title}</h3>
+    </div>
+  </div>
   </div>
 </a>
