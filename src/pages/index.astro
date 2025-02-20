@@ -689,292 +689,236 @@ const text = "hello";
 <!-- フッターここまで -->
 </Layout>
 <script>
-const items = Array.from(document.querySelectorAll(".slider-item"));
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const totalItems = items.length;
-let currentIndex = 0;
-let startX = 0;
-
-// メディアクエリのブレークポイント
-const breakpointMobile = window.matchMedia("(max-width: 590px)");
-
-// スライダーを更新する関数
-function updateSlider() {
-  items.forEach((item) => {
-    item.classList.remove("left", "active", "right");
-    item.style.display = "none";
-  });
-
-  const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-  const rightIndex = (currentIndex + 1) % totalItems;
-
-  items[leftIndex].classList.add("left");
-  items[leftIndex].style.display = "block";
-  items[currentIndex].classList.add("active");
-  items[currentIndex].style.display = "block";
-  items[rightIndex].classList.add("right");
-  items[rightIndex].style.display = "block";
-}
-
-function updateSlider_Mobile() {
-  items.forEach((item) => {
-    item.classList.remove("left", "active", "right");
-    item.style.display = "none";
-  });
-
-  const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-  const rightIndex = (currentIndex + 1) % totalItems;
-
-  items[leftIndex].classList.add("left");
-  items[leftIndex].style.display = "none";
-  items[currentIndex].classList.add("active");
-  items[currentIndex].style.display = "block";
-  items[rightIndex].classList.add("right");
-  items[rightIndex].style.display = "none";
-}
-
-// 初期表示
-currentIndex = 0;
-
-// スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
-function responsiveUpdateSlider() {
-  if (breakpointMobile.matches) {
-    updateSlider_Mobile();
-  } else {
-    updateSlider();
+  const items = Array.from(document.querySelectorAll(".slider-item"));
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalItems = items.length;
+  let currentIndex = 0;
+  let startX = 0;
+  
+  // メディアクエリのブレークポイント
+  const breakpointMobile = window.matchMedia("(max-width: 590px)");
+  
+  // スライダーを更新する関数
+  function updateSlider() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+  
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+  
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "block";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "block";
   }
-}
-responsiveUpdateSlider();
-
-// ボタンクリックでスライダーを操作
-function setupButtonNavigation() {
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % totalItems;
-    responsiveUpdateSlider();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    responsiveUpdateSlider();
-  });
-}
-
-// フリック操作でスライダーを操作
-function setupSwipeNavigation() {
-  const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
-
-  sliderContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX; // タッチの開始位置を記録
-  });
-
-  sliderContainer.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
-    const diffX = endX - startX;
-
-    if (diffX > 50) {
-      // 右フリック: 前のアイテム
-      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-      responsiveUpdateSlider();
-    } else if (diffX < -50) {
-      // 左フリック: 次のアイテム
+  
+  function updateSlider_Mobile() {
+    items.forEach((item) => {
+      item.classList.remove("left", "active", "right");
+      item.style.display = "none";
+    });
+  
+    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const rightIndex = (currentIndex + 1) % totalItems;
+  
+    items[leftIndex].classList.add("left");
+    items[leftIndex].style.display = "none";
+    items[currentIndex].classList.add("active");
+    items[currentIndex].style.display = "block";
+    items[rightIndex].classList.add("right");
+    items[rightIndex].style.display = "none";
+  }
+  
+  // 初期表示
+  // currentIndex = 0;
+  
+  // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
+  function responsiveUpdateSlider() {
+    if (breakpointMobile.matches) {
+      updateSlider_Mobile();
+    } else {
+      updateSlider();
+    }
+  }
+  responsiveUpdateSlider();
+  
+  // ボタンクリックでスライダーを操作
+  function setupButtonNavigation() {
+    nextBtn.addEventListener("click", () => {
       currentIndex = (currentIndex + 1) % totalItems;
       responsiveUpdateSlider();
-    }
-  });
-}
-
-// メディアクエリに基づいてイベントリスナーを切り替える
-function setupResponsiveNavigation() {
-  if (breakpointMobile.matches) {
-    // モバイルサイズの場合
-    setupSwipeNavigation();
-  } else {
-    // デスクトップサイズの場合
-    setupButtonNavigation();
-  }
-}
-
-// ページがロードされたらイベントを設定
-document.addEventListener("DOMContentLoaded", () => {
-  setupResponsiveNavigation();
-});
-
-// ウィンドウサイズ変更時に再設定
-window.addEventListener("resize", () => {
-  // メディアクエリの状態を再確認
-  responsiveUpdateSlider();
-  setupResponsiveNavigation();
-});
-
-
-
-document.querySelectorAll('.qa-item').forEach(item => {
-const question = item.querySelector('.question');
-const answer = item.querySelector('.answer');
-const vertical = item.querySelector('.vertical')
-
-question.addEventListener('click', () => {
-     item.classList.toggle('open');
-
-     if (item.classList.contains('open')) {
-          answer.style.display = 'flex';
-          vertical.style.display = 'none';
-     } else {
-          answer.style.display = 'none';
-          vertical.style.display = 'flex';
-     }
-});
-});
-document.addEventListener("DOMContentLoaded", () => {
-     const sliderItems = document.querySelectorAll(".slider-item div p");
-     const readMoreLinks = document.querySelectorAll(".slider-item div a");
-
-     sliderItems.forEach((item, index) => {
-          const maxLength = 125;
-          const fullText = item.textContent.trim();
-
-          if (fullText.length > maxLength) {
-               const truncatedText = fullText.substring(0, maxLength);
-               item.innerHTML = `${truncatedText}<span>・・・</span>`;
-
-               if (readMoreLinks[index]) {
-                    readMoreLinks[index].style.display = 'block';
-               }
-          }
-     });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const listItems = document.querySelectorAll('.p-topic ul li');
-  const totalItems = listItems.length;
-  let currentIndex = 0; // 初期表示のインデックス
-  let startX = 0;
-
-  // スマホサイズかどうかを判定
-  function isMobileSize() {
-    return window.innerWidth <= 590; // ここでスマホサイズの条件を指定
-  }
-
-  // 初期表示の更新関数
-  function updateDisplay() {
-    listItems.forEach((item, index) => {
-      if (index === currentIndex) {
-        item.classList.add('active');
-        item.style.display = 'block'; // 表示
-      } else {
-        item.classList.remove('active');
-        item.style.display = 'none'; // 非表示
-      }
+    });
+  
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      responsiveUpdateSlider();
     });
   }
-
-  // イベントリスナーのセットアップ
-  function setupSwipeEvents() {
-    const ulElement = document.querySelector('.p-topic ul');
-
-    ulElement.addEventListener('touchstart', (e) => {
-      if (!isMobileSize()) return; // スマホサイズ以外では動作させない
-      startX = e.touches[0].clientX; // タッチの開始位置を取得
+  
+  // フリック操作でスライダーを操作
+  function setupSwipeNavigation() {
+    const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
+  
+    sliderContainer.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX; // タッチの開始位置を記録
     });
-
-    ulElement.addEventListener('touchend', (e) => {
-      if (!isMobileSize()) return; // スマホサイズ以外では動作させない
-      const endX = e.changedTouches[0].clientX;
+  
+    sliderContainer.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
       const diffX = endX - startX;
-
+  
       if (diffX > 50) {
-        // 右スワイプ：前のアイテムを表示
+        // 右フリック: 前のアイテム
         currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        responsiveUpdateSlider();
       } else if (diffX < -50) {
-        // 左スワイプ：次のアイテムを表示
+        // 左フリック: 次のアイテム
         currentIndex = (currentIndex + 1) % totalItems;
+        responsiveUpdateSlider();
       }
-
-      updateDisplay(); // 表示を更新
     });
   }
-
-  // 初期化
-  if (isMobileSize()) {
-    updateDisplay();
-    setupSwipeEvents();
-  }
-
-  // ウィンドウサイズ変更時に再判定
-  window.addEventListener('resize', () => {
-    if (isMobileSize()) {
-      updateDisplay(); // スマホサイズなら表示を更新
+  
+  // メディアクエリに基づいてイベントリスナーを切り替える
+  function setupResponsiveNavigation() {
+    if (breakpointMobile.matches) {
+      // モバイルサイズの場合
+      setupSwipeNavigation();
     } else {
-      // スマホサイズ以外では全てのアイテムを表示
-      listItems.forEach((item) => {
-        item.style.display = 'block';
-        item.classList.remove('visible');
+      // デスクトップサイズの場合
+      setupButtonNavigation();
+    }
+  }
+  
+  // ページがロードされたらイベントを設定
+  document.addEventListener("DOMContentLoaded", () => {
+    setupResponsiveNavigation();
+  });
+  
+  // ウィンドウサイズ変更時に再設定
+  window.addEventListener("resize", () => {
+    // メディアクエリの状態を再確認
+    responsiveUpdateSlider();
+    setupResponsiveNavigation();
+  });
+  
+  
+  // ここからQA
+  document.querySelectorAll('.qa-item').forEach(item => {
+  const question = item.querySelector('.question');
+  const answer = item.querySelector('.answer');
+  const vertical = item.querySelector('.vertical')
+  
+  question.addEventListener('click', () => {
+       item.classList.toggle('open');
+  
+       if (item.classList.contains('open')) {
+            answer.style.display = 'flex';
+            vertical.style.display = 'none';
+       } else {
+            answer.style.display = 'none';
+            vertical.style.display = 'flex';
+       }
+  });
+  });
+  // ここまでQA
+
+  // ここから続きを読む
+  document.addEventListener("DOMContentLoaded", () => {
+       const sliderItems = document.querySelectorAll(".slider-item div p");
+       const readMoreLinks = document.querySelectorAll(".slider-item div a");
+  
+       sliderItems.forEach((item, index) => {
+            const maxLength = 125;
+            const fullText = item.textContent.trim();
+  
+            if (fullText.length > maxLength) {
+                 const truncatedText = fullText.substring(0, maxLength);
+                 item.innerHTML = `${truncatedText}<span>・・・</span>`;
+  
+                 if (readMoreLinks[index]) {
+                      readMoreLinks[index].style.display = 'block';
+                 }
+            }
+       });
+  });
+  // ここまで続きを読む
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const listItems = document.querySelectorAll('.p-topic ul li');
+    const totalItems = listItems.length;
+    let currentIndex = 0; // 初期表示のインデックス
+    let startX = 0;
+  
+    // スマホサイズかどうかを判定
+    function isMobileSize() {
+      return window.innerWidth <= 590; // ここでスマホサイズの条件を指定
+    }
+  
+    // 初期表示の更新関数
+    function updateDisplay() {
+      listItems.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.classList.add('active');
+          item.style.display = 'block'; // 表示
+        } else {
+          item.classList.remove('active');
+          item.style.display = 'none'; // 非表示
+        }
       });
     }
+  
+    // イベントリスナーのセットアップ
+    function setupSwipeEvents() {
+      const ulElement = document.querySelector('.p-topic ul');
+  
+      ulElement.addEventListener('touchstart', (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        startX = e.touches[0].clientX; // タッチの開始位置を取得
+      });
+  
+      ulElement.addEventListener('touchend', (e) => {
+        if (!isMobileSize()) return; // スマホサイズ以外では動作させない
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+  
+        if (diffX > 50) {
+          // 右スワイプ：前のアイテムを表示
+          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        } else if (diffX < -50) {
+          // 左スワイプ：次のアイテムを表示
+          currentIndex = (currentIndex + 1) % totalItems;
+        }
+  
+        updateDisplay(); // 表示を更新
+      });
+    }
+  
+    // 初期化
+    if (isMobileSize()) {
+      updateDisplay();
+      setupSwipeEvents();
+    }
+  
+    // ウィンドウサイズ変更時に再判定
+    window.addEventListener('resize', () => {
+      if (isMobileSize()) {
+        updateDisplay(); // スマホサイズなら表示を更新
+      } else {
+        // スマホサイズ以外では全てのアイテムを表示
+        listItems.forEach((item) => {
+          item.style.display = 'block';
+          item.classList.remove('visible');
+        });
+      }
+    });
   });
-});
-
-
-
-</script>
-</Layout>
-<script>
-const items = Array.from(document.querySelectorAll(".slider-item"));
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const totalItems = items.length;
-let currentIndex = 0;
-
-function updateSlider() {
-items.forEach((item) => {
-item.classList.remove("left", "active", "right");
-item.style.display = 'none';
-});
-
-const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-const rightIndex = (currentIndex + 1) % totalItems;
-
-items[leftIndex].classList.add("left");
-items[leftIndex].style.display = 'block';
-items[currentIndex].classList.add("active");
-items[currentIndex].style.display = 'block';
-items[rightIndex].classList.add("right");
-items[rightIndex].style.display = 'block';
-}
-
-
-currentIndex = 0;
-updateSlider();
-
-
-nextBtn.addEventListener("click", () => {
-currentIndex = (currentIndex + 1) % totalItems;
-updateSlider();
-});
-
-
-prevBtn.addEventListener("click", () => {
-currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-updateSlider();
-});
-
-document.querySelectorAll('.qa-item').forEach(item => {
-     const question = item.querySelector('.question');
-     const answer = item.querySelector('.answer');
-     const vertical = item.querySelector('.vertical')
-
-     question.addEventListener('click', () => {
-          item.classList.toggle('open');
-
-          if (item.classList.contains('open')) {
-               answer.style.display = 'block';
-               vertical.style.display = 'none';
-          } else {
-               answer.style.display = 'none';
-               vertical.style.display = 'block';
-          }
-     });
-});
-
-</script>
+  
+  
+  
+  </script>
