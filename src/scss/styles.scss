@@ -361,7 +361,7 @@ header {
   width: 100%;
   height: 95px;
   .hamburger {
-    display: hidden;
+    display: none;
   }
   nav {
     display: flex;
@@ -517,6 +517,7 @@ header {
       }
     }
     .hamburger {
+      display: block;
       position: absolute;
       top: 10px;
       right: 32px;
