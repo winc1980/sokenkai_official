@@ -1001,7 +1001,6 @@ header img {
 
     .sokenkai__topiccard {
       flex-direction: column;
-      justify-items: left;
       width: 100%;
       h3 {
         color: #007bff;
@@ -1012,7 +1011,6 @@ header img {
         font-weight: 400;
         line-height: 128.2%; /* 17.948px */
         position: relative;
-        width: 90%;
         padding-bottom: 6px;
         padding-left: 41px;
       }
@@ -1021,13 +1019,13 @@ header img {
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 100%;
+
         margin: 0px;
         display: block;
-        min-width: 254px;
-        height: 1px; /* 線の太さ */
-        background-color: #71cedf; /* 線の色 */
-        margin-top: 10px; /* 線とテキストの間隔 */
+        height: 1px;
+        width: 100%;
+        background-color: #71cedf;
+        margin-top: 10px;
       }
       p {
         margin-left: 9px;

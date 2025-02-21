@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BreadCrumb from "@/components/BreadCrumb.astro";
+const response = await getTopics({
+  fields: ["id", "title", "description", "publishedDate", "featuredImage"],
+});
+import TopicCard from "@/components/TopicCard.astro";
+import Toc from "@/components/Toc.astro";
+import { getTopics, getTopicDetail } from "@/lib/microcms.ts";
+export async function getStaticPaths() {
+  const response = await getTopics({ fields: ["id"] });
+  return response.contents.map((content: any) => ({
+    params: {
+      articleId: content.id,
+    },
+  }));
+}
+const { articleId } = Astro.params;
+const article = await getTopicDetail(articleId as string);
+
+const title = "";
+const description = "";
+const og_image = "";
+---
+
+<Layout title={title} , description={description} og_image={og_image}>
+  <section class="sokenkai__articleMv">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "記事", link: "/article" },
+          { text: article.title, link: "" },
+        ]}
+      />
+    </div>
+
+      <div class="Article_detail_tittle_bg">
+        <div class="l-container">
+          <h1 class="Article_detail_tittle">{article.title}</h1>
+          <p class="Article_detail_date">{article.publishedAt}</p>
+        </div>
+      </div>
+
+      <div class="l-container">
+      <img
+        src={article.featuredImage.url}
+        width={article.featuredImage.width}
+        height={article.featuredImage.height}
+        alt="トピック記事のバナー画像"
+      />
+    </div>
+  </section>
+
+  <!-- ここからp-articleContent -->
+  <section id="articleContent" class="p-articleContent">
+    <div class="l-container">
+      <h4>目次</h4>
+      <Toc />
+      <div set:html={article.content} />
+    </div>
+
+    <div class="sokenkai_short-despriction">
+      <div class="l-container">
+        <h4 class="description_tittle">早健会とは</h4>
+        <p>学生早健会（1964年設立）は、会員（学生）から納入された会費によって、会員の健康の維持・増進を図るための活動や医療費給付・健康診断補助費給付などの事業を行う早稲田大学独自の互助会組織です。早稲田大学に入学した正規の学生は自動的に会員となり、年間3000円の会費を学費に含まれた形で納入していただいています。集まった会費をもとに、早大生の健康増進のために様々なサービスを提供しています。近年の活動においては、「100円朝食」、「歯科検診」、「健康フェスタ」の３つを活動の柱としています。
+        </p>
+
+        <div class="article_view_more_btn">
+          <a href="/">VIEW MORE</a><br/>
+          <a href="/">∨</a>
+        </div>
+      </div>
+      
+      </div>
+
+ 
+    </div>
+
+
+
+  </section>
+  <!-- ここまでp-articleContent -->
+  <div class="l-container">
+
+    <div class="Article-title">
+      <h2>Recommend</h2>
+      <p>おすすめの投稿</p>
+    </div>
+
+    <div class="Article-title-resp">
+      <h2>おすすめの記事!</h2>
+    </div>
+
+    <section id="articlesList" class="p-articlesIdList">
+    <div class="p-articlesIdList__wrapper">
+      <!-- map関数で展開する -->
+      {
+        response.contents.slice(-4).map((content: any) => (
+          <TopicCard content={content} />
+        ))
+      }
+    </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getTopics } from "@/lib/microcms.ts";
+const response = await getTopics({
+  fields: ["id", "title", "description", "publishedDate", "featuredImage"],
+});
+import BreadCrumb from "@/components/BreadCrumb.astro";
+import Mv from "@/components/Mv.astro";
+import TopicCard from "@/components/TopicCard.astro";
+
+
+
+const { page } = Astro.props;
+
+const title = "";
+const description = "";
+const og_image = "";
+---
+
+<Layout title={title} , description={description} og_image={og_image}>
+<section class="page-wrapper">
+    <div class="l-container">
+      <BreadCrumb
+        items={[
+          { text: "TOP", link: "/" },
+          { text: "記事", link: "/Article" },
+        ]}
+      />
+    </div>
+
+    
+  
+        <Mv enTitle="Article" jaTitle="記事" />
+
+
+
+    </div>
+  <!-- </section> -->
+
+  <section id="articleList" class="p-articleList">
+    <div class="l-container">
+      <div class="p-articleList__wrapper">
+        <!-- map関数で展開する -->
+        {
+          response.contents.map((content: any) => (
+            <TopicCard content={content} />
+          ))
+        }
+      </div>
+    
+    </div>
+
+
+  </section>
+  </section>
+</Layout>
