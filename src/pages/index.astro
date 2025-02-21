@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 
+import { getBlogs } from "@/lib/microcms.ts";
+const response = await getBlogs({
+  fields: ["id", "title", "description", "publishedDate", "featuredImage"],
+});
+import TopBlogCard from "@/components/TopBlogCard.astro";
+
 import dental_checkup from '@/assets/images/IMG_4519.JPG';
 import beer from '@/assets/images/image 1.png';
 import left_arrow from '@/assets/images/Vector.svg';
@@ -217,72 +223,23 @@ const text = "hello";
           <p>活動報告</p>
      </div>
      <div class="slider">
-          <span id="prevBtn" class="arrow-left">
-               
-          </span>
           <ul class="slider-list">
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート1</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート2</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート3</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート4</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
-               <li class="slider-item">
-                    <figure>
-                         <Image class="image-blur" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                         <Image class="image-small" src={dental_checkup} alt="歯科検診のイメージ画像" />
-                    </figure>
-                    <div>
-                         <time datetime="">2024.08.18</time>
-                         <h3>歯科検診レポート5</h3>
-                         <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひか・・・</p>
-                         <a href="">続きを読む</a>
-                    </div>
-               </li>
+            {
+              response.contents
+                .slice(0, 1)
+                .map((content: any) => <TopBlogCard content={content} />)
+            }
+            {
+              response.contents
+                .slice(1, 2)
+                .map((content: any) => <TopBlogCard content={content} />)
+            }
+            {
+              response.contents
+                .slice(2, 3)
+                .map((content: any) => <TopBlogCard content={content} />)
+            }
           </ul>
-          <span id="nextBtn" class="arrow-right"></span>
      </div>
 </section>
 <!-- レポートここまで -->
@@ -689,123 +646,123 @@ const text = "hello";
 <!-- フッターここまで -->
 </Layout>
 <script>
-  const items = Array.from(document.querySelectorAll(".slider-item"));
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const totalItems = items.length;
-  let currentIndex = 0;
-  let startX = 0;
+  // const items = Array.from(document.querySelectorAll(".slider-item"));
+  // const prevBtn = document.getElementById("prevBtn");
+  // const nextBtn = document.getElementById("nextBtn");
+  // const totalItems = items.length;
+  // let currentIndex = 0;
+  // let startX = 0;
   
-  // メディアクエリのブレークポイント
-  const breakpointMobile = window.matchMedia("(max-width: 590px)");
+  // // メディアクエリのブレークポイント
+  // const breakpointMobile = window.matchMedia("(max-width: 590px)");
   
-  // スライダーを更新する関数
-  function updateSlider() {
-    items.forEach((item) => {
-      item.classList.remove("left", "active", "right");
-      item.style.display = "none";
-    });
+  // // スライダーを更新する関数
+  // function updateSlider() {
+  //   items.forEach((item) => {
+  //     item.classList.remove("left", "active", "right");
+  //     item.style.display = "none";
+  //   });
   
-    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-    const rightIndex = (currentIndex + 1) % totalItems;
+  //   const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+  //   const rightIndex = (currentIndex + 1) % totalItems;
   
-    items[leftIndex].classList.add("left");
-    items[leftIndex].style.display = "block";
-    items[currentIndex].classList.add("active");
-    items[currentIndex].style.display = "block";
-    items[rightIndex].classList.add("right");
-    items[rightIndex].style.display = "block";
-  }
+  //   items[leftIndex].classList.add("left");
+  //   items[leftIndex].style.display = "block";
+  //   items[currentIndex].classList.add("active");
+  //   items[currentIndex].style.display = "block";
+  //   items[rightIndex].classList.add("right");
+  //   items[rightIndex].style.display = "block";
+  // }
   
-  function updateSlider_Mobile() {
-    items.forEach((item) => {
-      item.classList.remove("left", "active", "right");
-      item.style.display = "none";
-    });
+  // function updateSlider_Mobile() {
+  //   items.forEach((item) => {
+  //     item.classList.remove("left", "active", "right");
+  //     item.style.display = "none";
+  //   });
   
-    const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
-    const rightIndex = (currentIndex + 1) % totalItems;
+  //   const leftIndex = (currentIndex - 1 + totalItems) % totalItems;
+  //   const rightIndex = (currentIndex + 1) % totalItems;
   
-    items[leftIndex].classList.add("left");
-    items[leftIndex].style.display = "none";
-    items[currentIndex].classList.add("active");
-    items[currentIndex].style.display = "block";
-    items[rightIndex].classList.add("right");
-    items[rightIndex].style.display = "none";
-  }
+  //   items[leftIndex].classList.add("left");
+  //   items[leftIndex].style.display = "none";
+  //   items[currentIndex].classList.add("active");
+  //   items[currentIndex].style.display = "block";
+  //   items[rightIndex].classList.add("right");
+  //   items[rightIndex].style.display = "none";
+  // }
   
-  // 初期表示
-  // currentIndex = 0;
+  // // 初期表示
+  // // currentIndex = 0;
   
-  // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
-  function responsiveUpdateSlider() {
-    if (breakpointMobile.matches) {
-      updateSlider_Mobile();
-    } else {
-      updateSlider();
-    }
-  }
-  responsiveUpdateSlider();
+  // // スライダー更新のラッパー関数（モバイルとデスクトップで切り替え）
+  // function responsiveUpdateSlider() {
+  //   if (breakpointMobile.matches) {
+  //     updateSlider_Mobile();
+  //   } else {
+  //     updateSlider();
+  //   }
+  // }
+  // responsiveUpdateSlider();
   
-  // ボタンクリックでスライダーを操作
-  function setupButtonNavigation() {
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % totalItems;
-      responsiveUpdateSlider();
-    });
+  // // ボタンクリックでスライダーを操作
+  // function setupButtonNavigation() {
+  //   nextBtn.addEventListener("click", () => {
+  //     currentIndex = (currentIndex + 1) % totalItems;
+  //     responsiveUpdateSlider();
+  //   });
   
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-      responsiveUpdateSlider();
-    });
-  }
+  //   prevBtn.addEventListener("click", () => {
+  //     currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  //     responsiveUpdateSlider();
+  //   });
+  // }
   
-  // フリック操作でスライダーを操作
-  function setupSwipeNavigation() {
-    const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
+  // // フリック操作でスライダーを操作
+  // function setupSwipeNavigation() {
+  //   const sliderContainer = document.querySelector(".slider-container"); // スライダー全体の親要素
   
-    sliderContainer.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX; // タッチの開始位置を記録
-    });
+  //   sliderContainer.addEventListener("touchstart", (e) => {
+  //     startX = e.touches[0].clientX; // タッチの開始位置を記録
+  //   });
   
-    sliderContainer.addEventListener("touchend", (e) => {
-      const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
-      const diffX = endX - startX;
+  //   sliderContainer.addEventListener("touchend", (e) => {
+  //     const endX = e.changedTouches[0].clientX; // タッチの終了位置を記録
+  //     const diffX = endX - startX;
   
-      if (diffX > 50) {
-        // 右フリック: 前のアイテム
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        responsiveUpdateSlider();
-      } else if (diffX < -50) {
-        // 左フリック: 次のアイテム
-        currentIndex = (currentIndex + 1) % totalItems;
-        responsiveUpdateSlider();
-      }
-    });
-  }
+  //     if (diffX > 50) {
+  //       // 右フリック: 前のアイテム
+  //       currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  //       responsiveUpdateSlider();
+  //     } else if (diffX < -50) {
+  //       // 左フリック: 次のアイテム
+  //       currentIndex = (currentIndex + 1) % totalItems;
+  //       responsiveUpdateSlider();
+  //     }
+  //   });
+  // }
   
-  // メディアクエリに基づいてイベントリスナーを切り替える
-  function setupResponsiveNavigation() {
-    if (breakpointMobile.matches) {
-      // モバイルサイズの場合
-      setupSwipeNavigation();
-    } else {
-      // デスクトップサイズの場合
-      setupButtonNavigation();
-    }
-  }
+  // // メディアクエリに基づいてイベントリスナーを切り替える
+  // function setupResponsiveNavigation() {
+  //   if (breakpointMobile.matches) {
+  //     // モバイルサイズの場合
+  //     setupSwipeNavigation();
+  //   } else {
+  //     // デスクトップサイズの場合
+  //     setupButtonNavigation();
+  //   }
+  // }
   
-  // ページがロードされたらイベントを設定
-  document.addEventListener("DOMContentLoaded", () => {
-    setupResponsiveNavigation();
-  });
+  // // ページがロードされたらイベントを設定
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   setupResponsiveNavigation();
+  // });
   
-  // ウィンドウサイズ変更時に再設定
-  window.addEventListener("resize", () => {
-    // メディアクエリの状態を再確認
-    responsiveUpdateSlider();
-    setupResponsiveNavigation();
-  });
+  // // ウィンドウサイズ変更時に再設定
+  // window.addEventListener("resize", () => {
+  //   // メディアクエリの状態を再確認
+  //   responsiveUpdateSlider();
+  //   setupResponsiveNavigation();
+  // });
   
   
   // ここからQA
@@ -830,8 +787,8 @@ const text = "hello";
 
   // ここから続きを読む
   document.addEventListener("DOMContentLoaded", () => {
-       const sliderItems = document.querySelectorAll(".slider-item div p");
-       const readMoreLinks = document.querySelectorAll(".slider-item div a");
+       const sliderItems = document.querySelectorAll(".top-blog-card__description");
+       const readMoreLinks = document.querySelectorAll(".top-blog-card__link");
   
        sliderItems.forEach((item, index) => {
             const maxLength = 125;
