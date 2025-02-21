@@ -1991,3 +1991,65 @@ header {
     font-size: 12px;
   }
 }
+
+// footerここから
+footer {
+  margin-top: 120px;
+  background-color: #71cedf;
+  padding-top: 69px;
+  padding-bottom: 12px;
+  .footer-comtent {
+    .footer-nav {
+      display: flex;
+      margin: 0px auto;
+      color: #fff;
+      width: 540px;
+      justify-content: space-between;
+      font-size: 18px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    p {
+      color: #fff;
+      font-size: 18px;
+      margin: 0px auto;
+      width: 240px;
+      margin-top: 35px;
+      display: flex;
+      text-align: center;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .rsp-footer {
+    display: none;
+  }
+}
+@media screen and (max-width: $breakpoint-md) {
+  footer {
+    margin-top: 64px;
+    background-color: #71cedf;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    .footer-comtent {
+      display: none;
+    }
+    .rsp-footer {
+      display: block;
+      color: #fff;
+      width: 220px;
+      margin: 0px auto;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+// footerここまで
