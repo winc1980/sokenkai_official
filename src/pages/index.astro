@@ -787,23 +787,28 @@ const text = "hello";
 
   // ここから続きを読む
   document.addEventListener("DOMContentLoaded", () => {
-       const sliderItems = document.querySelectorAll(".top-blog-card__description");
-       const readMoreLinks = document.querySelectorAll(".top-blog-card__link");
-  
-       sliderItems.forEach((item, index) => {
-            const maxLength = 125;
-            const fullText = item.textContent.trim();
-  
-            if (fullText.length > maxLength) {
-                 const truncatedText = fullText.substring(0, maxLength);
-                 item.innerHTML = `${truncatedText}<span>・・・</span>`;
-  
-                 if (readMoreLinks[index]) {
-                      readMoreLinks[index].style.display = 'block';
-                 }
+    const sliderItems = document.querySelectorAll(".top-blog-card__description");
+    const readMoreLinks = document.querySelectorAll(".top-blog-card__link");
+
+    sliderItems.forEach((item, index) => {
+        const maxLength = 100;
+        const fullText = item?.textContent?.trim() || ""; // nullチェック
+
+        if (fullText.length > maxLength) {
+            const truncatedText = fullText.substring(0, maxLength);
+            item.innerHTML = `${truncatedText}<span>・・・</span>`; // 省略記号を追加
+
+            if (readMoreLinks[index]) {
+                readMoreLinks[index].style.display = "block"; // 「続きを読む」を表示
             }
-       });
-  });
+        } else {
+            if (readMoreLinks[index]) {
+                readMoreLinks[index].style.display = "none"; // 「続きを読む」を非表示
+            }
+        }
+    });
+});
+
   // ここまで続きを読む
   
   document.addEventListener('DOMContentLoaded', () => {
